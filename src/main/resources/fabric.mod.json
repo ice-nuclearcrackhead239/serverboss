@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "svbcr",
+	"version": "${version}",
+	"name": "Serverboss: Cross-Reference",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/svbcr/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.nuclearcrackhead.serverboss.ServerbossCrossReference"
+		],
+		"client": [
+			"com.nuclearcrackhead.serverboss.ServerbossCrossReferenceClient"
+		],
+		"fabric-datagen": [
+			"com.nuclearcrackhead.serverboss.ServerbossCrossReferenceDataGenerator"
+		]
+	},
+	"mixins": [
+		"svbcr.mixins.json",
+		{
+			"config": "svbcr.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.3",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
