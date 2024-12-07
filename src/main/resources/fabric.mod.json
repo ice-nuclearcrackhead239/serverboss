@@ -16,13 +16,13 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.nuclearcrackhead.serverboss.ServerbossCrossReference"
+			"com.nuclearcrackhead.serverboss.SVBCR"
 		],
 		"client": [
-			"com.nuclearcrackhead.serverboss.ServerbossCrossReferenceClient"
+			"com.nuclearcrackhead.serverboss.SVBCRClient"
 		],
 		"fabric-datagen": [
-			"com.nuclearcrackhead.serverboss.ServerbossCrossReferenceDataGenerator"
+			"com.nuclearcrackhead.serverboss.SVBCRDatagen"
 		]
 	},
 	"mixins": [
