@@ -22,10 +22,10 @@ public class ModBlocks {
 
     public static void init() {}
 
-    public static FlowableFluid RADIOACTIVE_STILL = Registry.register(Registries.FLUID, Identifier.of("svbcr", "radioactive_still"), new RadioactiveFluid.Still());
-    public static FlowableFluid RADIOACTIVE_FLOWING = Registry.register(Registries.FLUID, Identifier.of("svbcr", "radioactive_flowing"), new RadioactiveFluid.Flowing());
-    public static Block RADIOACTIVE = Registry.register(Registries.BLOCK, Identifier.of("svbcr", "radioactive"), new FluidBlock(RADIOACTIVE_STILL, AbstractBlock.Settings.copy(Blocks.WATER)){});
-
+    public static Block RADIOACTIVE = register("radioactive",
+            settings -> new FluidBlock(ModFluids.RADIOACTIVE_STILL, settings),
+            AbstractBlock.Settings.copy(Blocks.WATER)
+    );
     public static final Block EXAMPLE_BLOCK = register("example_block", ExampleBlock::new,
             AbstractBlock.Settings.create()
     );

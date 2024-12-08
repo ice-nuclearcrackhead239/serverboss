@@ -1,6 +1,7 @@
 package com.nuclearcrackhead.serverboss;
 
 import com.nuclearcrackhead.serverboss.registry.ModBlocks;
+import com.nuclearcrackhead.serverboss.registry.ModFluids;
 import com.nuclearcrackhead.serverboss.registry.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -20,6 +21,7 @@ public class SVBCR implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.init();
+		ModFluids.init();
 		ModBlocks.init();
 	}
 }
