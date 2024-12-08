@@ -25,11 +25,10 @@ public class ModItems {
     public static final Item EXAMPLE_ITEM = register("example_item", ExampleItem::new,
             new Item.Settings()
     );
-
-    public static Item RADIOACTIVE_BUCKET = Registry.register(Registries.ITEM, Identifier.of("svbcr", "radioactive_bucket"),
-    new BucketItem(RADIOACTIVE_STILL, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
-
-    RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, RADIOACTIVE_BUCKET);
+    public static Item RADIOACTIVE_BUCKET = register("radioactive_bucket",
+            settings -> new BucketItem(RADIOACTIVE_STILL, settings),
+            new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)
+    );
 
     public static Item register(String path, Function<Item.Settings, Item> function, Item.Settings settings) {
         Identifier id = SVBCR.of(path);
