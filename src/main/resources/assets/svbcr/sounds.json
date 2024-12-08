@@ -1,0 +1,24 @@
+{
+  "block.agony.activate_fangsnap": {
+    "subtitle": "subtitles.block.agony.activate",
+    "sounds": [
+      {
+        "name": "entity.evoker_fangs.attack",
+        "type": "event",
+        "volume": 0.5,
+        "pitch": 0.5
+      }
+    ]
+  },
+  "block.agony.activate_zombiestep": {
+    "subtitle": "subtitles.block.agony.activate",
+    "sounds": [
+      {
+        "name": "entity.zombie_villager.step",
+        "type": "event",
+        "volume": 0.5,
+        "pitch": 0.5
+      }
+    ]
+  }
+}

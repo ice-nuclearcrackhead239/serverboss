@@ -26,6 +26,7 @@ public class Sludge extends TranslucentBlock {
     private static final double field_31103 = 0.05;
     private static final int TICKS_PER_SECOND = 20;
     protected static final VoxelShape SHAPE = Block.createCuboidShape((double)1.0F, (double)0.0F, (double)1.0F, (double)15.0F, (double)15.0F, (double)15.0F);
+    protected static final VoxelShape LINESHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 15.0, 16.0);
 
     public MapCodec<Sludge> getCodec() {
         return CODEC;
@@ -41,6 +42,11 @@ public class Sludge extends TranslucentBlock {
 
     protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
+    }
+
+    @Override
+    protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return LINESHAPE;
     }
 
     /*public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
