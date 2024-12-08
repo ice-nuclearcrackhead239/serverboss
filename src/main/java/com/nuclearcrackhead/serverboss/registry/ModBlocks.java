@@ -2,6 +2,7 @@ package com.nuclearcrackhead.serverboss.registry;
 import com.nuclearcrackhead.serverboss.SVBCR;
 import com.nuclearcrackhead.serverboss.content.block.ExampleBlock;
 import com.nuclearcrackhead.serverboss.content.block.Agony;
+import com.nuclearcrackhead.serverboss.content.block.WasteBarrel;
 import com.nuclearcrackhead.serverboss.content.block.Radioactive;
 import com.nuclearcrackhead.serverboss.content.block.RadioactiveFluid;
 import net.minecraft.block.*;
@@ -24,9 +25,12 @@ public class ModBlocks {
 
     public static Block RADIOACTIVE = register("radioactive",
             settings -> new FluidBlock(ModFluids.RADIOACTIVE_STILL, settings),
-            AbstractBlock.Settings.copy(Blocks.WATER)
+            AbstractBlock.Settings.copy(Blocks.WATER).emissiveLighting(ModBlocks::always).luminance(value -> 10)
     );
     public static final Block EXAMPLE_BLOCK = register("example_block", ExampleBlock::new,
+            AbstractBlock.Settings.create()
+    );
+    public static final Block WASTEBARREL = register("wastebarrel", WasteBarrel::new,
             AbstractBlock.Settings.create()
     );
     public static final Block AGONY = register("agony", Agony::new,

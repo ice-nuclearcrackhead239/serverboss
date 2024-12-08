@@ -1,5 +1,8 @@
 {
 	"block.svbcr.example_block": "Example Block",
 	"block.svbcr.agony": "Agony",
+	"block.svbcr.radioactive": "Radioactive Waste",
+	"block.svbcr.wastebarrel": "Large Radioactive Waste Barrel",
+	"item.svbcr.radioactive_bucket": "Radioactive Waste Barrel",
 	"item.svbcr.example_item": "Example Item"
 }

@@ -1,23 +1,14 @@
 package com.nuclearcrackhead.serverboss.registry;
 
 import com.nuclearcrackhead.serverboss.SVBCR;
-import com.nuclearcrackhead.serverboss.content.block.Agony;
-import com.nuclearcrackhead.serverboss.content.block.ExampleBlock;
 import com.nuclearcrackhead.serverboss.content.block.RadioactiveFluid;
-import net.minecraft.block.*;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.fluid.Fluid;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
-
-import java.util.function.Function;
 
 public class ModFluids {
 
@@ -31,5 +22,13 @@ public class ModFluids {
         RegistryKey<Fluid> key = RegistryKey.of(RegistryKeys.FLUID, id);
         return Registry.register(Registries.FLUID, key, fluid);
     }
+/*
+    FluidRenderHandlerRegistry.INSTANCE.register(RADIOACTIVE_STILL, RADIOACTIVE_FLOWING, new SimpleFluidRenderHandler(
+        new void Identifier("minecraft:block/water_still"),
+        new void Identifier("minecraft:block/water_flow"),
+        0x4CC248
+    ));
+    BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), RADIOACTIVE_STILL, RADIOACTIVE_FLOWING);
+*/
 
 }
