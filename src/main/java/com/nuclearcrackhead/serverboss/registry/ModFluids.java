@@ -22,13 +22,5 @@ public class ModFluids {
         RegistryKey<Fluid> key = RegistryKey.of(RegistryKeys.FLUID, id);
         return Registry.register(Registries.FLUID, key, fluid);
     }
-/*
-    FluidRenderHandlerRegistry.INSTANCE.register(RADIOACTIVE_STILL, RADIOACTIVE_FLOWING, new SimpleFluidRenderHandler(
-        new void Identifier("minecraft:block/water_still"),
-        new void Identifier("minecraft:block/water_flow"),
-        0x4CC248
-    ));
-    BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), RADIOACTIVE_STILL, RADIOACTIVE_FLOWING);
-*/
 
 }

@@ -16,6 +16,9 @@ public class ModItemGroups {
             entries.add(ModBlocks.WASTEBARREL);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+            entries.add(ModBlocks.SLUDGE);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(ModItems.RADIOACTIVE_BUCKET);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {

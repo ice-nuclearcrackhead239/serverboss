@@ -1,0 +1,53 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "particle": "svbcr:block/sludge",
+    "down": "svbcr:block/sludge",
+    "up": "svbcr:block/sludge",
+    "side": "svbcr:block/sludge_side"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        -1,
+        0
+      ],
+      "to": [
+        16,
+        15,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "#down",
+          "cullface": "down"
+        },
+        "up": {
+          "texture": "#down",
+          "cullface": "up"
+        },
+        "north": {
+          "texture": "#side",
+          "uv": [ 0, 0, 16, 16 ],
+          "cullface": "north"
+        },
+        "south": {
+          "texture": "#side",
+          "uv": [ 0, 0, 16, 16 ],
+          "cullface": "south"
+        },
+        "west": {
+          "texture": "#side",
+          "uv": [ 0, 0, 16, 16 ],
+          "cullface": "west"
+        },
+        "east": {
+          "texture": "#side",
+          "uv": [ 0, 0, 16, 16 ],
+          "cullface": "east"
+        }
+      }
+    }
+  ]
+}

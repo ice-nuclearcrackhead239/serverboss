@@ -1,5 +1,6 @@
 package com.nuclearcrackhead.serverboss;
 
+import com.nuclearcrackhead.serverboss.registry.ModBlocks;
 import com.nuclearcrackhead.serverboss.registry.ModItemGroups;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -27,6 +28,10 @@ public class SVBCRClient implements ClientModInitializer {
                 Identifier.of("svbcr:block/radioactive_flowing"),
 				0xFFFFFF
 		));
+
+		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
+				ModBlocks.SLUDGE
+		);
 
 		BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), RADIOACTIVE_STILL, RADIOACTIVE_FLOWING);
 		ModItemGroups.init();
