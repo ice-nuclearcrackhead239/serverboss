@@ -3,6 +3,7 @@ package com.nuclearcrackhead.serverboss;
 import com.nuclearcrackhead.serverboss.registry.ModBlocks;
 import com.nuclearcrackhead.serverboss.registry.ModFluids;
 import com.nuclearcrackhead.serverboss.registry.ModItems;
+import com.nuclearcrackhead.serverboss.registry.ModDamageTypes;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.util.Identifier;
@@ -23,5 +24,6 @@ public class SVBCR implements ModInitializer {
 		ModItems.init();
 		ModFluids.init();
 		ModBlocks.init();
+		ModDamageTypes.init();
 	}
 }
