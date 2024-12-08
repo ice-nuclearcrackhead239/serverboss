@@ -10,6 +10,8 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.world.WorldView;
 
 import static com.nuclearcrackhead.serverboss.registry.ModBlocks.*;
+import static com.nuclearcrackhead.serverboss.registry.ModFluids.RADIOACTIVE_FLOWING;
+import static com.nuclearcrackhead.serverboss.registry.ModFluids.RADIOACTIVE_STILL;
 import static com.nuclearcrackhead.serverboss.registry.ModItems.RADIOACTIVE_BUCKET;
 
 public abstract class RadioactiveFluid extends Radioactive {

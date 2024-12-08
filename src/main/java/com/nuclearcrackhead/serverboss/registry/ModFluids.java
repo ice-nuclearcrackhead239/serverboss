@@ -23,8 +23,8 @@ public class ModFluids {
 
     public static void init() {}
 
-    public static FlowableFluid RADIOACTIVE_STILL = register("radioactive_still", new RadioactiveFluid.Still());
-    public static FlowableFluid RADIOACTIVE_FLOWING = register("radioactive_flowing", new RadioactiveFluid.Flowing());
+    public static FlowableFluid RADIOACTIVE_STILL = (FlowableFluid) register("radioactive_still", new RadioactiveFluid.Still());
+    public static FlowableFluid RADIOACTIVE_FLOWING = (FlowableFluid) register("radioactive_flowing", new RadioactiveFluid.Flowing());
 
     public static Fluid register(String path, Fluid fluid) {
         Identifier id = SVBCR.of(path);

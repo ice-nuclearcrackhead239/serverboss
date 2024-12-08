@@ -2,6 +2,7 @@ package com.nuclearcrackhead.serverboss.registry;
 
 import com.nuclearcrackhead.serverboss.SVBCR;
 import com.nuclearcrackhead.serverboss.content.item.ExampleItem;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -13,7 +14,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.function.Function;
 
-import static com.nuclearcrackhead.serverboss.registry.ModBlocks.RADIOACTIVE_STILL;
+import static com.nuclearcrackhead.serverboss.registry.ModFluids.RADIOACTIVE_STILL;
 
 
 public class ModItems {
@@ -25,8 +26,10 @@ public class ModItems {
             new Item.Settings()
     );
 
-    public static Item RADIOACTIVE_BUCKET = Registry.register(Registries.ITEM, Identifier.of("svbcr", "acid_bucket"),
+    public static Item RADIOACTIVE_BUCKET = Registry.register(Registries.ITEM, Identifier.of("svbcr", "radioactive_bucket"),
     new BucketItem(RADIOACTIVE_STILL, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
+
+    RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, RADIOACTIVE_BUCKET);
 
     public static Item register(String path, Function<Item.Settings, Item> function, Item.Settings settings) {
         Identifier id = SVBCR.of(path);
