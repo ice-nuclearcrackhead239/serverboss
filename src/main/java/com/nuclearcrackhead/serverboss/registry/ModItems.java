@@ -2,6 +2,7 @@ package com.nuclearcrackhead.serverboss.registry;
 
 import com.nuclearcrackhead.serverboss.SVBCR;
 import com.nuclearcrackhead.serverboss.content.item.ExampleItem;
+import com.nuclearcrackhead.serverboss.content.item.GcpDotTestingItem;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
@@ -23,6 +24,9 @@ public class ModItems {
 
 
     public static final Item EXAMPLE_ITEM = register("example_item", ExampleItem::new,
+            new Item.Settings()
+    );
+    public static final Item GCP_DOT_TESTING_ITEM = register("gcp_dot_testing_item", GcpDotTestingItem::new,
             new Item.Settings()
     );
     public static Item RADIOACTIVE_BUCKET = register("radioactive_bucket",
