@@ -26,7 +26,7 @@ public class Sludge extends TranslucentBlock {
     private static final double field_31103 = 0.05;
     private static final int TICKS_PER_SECOND = 20;
     protected static final VoxelShape SHAPE = Block.createCuboidShape((double)1.0F, (double)0.0F, (double)1.0F, (double)15.0F, (double)15.0F, (double)15.0F);
-    protected static final VoxelShape LINESHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 15.0, 16.0);
+    protected static final VoxelShape LINESHAPE = Block.createCuboidShape(0.0, -1.0, 0.0, 16.0, 15.0, 16.0);
 
     public MapCodec<Sludge> getCodec() {
         return CODEC;

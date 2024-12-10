@@ -11,5 +11,8 @@
   "item.svbcr.example_item": "Example Item",
   "item.svbcr.radioactive_bucket": "Radioactive Waste Barrel",
 
+  "itemGroup.svbcr.functional_blocks": "Serverboss Functional Blocks",
+  "itemGroup.svbcr.decorational_blocks": "Serverboss Decorational Blocks",
+
   "subtitles.block.agony.activate": "Agony"
 }
