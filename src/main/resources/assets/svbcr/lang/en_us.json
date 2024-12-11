@@ -1,8 +1,14 @@
 {
   "block.svbcr.agony": "Agony",
+  "block.svbcr.agony.tooltip": "Damages entities on top by 1/7th of their max health",
+  "block.svbcr.checkered_obsidian": "Checkered Obsidian",
+  "block.svbcr.chiseled_obsidian": "Chiseled Obsidian",
   "block.svbcr.example_block": "Example Block",
+  "block.svbcr.obsidian_light": "Obsidian Light Strip",
   "block.svbcr.radioactive": "Radioactive Waste",
   "block.svbcr.sludge": "Sludge",
+  "block.svbcr.sludge.tooltip": "Decreases mobility and allows sliding similar to honey blocks",
+  "block.svbcr.sludge.tooltip2": "Additionally slightly slippery",
   "block.svbcr.wastebarrel": "Large Radioactive Waste Barrel",
 
   "death.attack.agony": "%s was crushed by grief",
@@ -11,8 +17,9 @@
   "item.svbcr.example_item": "Example Item",
   "item.svbcr.radioactive_bucket": "Radioactive Waste Barrel",
 
-  "itemGroup.svbcr.functional_blocks": "Serverboss Functional Blocks",
   "itemGroup.svbcr.decorational_blocks": "Serverboss Decoration Blocks",
+  "itemGroup.svbcr.functional_blocks": "Serverboss Functional Blocks",
 
-  "subtitles.block.agony.activate": "Agony"
+  "subtitles.block.agony.activate": "Agony",
+  "subtitles.block.sludge.slide": "Sliding down sludge"
 }

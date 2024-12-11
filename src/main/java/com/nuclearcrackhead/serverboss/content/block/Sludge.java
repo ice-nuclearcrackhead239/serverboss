@@ -2,6 +2,7 @@ package com.nuclearcrackhead.serverboss.content.block;
 
 import com.mojang.serialization.MapCodec;
 import com.nuclearcrackhead.serverboss.registry.ModBlocks;
+import com.nuclearcrackhead.serverboss.registry.ModSounds;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
@@ -9,15 +10,23 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.TntEntity;
 import net.minecraft.entity.vehicle.AbstractBoatEntity;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.particle.BlockStateParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import com.nuclearcrackhead.serverboss.SVBCR;
+
+import java.util.List;
 
 public class Sludge extends TranslucentBlock {
     public static final MapCodec<Sludge> CODEC = createCodec(Sludge::new);
@@ -34,6 +43,12 @@ public class Sludge extends TranslucentBlock {
 
     public Sludge(AbstractBlock.Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack itemStack, Item.TooltipContext context, List<Text> tooltip, TooltipType options) {
+        tooltip.add(Text.translatable("block.svbcr.sludge.tooltip").formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable("block.svbcr.sludge.tooltip2").formatted(Formatting.GRAY));
     }
 
     private static boolean hasSludgeEffects(Entity entity) {
@@ -116,7 +131,7 @@ public class Sludge extends TranslucentBlock {
     private void addCollisionEffects(World world, Entity entity) {
         if (hasSludgeEffects(entity)) {
             if (world.random.nextInt(5) == 0) {
-                entity.playSound(SoundEvents.BLOCK_HONEY_BLOCK_SLIDE, 1.0F, 1.0F);
+                entity.playSound(ModSounds.BLOCK_SLUDGE_SLIDE, 1.0F, 1.0F);
             }
 
             if (!world.isClient && world.random.nextInt(5) == 0) {

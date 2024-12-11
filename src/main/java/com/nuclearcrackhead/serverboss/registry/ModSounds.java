@@ -13,6 +13,7 @@ public class ModSounds {
 
     public static final SoundEvent BLOCK_AGONY_ACTIVATE_FANGSNAP = registerSound("block.agony.activate_fangsnap");
     public static final SoundEvent BLOCK_AGONY_ACTIVATE_ZOMBIESTEP = registerSound("block.agony.activate_zombiestep");
+    public static final SoundEvent BLOCK_SLUDGE_SLIDE = registerSound("block.sludge.slide");
 
     private static SoundEvent registerSound(String id) {
         Identifier identifier = Identifier.of(SVBCR.MOD_ID, id);

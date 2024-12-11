@@ -42,6 +42,11 @@ public class ModItemGroups {
             .entries((context, entries) -> {
                 entries.add(ModBlocks.EXAMPLE_BLOCK);
                 entries.add(ModBlocks.WASTEBARREL);
+                entries.add(ModBlocks.CHECKERED_OBSIDIAN);
+                entries.add(ModBlocks.CHISELED_OBSIDIAN);
+                entries.add(ModBlocks.OBSIDIAN_LIGHT_STRIP);
+                entries.add(ModBlocks.PORTAL_GLASS_OPAQUE);
+                entries.add(ModBlocks.PORTAL_GLASS_TRANSPARENT);
             })
             .build();
 

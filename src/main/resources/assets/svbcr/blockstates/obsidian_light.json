@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "svbcr:block/obsidian_light_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "svbcr:block/obsidian_light"
+    },
+    "axis=z": {
+      "model": "svbcr:block/obsidian_light_horizontal",
+      "x": 90
+    }
+  }
+}

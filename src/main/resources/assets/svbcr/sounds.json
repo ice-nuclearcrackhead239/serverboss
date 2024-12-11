@@ -20,5 +20,14 @@
         "pitch": 0.5
       }
     ]
+  },
+  "block.sludge.slide": {
+    "subtitle": "subtitles.block.sludge.slide",
+    "sounds": [
+      {
+        "name": "block.honey_block.slide",
+        "type": "event"
+      }
+    ]
   }
 }

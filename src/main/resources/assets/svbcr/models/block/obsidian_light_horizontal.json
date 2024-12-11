@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_column_horizontal",
+	"textures": {
+		"end": "minecraft:block/obsidian",
+		"side": "svbcr:block/obsidian_light"
+	}
+}
