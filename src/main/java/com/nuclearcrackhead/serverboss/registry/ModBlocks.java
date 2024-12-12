@@ -4,6 +4,7 @@ import com.nuclearcrackhead.serverboss.content.block.ExampleBlock;
 import com.nuclearcrackhead.serverboss.content.block.Agony;
 import com.nuclearcrackhead.serverboss.content.block.WasteBarrel;
 import com.nuclearcrackhead.serverboss.content.block.Sludge;
+import com.nuclearcrackhead.serverboss.content.block.SpikeBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.BlockItem;
@@ -48,6 +49,7 @@ public class ModBlocks {
     public static final Block PORTAL_GLASS_TRANSPARENT = register("portal_glass_trans", TransparentBlock::new,
             AbstractBlock.Settings.copy(PORTAL_GLASS_OPAQUE).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
     );
+	public static final Block SPIKE_BLOCK = register("spike_block", SpikeBlock::new, AbstractBlock.Settings.create()); // finxx todo sounds
 
     public static Block register(String path, Function<AbstractBlock.Settings, Block> function, AbstractBlock.Settings settings) {
         Identifier id = SVBCR.of(path);

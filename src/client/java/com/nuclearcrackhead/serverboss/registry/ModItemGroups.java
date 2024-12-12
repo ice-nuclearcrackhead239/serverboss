@@ -33,6 +33,7 @@ public class ModItemGroups {
             .entries((context, entries) -> {
                 entries.add(ModBlocks.AGONY);
                 entries.add(ModBlocks.SLUDGE);
+				entries.add(ModBlocks.SPIKE_BLOCK);
             })
             .build();
 
@@ -57,20 +58,15 @@ public class ModItemGroups {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.add(ModBlocks.EXAMPLE_BLOCK);
-        });
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.add(ModBlocks.AGONY);
+        });
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
+            entries.add(ModBlocks.SPIKE_BLOCK);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(ModBlocks.WASTEBARREL);
-        });
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(ModBlocks.SLUDGE);
-        });
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(ModItems.RADIOACTIVE_BUCKET);
-        });
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(ModItems.EXAMPLE_ITEM);
         });
     }
