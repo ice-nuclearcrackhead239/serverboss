@@ -30,10 +30,18 @@ public class SVBCRClient implements ClientModInitializer {
 		));
 
 		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-				ModBlocks.SLUDGE
+				ModBlocks.SLUDGE,
+				ModBlocks.CHECKERED_OBSIDIAN,
+				ModBlocks.CHISELED_OBSIDIAN,
+				ModBlocks.OBSIDIAN_LIGHT_STRIP
+		);
+
+		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
+				ModBlocks.PORTAL_GLASS_TRANSPARENT
 		);
 
 		BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), RADIOACTIVE_STILL, RADIOACTIVE_FLOWING);
+
 		ModItemGroups.init();
 	}
 

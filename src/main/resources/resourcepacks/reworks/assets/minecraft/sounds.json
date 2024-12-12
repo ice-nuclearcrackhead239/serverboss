@@ -1,0 +1,46 @@
+{
+  "block.glass.step": {
+    "sounds": [
+      "newglass/glass1",
+      "newglass/glass2",
+      "newglass/glass3",
+      "newglass/glass4",
+      "newglass/glass5",
+      "newglass/glass6"
+    ],
+    "replace": true
+  },
+  "block.glass.hit": {
+    "sounds": [
+      "newglass/glass1",
+      "newglass/glass2",
+      "newglass/glass3",
+      "newglass/glass4",
+      "newglass/glass5",
+      "newglass/glass6"
+    ],
+    "replace": true
+  },
+  "block.glass.fall": {
+    "sounds": [
+      "newglass/glass1",
+      "newglass/glass2",
+      "newglass/glass3",
+      "newglass/glass4",
+      "newglass/glass5",
+      "newglass/glass6"
+    ],
+    "replace": true
+  },
+  "block.glass.place": {
+    "sounds": [
+      "newglass/glass1",
+      "newglass/glass2",
+      "newglass/glass3",
+      "newglass/glass4",
+      "newglass/glass5",
+      "newglass/glass6"
+    ],
+    "replace": true
+  }
+}

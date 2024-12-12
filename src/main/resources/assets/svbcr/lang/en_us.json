@@ -5,6 +5,8 @@
   "block.svbcr.chiseled_obsidian": "Chiseled Obsidian",
   "block.svbcr.example_block": "Example Block",
   "block.svbcr.obsidian_light": "Obsidian Light Strip",
+  "block.svbcr.portal_glass": "Opaque Portal Glass",
+  "block.svbcr.portal_glass_trans": "Translucent Portal Glass",
   "block.svbcr.radioactive": "Radioactive Waste",
   "block.svbcr.sludge": "Sludge",
   "block.svbcr.sludge.tooltip": "Decreases mobility and allows sliding similar to honey blocks",

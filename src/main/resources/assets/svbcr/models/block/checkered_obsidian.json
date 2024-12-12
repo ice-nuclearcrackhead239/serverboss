@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/cube_all",
+	"parent": "svbcr:block/cube_all_e",
 	"textures": {
-		"all": "svbcr:block/checkered_obsidian"
+		"all": "svbcr:block/checkered_obsidian",
+		"all_e": "svbcr:block/checkered_obsidian_e"
 	}
 }

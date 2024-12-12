@@ -131,7 +131,7 @@ public class Sludge extends TranslucentBlock {
     private void addCollisionEffects(World world, Entity entity) {
         if (hasSludgeEffects(entity)) {
             if (world.random.nextInt(5) == 0) {
-                entity.playSound(ModSounds.BLOCK_SLUDGE_SLIDE, 1.0F, 1.0F);
+                entity.playSound(ModSounds.BLOCK_SLUDGE_SLIDE, 1.0F, 0.75F);
             }
 
             if (!world.isClient && world.random.nextInt(5) == 0) {
