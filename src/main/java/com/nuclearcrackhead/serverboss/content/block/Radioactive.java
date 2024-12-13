@@ -3,16 +3,29 @@ package com.nuclearcrackhead.serverboss.content.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
 public abstract class Radioactive extends FlowableFluid {
+
+    protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+        Vec3d vec3d = new Vec3d((double)1.0F, (double)0.5F, (double)1.0F);
+        if (entity instanceof LivingEntity livingEntity) {
+        }
+
+        entity.slowMovement(state, vec3d);
+    }
     /**
      * @return whether the given fluid an instance of this fluid
      */
