@@ -1,10 +1,6 @@
 package com.nuclearcrackhead.serverboss.registry;
 import com.nuclearcrackhead.serverboss.SVBCR;
-import com.nuclearcrackhead.serverboss.content.block.ExampleBlock;
-import com.nuclearcrackhead.serverboss.content.block.Agony;
-import com.nuclearcrackhead.serverboss.content.block.WasteBarrel;
-import com.nuclearcrackhead.serverboss.content.block.Sludge;
-import com.nuclearcrackhead.serverboss.content.block.SpikeBlock;
+import com.nuclearcrackhead.serverboss.content.block.*;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.BlockItem;
@@ -34,6 +30,15 @@ public class ModBlocks {
     public static final Block WASTEBARREL = register("wastebarrel", WasteBarrel::new,
             AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL)
     );
+
+    public static final Block WHITE = register("white", White::new,
+            AbstractBlock.Settings.create().emissiveLighting(ModBlocks::always).luminance(value -> 15).sounds(BlockSoundGroup.GLASS)
+    );
+
+    public static final Block BLACK = register("black", Black::new,
+            AbstractBlock.Settings.create().emissiveLighting(ModBlocks::always).sounds(BlockSoundGroup.GLASS)
+    );
+
     public static final Block AGONY = register("agony", Agony::new,
             AbstractBlock.Settings.create().velocityMultiplier(0.6F).jumpVelocityMultiplier(0.9F).emissiveLighting(ModBlocks::always).luminance(value -> 13).sounds(BlockSoundGroup.HONEY)
     );

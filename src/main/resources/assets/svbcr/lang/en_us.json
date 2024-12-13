@@ -13,6 +13,8 @@
   "block.svbcr.sludge.tooltip2": "Additionally slightly slippery",
   "block.svbcr.wastebarrel": "Large Radioactive Waste Barrel",
   "block.svbcr.spike_block": "Spike Block",
+  "block.svbcr.white": "White",
+  "block.svbcr.black": "Black",
   "block.svbcr.spike_block.tooltip": "A block full 'o spikes",
 
   "death.attack.agony": "%s was crushed by grief",

@@ -1,0 +1,7 @@
+{
+  "parent": "svbcr:block/cube_flat_e",
+  "textures": {
+    "all": "svbcr:block/wht",
+    "all_e": "svbcr:block/wht"
+  }
+}
