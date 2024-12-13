@@ -18,18 +18,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Debug(export = true)
 @Mixin(PlayerEntity.class)
 public abstract class MoveMixin extends LivingEntity implements DataTracked {
-
     protected MoveMixin(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
-
-    @Final
-    @Shadow private PlayerAbilities abilities;
+/*
     @Inject(method = "getVelocityMultiplier()F", at = @At("RETURN"), cancellable = true)
     private void injected(CallbackInfoReturnable<Float> cir) {
         cir.setReturnValue(
-                ( !this.isOnGround() ? 1/super.getVelocityMultiplier() : super.getVelocityMultiplier() ) //LivingEntity.getVelocityMultiplier()
+                ( !this.isOnGround() ? 1.0F/super.getVelocityMultiplier() : super.getVelocityMultiplier() ) //LivingEntity.getVelocityMultiplier()
         );
     }
-
+*/
 }
