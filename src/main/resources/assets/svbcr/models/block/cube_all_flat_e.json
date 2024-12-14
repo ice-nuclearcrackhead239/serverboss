@@ -1,0 +1,18 @@
+{
+    "parent": "svbcr:block/cube_flat_e",
+    "textures": {
+        "particle": "#all",
+        "down": "#all",
+        "up": "#all",
+        "north": "#all",
+        "east": "#all",
+        "south": "#all",
+        "west": "#all",
+		"down_e": "#all_e",
+        "up_e": "#all_e",
+        "north_e": "#all_e",
+        "east_e": "#all_e",
+        "south_e": "#all_e",
+        "west_e": "#all_e"
+    }
+}
