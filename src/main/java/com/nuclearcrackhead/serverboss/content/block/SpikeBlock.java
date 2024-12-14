@@ -3,8 +3,14 @@ package com.nuclearcrackhead.serverboss.content.block;
 import com.nuclearcrackhead.serverboss.SVBCR;
 import com.nuclearcrackhead.serverboss.registry.ModDamageTypes;
 import com.nuclearcrackhead.serverboss.registry.ModSounds;
+import com.nuclearcrackhead.serverboss.registry.ModBlockEntityTypes;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockWithEntity;
+import net.minecraft.block.BlockRenderType;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -27,17 +33,32 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class SpikeBlock extends Block {
+public class SpikeBlock extends BlockWithEntity {
+	public SpikeBlock(Settings settings) {
+		super(settings);
+	}
+	
 	public static final MapCodec<SpikeBlock> CODEC = createCodec(SpikeBlock::new);
 	protected static final VoxelShape SHAPE = Block.createCuboidShape((double)1.0F, (double)0.0F, (double)1.0F, (double)16.0F, (double)15.0F, (double)16.0F);
 	
-	public MapCodec<SpikeBlock> getCodec() {
+	public MapCodec<? extends SpikeBlock> getCodec() {
         return CODEC;
     }
 	
-	public SpikeBlock(AbstractBlock.Settings settings) {
-        super(settings);
-    }
+	@Override
+	public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+		return new SpikeBlockEntity(pos, state);
+	}
+	
+	@Override
+	public BlockRenderType getRenderType(BlockState state) {
+		return BlockRenderType.MODEL;
+	}
+	
+	@Override
+	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+		return validateTicker(type, ModBlockEntityTypes.SPIKE_BLOCK, SpikeBlockEntity::tick);
+	}
 
     @Override
     public void appendTooltip(ItemStack itemStack, Item.TooltipContext context, List<Text> tooltip, TooltipType options) {
@@ -48,9 +69,14 @@ public class SpikeBlock extends Block {
         return SHAPE;
     }
 
+	@Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-        // todo spawn spike entity (if it is an entity)
+        summonSpike(pos);
 
         super.onSteppedOn(world, pos, state, entity);
     }
+	
+	private void summonSpike(BlockPos pos) {
+		
+	}
 }

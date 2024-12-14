@@ -23,5 +23,6 @@ public class SVBCR implements ModInitializer {
 		ModDamageTypes.init();
 		ModSounds.init();
 		ExtraPacks.init();
+		ModBlockEntityTypes.init();
 	}
 }
