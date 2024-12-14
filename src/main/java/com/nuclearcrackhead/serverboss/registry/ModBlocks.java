@@ -36,7 +36,7 @@ public class ModBlocks {
     );
 
     public static final Block BLACK = register("black", Black::new,
-            AbstractBlock.Settings.create().emissiveLighting(ModBlocks::always).sounds(BlockSoundGroup.GLASS)
+            AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS)
     );
 
     public static final Block AGONY = register("agony", Agony::new,
