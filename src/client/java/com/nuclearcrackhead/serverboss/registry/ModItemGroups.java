@@ -50,6 +50,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.OBSIDIAN_LIGHT_STRIP);
                 entries.add(ModBlocks.PORTAL_GLASS_OPAQUE);
                 entries.add(ModBlocks.PORTAL_GLASS_TRANSPARENT);
+                entries.add(ModBlocks.VOID_LAMP);
             })
             .build();
 

@@ -33,7 +33,8 @@ public class SVBCRClient implements ClientModInitializer {
 				ModBlocks.SLUDGE,
 				ModBlocks.CHECKERED_OBSIDIAN,
 				ModBlocks.CHISELED_OBSIDIAN,
-				ModBlocks.OBSIDIAN_LIGHT_STRIP
+				ModBlocks.OBSIDIAN_LIGHT_STRIP,
+				ModBlocks.VOID_LAMP
 		);
 
 		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),

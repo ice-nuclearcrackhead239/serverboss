@@ -1,0 +1,7 @@
+{
+	"parent": "svbcr:block/cube_all_e",
+	"textures": {
+		"all": "svbcr:block/void_lamp",
+		"all_e": "svbcr:block/void_lamp_e"
+	}
+}

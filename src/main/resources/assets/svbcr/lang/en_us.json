@@ -1,7 +1,7 @@
 {
   "block.svbcr.agony": "Agony",
   "block.svbcr.agony.tooltip": "Damages entities on top by 1/7th of their max health",
-  "block.svbcr.black": "§8§lVoid",
+  "block.svbcr.black": "Pure Black",
   "block.svbcr.black.tooltip": "Displays purely as black",
   "block.svbcr.checkered_obsidian": "Checkered Obsidian",
   "block.svbcr.chiseled_obsidian": "Chiseled Obsidian",
@@ -15,8 +15,9 @@
   "block.svbcr.sludge.tooltip2": "Additionally slightly slippery",
   "block.svbcr.spike_block": "Spike Block",
   "block.svbcr.spike_block.tooltip": "// UNFINISHED",
+  "block.svbcr.void_lamp": "Void Lamp",
   "block.svbcr.wastebarrel": "Large Radioactive Waste Barrel",
-  "block.svbcr.white": "§lRadiance",
+  "block.svbcr.white": "Pure White",
   "block.svbcr.white.tooltip": "Displays purely as white",
   "block.svbcr.white.tooltip2": "Additonally emits light",
 
