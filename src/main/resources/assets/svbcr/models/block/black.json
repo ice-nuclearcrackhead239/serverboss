@@ -1,7 +1,6 @@
 {
-  "parent": "svbcr:block/cube_all_flat_e",
+  "parent": "svbcr:block/solidcolor",
   "textures": {
-    "all": "svbcr:block/blk",
-    "all_e": "svbcr:block/blk"
+    "all": "svbcr:block/blk"
   }
 }

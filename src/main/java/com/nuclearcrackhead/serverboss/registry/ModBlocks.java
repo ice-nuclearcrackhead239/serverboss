@@ -62,6 +62,9 @@ public class ModBlocks {
     );
     public static final Block WATER_SILK = register("water_silk", WaterSilk::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.DARK_GREEN).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 
+    public static final Block SMOOTH_STONE_STAIRS = register("smooth_stone_stairs", settings -> new StairsBlock(Blocks.SMOOTH_STONE.getDefaultState(), settings),
+            AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE)
+    );
 
     public static Block register(String path, Function<AbstractBlock.Settings, Block> function, AbstractBlock.Settings settings) {
         Identifier id = SVBCR.of(path);
