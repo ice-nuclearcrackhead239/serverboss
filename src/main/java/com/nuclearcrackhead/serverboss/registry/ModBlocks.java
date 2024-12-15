@@ -59,6 +59,9 @@ public class ModBlocks {
     public static final Block VOID_LAMP = register("void_lamp", Block::new,
             AbstractBlock.Settings.create().emissiveLighting(ModBlocks::always).luminance(value -> 15).sounds(BlockSoundGroup.STONE)
     );
+    public static final Block SMOOTH_STONE_STAIRS = register("smooth_stone_stairs", settings -> new StairsBlock(Blocks.SMOOTH_STONE.getDefaultState(), settings),
+            AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE)
+    );
 
     public static Block register(String path, Function<AbstractBlock.Settings, Block> function, AbstractBlock.Settings settings) {
         Identifier id = SVBCR.of(path);
