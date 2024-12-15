@@ -3,6 +3,7 @@ package com.nuclearcrackhead.serverboss.registry;
 import com.nuclearcrackhead.serverboss.SVBCR;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
@@ -31,6 +32,7 @@ public class ModItemGroups {
             .icon(() -> new ItemStack(ModBlocks.AGONY))
             .displayName(Text.translatable("itemGroup.svbcr.functional_blocks"))
             .entries((context, entries) -> {
+                //entries.add(Blocks.END_GATEWAY); // :[
                 entries.add(ModBlocks.AGONY);
                 entries.add(ModBlocks.SLUDGE);
 				entries.add(ModBlocks.SPIKE_BLOCK);
@@ -69,6 +71,7 @@ public class ModItemGroups {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(ModBlocks.WASTEBARREL);
             entries.add(ModBlocks.SLUDGE);
+            entries.add(ModBlocks.WATER_SILK);
             entries.add(ModItems.RADIOACTIVE_BUCKET);
             entries.add(ModItems.EXAMPLE_ITEM);
         });

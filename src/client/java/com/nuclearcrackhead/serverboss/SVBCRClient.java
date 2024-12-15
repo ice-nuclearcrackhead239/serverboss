@@ -38,7 +38,8 @@ public class SVBCRClient implements ClientModInitializer {
 		);
 
 		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
-				ModBlocks.PORTAL_GLASS_TRANSPARENT
+				ModBlocks.PORTAL_GLASS_TRANSPARENT,
+				ModBlocks.WATER_SILK
 		);
 
 		BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), RADIOACTIVE_STILL, RADIOACTIVE_FLOWING);
