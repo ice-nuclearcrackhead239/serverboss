@@ -76,6 +76,9 @@ public class ModItemGroups {
             entries.add(ModItems.RADIOACTIVE_BUCKET);
             entries.add(ModItems.EXAMPLE_ITEM);
         });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {
+            entries.add(ModItems.AXEMACHINE_SPAWN_EGG);
+        });
     }
 
 }
