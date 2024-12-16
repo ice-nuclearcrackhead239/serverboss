@@ -71,12 +71,11 @@ public class SpikeBlock extends BlockWithEntity {
 
 	@Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-        summonSpike(pos);
+		BlockEntity blockEntity = world.getBlockEntity(pos);
+		if (blockEntity instanceof SpikeBlockEntity spikeBlockEntity) {
+			spikeBlockEntity.spawnSpike(world, entity);
+		}
 
         super.onSteppedOn(world, pos, state, entity);
     }
-	
-	private void summonSpike(BlockPos pos) {
-		
-	}
 }
