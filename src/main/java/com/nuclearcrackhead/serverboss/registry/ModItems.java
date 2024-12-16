@@ -36,9 +36,9 @@ public class ModItems {
     );
 
     //public static final Item AXEMACHINE_SPAWN_EGG = new SpawnEggItem(ModEntities.AXEMACHINE, 0xff0000, 0x0000ff, new Item.Settings());
+    // ↑ dont do that. it will crash t he game on initialization -mikii/adenator
     public static final Item AXEMACHINE_SPAWN_EGG = register("axemachine_spawn_egg",
-            settings -> new SpawnEggItem(ModEntities.AXEMACHINE, 0x3a363a, 0x5b0000, settings),
-            new Item.Settings()
+            settings -> new SpawnEggItem(ModEntities.AXEMACHINE, 0x3a363a, 0x5b0000, settings), new Item.Settings()
     );
 
     public static Item register(String path, Function<Item.Settings, Item> function, Item.Settings settings) {
@@ -47,6 +47,5 @@ public class ModItems {
         settings = settings.registryKey(key);
         return Registry.register(Registries.ITEM, key, function.apply(settings));
     }
-
 
 }
