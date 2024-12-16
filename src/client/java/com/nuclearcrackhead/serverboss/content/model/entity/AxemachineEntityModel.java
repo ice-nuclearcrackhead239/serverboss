@@ -1,14 +1,25 @@
+package com.nuclearcrackhead.serverboss.content.model.entity;
+
+import com.nuclearcrackhead.serverboss.content.entity.AxemachineEntity;
+import com.nuclearcrackhead.serverboss.content.render.entity.state.AxemachineEntityRenderState;
+import net.minecraft.client.model.*;
+import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.entity.model.EntityModel;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.Entity;
+
 // Made with Blockbench 4.11.2
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
-public class AxeMachine extends EntityModel<Entity> {
+public class AxemachineEntityModel extends EntityModel<AxemachineEntityRenderState> {
 	private final ModelPart rightleg;
 	private final ModelPart leftleg;
 	private final ModelPart body;
 	private final ModelPart rightarm;
 	private final ModelPart leftarm;
 	private final ModelPart head;
-	public axemachine(ModelPart root) {
+	public AxemachineEntityModel(ModelPart root) {
+		super(root);
 		this.rightleg = root.getChild("rightleg");
 		this.leftleg = root.getChild("leftleg");
 		this.body = root.getChild("body");
@@ -42,15 +53,19 @@ public class AxeMachine extends EntityModel<Entity> {
 		return TexturedModelData.of(modelData, 64, 64);
 	}
 	@Override
-	public void setAngles(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setAngles(AxemachineEntityRenderState state) {
+		//figure out what the hell to do with this later
+		//args from blockbench: AxemachineEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch
 	}
-	@Override
+	/*
+	@Override what do you want from me java
 	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-		rightleg.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-		leftleg.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-		body.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-		rightarm.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-		leftarm.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-		head.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
+		rightleg.render(matrices, vertexConsumer, light, overlay);
+		leftleg.render(matrices, vertexConsumer, light, overlay);
+		body.render(matrices, vertexConsumer, light, overlay);
+		rightarm.render(matrices, vertexConsumer, light, overlay);
+		leftarm.render(matrices, vertexConsumer, light, overlay);
+		head.render(matrices, vertexConsumer, light, overlay);
 	}
+	*/
 }

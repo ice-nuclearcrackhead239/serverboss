@@ -26,6 +26,9 @@
   "death.attack.agony": "%s was crushed by grief",
   "death.attack.agony.player": "%s was crushed by grief whilst trying to escape %s",
 
+  "entity.svbcr.axemachine": "Axemachine",
+
+  "item.svbcr.axemachine_spawn_egg": "Axemachine Spawn Egg",
   "item.svbcr.example_item": "Example Item",
   "item.svbcr.radioactive_bucket": "Radioactive Waste Barrel",
 

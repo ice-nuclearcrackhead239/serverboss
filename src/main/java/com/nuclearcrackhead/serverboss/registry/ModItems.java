@@ -5,9 +5,7 @@ import com.nuclearcrackhead.serverboss.content.block.WaterSilk;
 import com.nuclearcrackhead.serverboss.content.item.ExampleItem;
 import com.nuclearcrackhead.serverboss.content.item.GcpDotTestingItem;
 import net.minecraft.fluid.Fluid;
-import net.minecraft.item.BucketItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -29,7 +27,7 @@ public class ModItems {
     );
     public static final Item GCP_DOT_TESTING_ITEM = register("gcp_dot_testing_item", GcpDotTestingItem::new,
             new Item.Settings()
-    );//
+    );
     public static Item RADIOACTIVE_BUCKET = register("radioactive_bucket",
             settings -> new BucketItem(RADIOACTIVE_STILL, settings),
             new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)
