@@ -21,7 +21,7 @@ import static com.nuclearcrackhead.serverboss.registry.ModFluids.RADIOACTIVE_STI
 public class ModItems {
 
     public static void init() {
-        Registry.register(Registries.ITEM, SVBCR.of("axemachine_spawn_egg"), AXEMACHINE_SPAWN_EGG);
+        //Registry.register(Registries.ITEM, SVBCR.of("axemachine_spawn_egg"), AXEMACHINE_SPAWN_EGG);
     }
 
     public static final Item EXAMPLE_ITEM = register("example_item", ExampleItem::new,
@@ -35,7 +35,11 @@ public class ModItems {
             new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)
     );
 
-    public static final Item AXEMACHINE_SPAWN_EGG = new SpawnEggItem(ModEntities.AXEMACHINE, 0xff0000, 0x0000ff, new Item.Settings());
+    //public static final Item AXEMACHINE_SPAWN_EGG = new SpawnEggItem(ModEntities.AXEMACHINE, 0xff0000, 0x0000ff, new Item.Settings());
+    public static final Item AXEMACHINE_SPAWN_EGG = register("axemachine_spawn_egg",
+            settings -> new SpawnEggItem(ModEntities.AXEMACHINE, 0x3a363a, 0x5b0000, settings),
+            new Item.Settings()
+    );
 
     public static Item register(String path, Function<Item.Settings, Item> function, Item.Settings settings) {
         Identifier id = SVBCR.of(path);
@@ -43,5 +47,6 @@ public class ModItems {
         settings = settings.registryKey(key);
         return Registry.register(Registries.ITEM, key, function.apply(settings));
     }
+
 
 }
