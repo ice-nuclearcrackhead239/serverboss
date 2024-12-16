@@ -1,10 +1,14 @@
 package com.nuclearcrackhead.serverboss;
 
+import com.nuclearcrackhead.serverboss.registry.ModBlockRenderMap;
 import com.nuclearcrackhead.serverboss.registry.ModBlocks;
 import com.nuclearcrackhead.serverboss.registry.ModBlockEntityTypes;
+import com.nuclearcrackhead.serverboss.registry.ModEntityRenderers;
 import com.nuclearcrackhead.serverboss.registry.ModItemGroups;
 import com.nuclearcrackhead.serverboss.content.block.SpikeBlockEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
@@ -20,6 +24,7 @@ import net.minecraft.client.texture.SpriteAtlasTexture;
 import static com.nuclearcrackhead.serverboss.registry.ModFluids.RADIOACTIVE_FLOWING;
 import static com.nuclearcrackhead.serverboss.registry.ModFluids.RADIOACTIVE_STILL;
 
+@Environment(EnvType.CLIENT)
 public class SVBCRClient implements ClientModInitializer {
 
 	@Override
@@ -29,29 +34,12 @@ public class SVBCRClient implements ClientModInitializer {
 		    //registry.register(Identifier.of("svbcr:block/radioactive_flowing"));
 			registry.register(Identifier.of("svbcr", "block/spikeblock_spikes"));
 		});*/ // fuck fuck fuck fuck fuck -finxx
-
-		FluidRenderHandlerRegistry.INSTANCE.register(RADIOACTIVE_STILL, RADIOACTIVE_FLOWING, new SimpleFluidRenderHandler(
-                Identifier.of("svbcr:block/radioactive_still"),
-                Identifier.of("svbcr:block/radioactive_flowing"),
-				0xFFFFFF
-		));
-
-		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-				ModBlocks.SLUDGE,
-				ModBlocks.CHECKERED_OBSIDIAN,
-				ModBlocks.CHISELED_OBSIDIAN,
-				ModBlocks.OBSIDIAN_LIGHT_STRIP
-		);
-
-		BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
-				ModBlocks.PORTAL_GLASS_TRANSPARENT
-		);
-
-		BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), RADIOACTIVE_STILL, RADIOACTIVE_FLOWING);
 		
 		BlockEntityRendererFactories.register(ModBlockEntityTypes.SPIKE_BLOCK, SpikeBlockEntityRenderer::new);
 
 		ModItemGroups.init();
+		ModBlockRenderMap.init();
+		ModEntityRenderers.init();
 	}
 
 }

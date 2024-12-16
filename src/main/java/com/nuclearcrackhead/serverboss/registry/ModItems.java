@@ -1,12 +1,12 @@
 package com.nuclearcrackhead.serverboss.registry;
 
 import com.nuclearcrackhead.serverboss.SVBCR;
+import com.nuclearcrackhead.serverboss.content.block.WaterSilk;
 import com.nuclearcrackhead.serverboss.content.item.ExampleItem;
 import com.nuclearcrackhead.serverboss.content.item.GcpDotTestingItem;
+import net.fabricmc.fabric.api.item.v1.FabricItem;
 import net.minecraft.fluid.Fluid;
-import net.minecraft.item.BucketItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -20,8 +20,9 @@ import static com.nuclearcrackhead.serverboss.registry.ModFluids.RADIOACTIVE_STI
 
 public class ModItems {
 
-    public static void init() {}
-
+    public static void init() {
+        //Registry.register(Registries.ITEM, SVBCR.of("axemachine_spawn_egg"), AXEMACHINE_SPAWN_EGG);
+    }
 
     public static final Item EXAMPLE_ITEM = register("example_item", ExampleItem::new,
             new Item.Settings()
@@ -34,11 +35,18 @@ public class ModItems {
             new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)
     );
 
+    //public static final Item AXEMACHINE_SPAWN_EGG = new SpawnEggItem(ModEntities.AXEMACHINE, 0xff0000, 0x0000ff, new Item.Settings());
+    public static final Item AXEMACHINE_SPAWN_EGG = register("axemachine_spawn_egg",
+            settings -> new SpawnEggItem(ModEntities.AXEMACHINE, 0x3a363a, 0x5b0000, settings),
+            new Item.Settings()
+    );
+
     public static Item register(String path, Function<Item.Settings, Item> function, Item.Settings settings) {
         Identifier id = SVBCR.of(path);
         RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, id);
         settings = settings.registryKey(key);
         return Registry.register(Registries.ITEM, key, function.apply(settings));
     }
+
 
 }

@@ -39,7 +39,6 @@ public class SpikeBlock extends BlockWithEntity {
 	}
 	
 	public static final MapCodec<SpikeBlock> CODEC = createCodec(SpikeBlock::new);
-	protected static final VoxelShape SHAPE = Block.createCuboidShape((double)1.0F, (double)0.0F, (double)1.0F, (double)16.0F, (double)15.0F, (double)16.0F);
 	
 	public MapCodec<? extends SpikeBlock> getCodec() {
         return CODEC;
@@ -63,10 +62,6 @@ public class SpikeBlock extends BlockWithEntity {
     @Override
     public void appendTooltip(ItemStack itemStack, Item.TooltipContext context, List<Text> tooltip, TooltipType options) {
         tooltip.add(Text.translatable("block.svbcr.spike_block.tooltip").formatted(Formatting.GRAY));
-    }
-
-    protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return SHAPE;
     }
 
 	@Override

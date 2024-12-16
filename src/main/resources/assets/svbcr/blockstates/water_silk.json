@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "svbcr:block/water_silk"
+      },
+      {
+        "model": "svbcr:block/water_silk",
+        "y": 90
+      },
+      {
+        "model": "svbcr:block/water_silk",
+        "y": 180
+      },
+      {
+        "model": "svbcr:block/water_silk",
+        "y": 270
+      }
+    ]
+  }
+}
