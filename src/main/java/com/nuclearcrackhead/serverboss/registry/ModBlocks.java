@@ -60,23 +60,30 @@ public class ModBlocks {
     public static final Block VOID_LAMP = register("void_lamp", Block::new,
             AbstractBlock.Settings.create().emissiveLighting(ModBlocks::always).luminance(value -> 15).sounds(BlockSoundGroup.STONE)
     );
-    public static final Block WATER_SILK = register("water_silk", WaterSilk::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.DARK_GREEN).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+    public static final Block WATER_SILK = registerBlock("water_silk", WaterSilk::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.DARK_GREEN).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 
     public static final Block SMOOTH_STONE_STAIRS = register("smooth_stone_stairs", settings -> new StairsBlock(Blocks.SMOOTH_STONE.getDefaultState(), settings),
             AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE)
     );
 
     public static Block register(String path, Function<AbstractBlock.Settings, Block> function, AbstractBlock.Settings settings) {
-        Identifier id = SVBCR.of(path);
-        RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, id);
-        settings.registryKey(blockKey);
-        Block block = Registry.register(Registries.BLOCK, blockKey, function.apply(settings));
+        Block block = registerBlock(path, function, settings);
 
+        Identifier id = SVBCR.of(path);
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, id);
         Item.Settings itemSettings = new Item.Settings()
                 .useBlockPrefixedTranslationKey()
                 .registryKey(itemKey);
         Registry.register(Registries.ITEM, itemKey, new BlockItem(block, itemSettings));
+        return block;
+    }
+
+    // registers ONLY the block. because ice was having trouble with water silk -mikii/adenator
+    public static Block registerBlock(String path, Function<AbstractBlock.Settings, Block> function, AbstractBlock.Settings settings) {
+        Identifier id = SVBCR.of(path);
+        RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, id);
+        settings.registryKey(blockKey);
+        Block block = Registry.register(Registries.BLOCK, blockKey, function.apply(settings));
         return block;
     }
 
