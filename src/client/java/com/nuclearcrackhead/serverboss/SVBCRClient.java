@@ -1,10 +1,6 @@
 package com.nuclearcrackhead.serverboss;
 
-import com.nuclearcrackhead.serverboss.registry.ModBlockRenderMap;
-import com.nuclearcrackhead.serverboss.registry.ModBlocks;
-import com.nuclearcrackhead.serverboss.registry.ModBlockEntityTypes;
-import com.nuclearcrackhead.serverboss.registry.ModEntityRenderers;
-import com.nuclearcrackhead.serverboss.registry.ModItemGroups;
+import com.nuclearcrackhead.serverboss.registry.*;
 import com.nuclearcrackhead.serverboss.content.block.SpikeBlockEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -40,6 +36,7 @@ public class SVBCRClient implements ClientModInitializer {
 		ModItemGroups.init();
 		ModBlockRenderMap.init();
 		ModEntityRenderers.init();
+		ModColorProviders.init();
 	}
 
 }
