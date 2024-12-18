@@ -1,6 +1,7 @@
 package com.nuclearcrackhead.serverboss.registry;
 
 import com.nuclearcrackhead.serverboss.content.model.entity.AxemachineEntityModel;
+import com.nuclearcrackhead.serverboss.content.model.entity.BatteryEntityMainModel;
 import com.nuclearcrackhead.serverboss.content.render.entity.AxemachineEntityRenderer;
 import com.nuclearcrackhead.serverboss.content.model.entity.BatteryEntityModel;
 import com.nuclearcrackhead.serverboss.content.render.entity.BatteryEntityRenderer;
@@ -13,6 +14,7 @@ public class ModEntityRenderers {
 
     public static final EntityModelLayer MODEL_AXEMACHINE_LAYER = new EntityModelLayer(Identifier.of("svbcr", "axemachine"), "main");
     public static final EntityModelLayer MODEL_BATTERY_LAYER = new EntityModelLayer(Identifier.of("svbcr", "battery"), "main");
+    public static final EntityModelLayer MODEL_BATTERY_OUTLINE_LAYER = new EntityModelLayer(Identifier.of("svbcr", "battery"), "outline");
 
 
     public static void init() {
@@ -20,6 +22,6 @@ public class ModEntityRenderers {
         EntityModelLayerRegistry.registerModelLayer(MODEL_AXEMACHINE_LAYER, AxemachineEntityModel::getTexturedModelData);
 
         EntityRendererRegistry.register(ModEntities.BATTERY, BatteryEntityRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(MODEL_BATTERY_LAYER, BatteryEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(MODEL_BATTERY_LAYER, BatteryEntityMainModel::getTexturedModelData);
     }
 }
