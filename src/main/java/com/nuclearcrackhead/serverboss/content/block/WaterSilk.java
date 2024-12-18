@@ -29,14 +29,6 @@ public class WaterSilk extends PlantBlock {
         super(settings);
     }
 
-    protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        super.onEntityCollision(state, world, pos, entity);
-        if (world instanceof ServerWorld && entity instanceof AbstractBoatEntity) {
-            world.breakBlock(new BlockPos(pos), true, entity);
-        }
-
-    }
-
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }

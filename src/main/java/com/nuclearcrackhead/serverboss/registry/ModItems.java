@@ -1,7 +1,7 @@
 package com.nuclearcrackhead.serverboss.registry;
 
 import com.nuclearcrackhead.serverboss.SVBCR;
-import com.nuclearcrackhead.serverboss.content.block.WaterSilk;
+import com.nuclearcrackhead.serverboss.registry.ModBlocks;
 import com.nuclearcrackhead.serverboss.content.item.ExampleItem;
 import com.nuclearcrackhead.serverboss.content.item.GcpDotTestingItem;
 import net.fabricmc.fabric.api.item.v1.FabricItem;
@@ -30,7 +30,7 @@ public class ModItems {
     public static final Item GCP_DOT_TESTING_ITEM = register("gcp_dot_testing_item", GcpDotTestingItem::new,
             new Item.Settings()
     );
-    public static Item RADIOACTIVE_BUCKET = register("radioactive_bucket",
+    public static final Item RADIOACTIVE_BUCKET = register("radioactive_bucket",
             settings -> new BucketItem(RADIOACTIVE_STILL, settings),
             new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)
     );
@@ -43,6 +43,9 @@ public class ModItems {
     public static final Item BATTERY_SPAWN_EGG = register("battery_spawn_egg",
             settings -> new SpawnEggItem(ModEntities.BATTERY, 0xFFFFFF, 0xFF00FF, settings), new Item.Settings()
     );
+
+    //blocks that don't already have an associated item
+    public static final Item WATER_SILK = register("water_silk", settings -> new PlaceableOnWaterItem(ModBlocks.WATER_SILK, settings), new Item.Settings());
 
     public static Item register(String path, Function<Item.Settings, Item> function, Item.Settings settings) {
         Identifier id = SVBCR.of(path);
