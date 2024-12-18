@@ -39,36 +39,27 @@ public class BatteryEntityOutlineModel extends EntityModel<BatteryEntityRenderSt
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
-		ModelPartData head = modelPartData.addChild("head", ModelPartBuilder.create().uv(32, 0).cuboid(-4.0F, -4.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.0F))
-				.uv(0, 0).cuboid(-4.0F, -4.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(-8.25F)), ModelTransform.pivot(0.0F, 7.0F, 0.0F));
+		ModelPartData head = modelPartData.addChild("head", ModelPartBuilder.create().uv(0, 0).cuboid(-4.0F, -4.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(-8.25F)), ModelTransform.pivot(0.0F, 7.0F, 0.0F));
 
 		ModelPartData top = modelPartData.addChild("top", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
-		ModelPartData rod5 = top.addChild("rod5", ModelPartBuilder.create().uv(0, 16).cuboid(-1.0F, -4.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F))
-				.uv(33, 49).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(9.0F, -23.0F, 9.0F));
+		ModelPartData rod5 = top.addChild("rod5", ModelPartBuilder.create().uv(33, 49).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(9.0F, -23.0F, 9.0F));
 
-		ModelPartData rod6 = top.addChild("rod6", ModelPartBuilder.create().uv(0, 16).cuboid(-1.0F, -4.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F))
-				.uv(35, 46).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(-9.0F, -23.0F, 9.0F));
+		ModelPartData rod6 = top.addChild("rod6", ModelPartBuilder.create().uv(35, 46).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(-9.0F, -23.0F, 9.0F));
 
-		ModelPartData rod7 = top.addChild("rod7", ModelPartBuilder.create().uv(0, 16).cuboid(-1.0F, -4.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F))
-				.uv(34, 46).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(9.0F, -23.0F, -9.0F));
+		ModelPartData rod7 = top.addChild("rod7", ModelPartBuilder.create().uv(34, 46).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(9.0F, -23.0F, -9.0F));
 
-		ModelPartData rod8 = top.addChild("rod8", ModelPartBuilder.create().uv(0, 16).cuboid(-1.0F, -4.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F))
-				.uv(34, 46).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(-9.0F, -23.0F, -9.0F));
+		ModelPartData rod8 = top.addChild("rod8", ModelPartBuilder.create().uv(34, 46).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(-9.0F, -23.0F, -9.0F));
 
 		ModelPartData bottom = modelPartData.addChild("bottom", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
-		ModelPartData rod2 = bottom.addChild("rod2", ModelPartBuilder.create().uv(0, 16).cuboid(-1.0F, -4.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F))
-				.uv(34, 46).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(9.0F, -11.0F, 9.0F));
+		ModelPartData rod2 = bottom.addChild("rod2", ModelPartBuilder.create().uv(34, 46).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(9.0F, -11.0F, 9.0F));
 
-		ModelPartData rod3 = bottom.addChild("rod3", ModelPartBuilder.create().uv(0, 16).cuboid(-1.0F, -4.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F))
-				.uv(34, 46).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(-9.0F, -11.0F, 9.0F));
+		ModelPartData rod3 = bottom.addChild("rod3", ModelPartBuilder.create().uv(34, 46).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(-9.0F, -11.0F, 9.0F));
 
-		ModelPartData rod4 = bottom.addChild("rod4", ModelPartBuilder.create().uv(0, 16).cuboid(-1.0F, -4.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F))
-				.uv(34, 44).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(9.0F, -11.0F, -9.0F));
+		ModelPartData rod4 = bottom.addChild("rod4", ModelPartBuilder.create().uv(34, 44).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(9.0F, -11.0F, -9.0F));
 
-		ModelPartData rod9 = bottom.addChild("rod9", ModelPartBuilder.create().uv(0, 16).cuboid(-1.0F, -4.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F))
-				.uv(34, 44).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(-9.0F, -11.0F, -9.0F));
+		ModelPartData rod9 = bottom.addChild("rod9", ModelPartBuilder.create().uv(34, 44).cuboid(1.0F, 4.0F, 1.0F, -2.0F, -8.0F, -2.0F, new Dilation(-0.25F)), ModelTransform.pivot(-9.0F, -11.0F, -9.0F));
 		return TexturedModelData.of(modelData, 64, 64);
 	}
 	@Override
