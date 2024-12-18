@@ -33,7 +33,7 @@ public class BatteryOutlineRenderer extends FeatureRenderer<BatteryEntityRenderS
     public void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, BatteryEntityRenderState state, float limbAngle, float limbDistance) {
         RenderLayer layer = RenderLayer.getEntityCutoutNoCull(this.getTexture());
         VertexConsumer vertexConsumer = vertexConsumers.getBuffer(layer);
-        this.outlineModel.render(matrices, vertexConsumer, light, OverlayTexture.DEFAULT_UV);
+        this.outlineModel.render(matrices, vertexConsumer, 240, OverlayTexture.DEFAULT_UV);
     }
 
 }

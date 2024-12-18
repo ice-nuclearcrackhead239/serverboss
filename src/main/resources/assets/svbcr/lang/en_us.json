@@ -27,6 +27,7 @@
   "death.attack.agony.player": "%s was crushed by grief whilst trying to escape %s",
 
   "entity.svbcr.axemachine": "Axemachine",
+  "entity.svbcr.battery": "Battery",
 
   "item.svbcr.axemachine_spawn_egg": "Axemachine Spawn Egg",
   "item.svbcr.battery_spawn_egg": "Battery Spawn Egg",

@@ -6,12 +6,12 @@ import com.nuclearcrackhead.serverboss.content.model.entity.AxemachineEntityMode
 import com.nuclearcrackhead.serverboss.content.render.entity.state.AxemachineEntityRenderState;
 import com.nuclearcrackhead.serverboss.registry.ModEntityRenderers;
 import net.minecraft.client.render.entity.EntityRendererFactory;
-import net.minecraft.client.render.entity.MobEntityRenderer;
+import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.state.EntityRenderState;
 import net.minecraft.client.render.entity.state.LivingEntityRenderState;
 import net.minecraft.util.Identifier;
 
-public class AxemachineEntityRenderer extends MobEntityRenderer<AxemachineEntity, AxemachineEntityRenderState, AxemachineEntityModel> {
+public class AxemachineEntityRenderer extends BipedEntityRenderer<AxemachineEntity, AxemachineEntityRenderState, AxemachineEntityModel> {
 
     public AxemachineEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new AxemachineEntityModel(context.getPart(ModEntityRenderers.MODEL_AXEMACHINE_LAYER)), 0.5f);

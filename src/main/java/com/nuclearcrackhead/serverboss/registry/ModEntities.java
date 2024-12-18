@@ -14,11 +14,11 @@ public class ModEntities {
 
     public static final EntityType<AxemachineEntity> AXEMACHINE = Registry.register(
             Registries.ENTITY_TYPE, Identifier.of("svbcr", "axemachine"),
-            EntityType.Builder.create(AxemachineEntity::new, SpawnGroup.MISC).dimensions(0.6f, 2.1f).build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of("svcbr","axemachine")))
+            EntityType.Builder.create(AxemachineEntity::new, SpawnGroup.MISC).dimensions(0.6f, 2.1f).build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of("svbcr","axemachine")))
     );
     public static final EntityType<BatteryEntity> BATTERY = Registry.register(
             Registries.ENTITY_TYPE, Identifier.of("svbcr", "battery"),
-            EntityType.Builder.create(BatteryEntity::new, SpawnGroup.MISC).dimensions(1.2f, 1.6f).build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of("svcbr","battery")))
+            EntityType.Builder.create(BatteryEntity::new, SpawnGroup.MISC).dimensions(1.2f, 1.6f).build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of("svbcr","battery")))
     );
 
     public static void init() {
