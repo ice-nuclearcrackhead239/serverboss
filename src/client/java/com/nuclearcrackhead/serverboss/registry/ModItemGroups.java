@@ -78,6 +78,7 @@ public class ModItemGroups {
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {
             entries.add(ModItems.AXEMACHINE_SPAWN_EGG);
+            entries.add(ModItems.BATTERY_SPAWN_EGG);
         });
     }
 

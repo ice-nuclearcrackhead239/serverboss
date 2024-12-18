@@ -40,6 +40,9 @@ public class ModItems {
     public static final Item AXEMACHINE_SPAWN_EGG = register("axemachine_spawn_egg",
             settings -> new SpawnEggItem(ModEntities.AXEMACHINE, 0x3a363a, 0x5b0000, settings), new Item.Settings()
     );
+    public static final Item BATTERY_SPAWN_EGG = register("battery_spawn_egg",
+            settings -> new SpawnEggItem(ModEntities.BATTERY, 0xFFFFFF, 0xFF00FF, settings), new Item.Settings()
+    );
 
     public static Item register(String path, Function<Item.Settings, Item> function, Item.Settings settings) {
         Identifier id = SVBCR.of(path);
