@@ -1,4 +1,10 @@
-// Save this class in your mod and generate all required imports
+package com.nuclearcrackhead.serverboss.content.model.entity.animation;// Save this class in your mod and generate all required imports
+
+import net.minecraft.client.render.entity.animation.Animation;
+import net.minecraft.client.render.entity.animation.AnimationHelper;
+import net.minecraft.client.render.entity.animation.Keyframe;
+import net.minecraft.client.render.entity.animation.Transformation;
+
 /**
  * Made with Blockbench 4.11.2
  * Exported for Minecraft version 1.19 or later with Yarn mappings
@@ -6,7 +12,7 @@
  */
 public class BatteryEntityAnimation {
 	public static final Animation speen = Animation.Builder.create(0.75F).looping()
-		.addBoneAnimation("head", new Transformation(Transformation.Targets.ROTATE, 
+		.addBoneAnimation("head", new Transformation(Transformation.Targets.ROTATE,
 			new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.1824F, 0.0F, 3.9927F), Transformation.Interpolations.LINEAR)
 		))
 		.addBoneAnimation("head", new Transformation(Transformation.Targets.TRANSLATE, 
