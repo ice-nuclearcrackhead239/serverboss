@@ -1,6 +1,7 @@
 package com.nuclearcrackhead.serverboss.content.model.entity;
 
 import com.nuclearcrackhead.serverboss.content.entity.BatteryEntity;
+import com.nuclearcrackhead.serverboss.content.model.entity.animation.BatteryEntityAnimation;
 import com.nuclearcrackhead.serverboss.content.render.entity.BatteryEntityRenderer;
 import com.nuclearcrackhead.serverboss.content.render.entity.state.AxemachineEntityRenderState;
 import com.nuclearcrackhead.serverboss.content.render.entity.state.BatteryEntityRenderState;
@@ -74,7 +75,7 @@ public class BatteryEntityModel extends EntityModel<BatteryEntityRenderState> {
 	@Override
 	public void setAngles(BatteryEntityRenderState state) {
 		super.setAngles(state);
-
+		this.animate(state.idleAnimationState, BatteryEntityAnimation.speen, state.age);
 		//args from blockbench: AxemachineEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch
 	}
 
