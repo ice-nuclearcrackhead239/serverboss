@@ -1,0 +1,6 @@
+{
+  "parent": "svbcr:block/solidcolor",
+  "textures": {
+    "all": "svbcr:block/forcefield"
+  }
+}

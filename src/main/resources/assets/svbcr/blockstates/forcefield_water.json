@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"": {
+			"model": "svbcr:block/forcefield_water"
+		}
+	}
+}

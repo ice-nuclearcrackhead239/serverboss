@@ -36,6 +36,8 @@ public class ModItemGroups {
                 entries.add(ModBlocks.AGONY);
                 entries.add(ModBlocks.SLUDGE);
 				entries.add(ModBlocks.SPIKE_BLOCK);
+                entries.add(ModBlocks.FORCEFIELD);
+                entries.add(ModBlocks.FORCEFIELD_WATER);
             })
             .build();
 
@@ -58,6 +60,14 @@ public class ModItemGroups {
                 entries.add(ModBlocks.RIVERTILES);
                 entries.add(ModBlocks.RIVEREYES);
                 entries.add(ModBlocks.CHISELED_POLISHED_BLACKSTONE_EYES);
+                entries.add(ModBlocks.AGONIZED_GLASS);
+                entries.add(ModBlocks.FLESH);
+                entries.add(ModBlocks.FLESH_EYES);
+                entries.add(ModBlocks.FLESH_GUTS);
+                entries.add(ModBlocks.FLESH_GUTS_ROTTEN);
+                entries.add(ModBlocks.FLESH_HOLES);
+                entries.add(ModBlocks.FLESH_MESH);
+                entries.add(ModBlocks.FLESH_SPINE);
                 entries.add(ModItems.WATER_SILK);
             })
             .build();

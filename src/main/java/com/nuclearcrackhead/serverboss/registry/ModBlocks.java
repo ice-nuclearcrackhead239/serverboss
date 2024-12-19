@@ -43,6 +43,27 @@ public class ModBlocks {
     public static final Block AGONY = register("agony", Agony::new,
             AbstractBlock.Settings.create().velocityMultiplier(0.6F).jumpVelocityMultiplier(0.9F).emissiveLighting(ModBlocks::always).luminance(value -> 13).sounds(BlockSoundGroup.HONEY)
     );
+    public static final Block FLESH = register("flesh", Block::new,
+            AbstractBlock.Settings.create().velocityMultiplier(0.9F).jumpVelocityMultiplier(0.9F).sounds(BlockSoundGroup.HONEY)
+    );
+    public static final Block FLESH_EYES = register("flesh_eyes", Block::new,
+            AbstractBlock.Settings.create().velocityMultiplier(0.9F).jumpVelocityMultiplier(0.9F).sounds(BlockSoundGroup.HONEY)
+    );
+    public static final Block FLESH_HOLES = register("flesh_holes", Block::new,
+            AbstractBlock.Settings.create().velocityMultiplier(0.9F).jumpVelocityMultiplier(0.9F).sounds(BlockSoundGroup.HONEY)
+    );
+    public static final Block FLESH_MESH = register("flesh_mesh", TransparentBlock::new,
+            AbstractBlock.Settings.create().velocityMultiplier(0.9F).jumpVelocityMultiplier(0.9F).sounds(BlockSoundGroup.HONEY).nonOpaque()
+    );
+    public static final Block FLESH_SPINE = register("flesh_spine", SpineBlock::new,
+            AbstractBlock.Settings.create().velocityMultiplier(0.9F).jumpVelocityMultiplier(0.9F).sounds(BlockSoundGroup.HONEY)
+    );
+    public static final Block FLESH_GUTS = register("flesh_guts", Block::new,
+            AbstractBlock.Settings.create().velocityMultiplier(0.9F).jumpVelocityMultiplier(0.9F).sounds(BlockSoundGroup.HONEY)
+    );
+    public static final Block FLESH_GUTS_ROTTEN = register("flesh_guts_rot", Block::new,
+            AbstractBlock.Settings.create().velocityMultiplier(0.9F).jumpVelocityMultiplier(0.9F).sounds(BlockSoundGroup.HONEY)
+    );
     public static final Block SLUDGE = register("sludge", Sludge::new,
             AbstractBlock.Settings.create().velocityMultiplier(0.8F).jumpVelocityMultiplier(0.5F).slipperiness(0.992F).sounds(BlockSoundGroup.HONEY).nonOpaque()
     );
@@ -55,6 +76,16 @@ public class ModBlocks {
     public static final Block OBSIDIAN_LIGHT_STRIP = register("obsidian_light", PillarBlock::new,
             AbstractBlock.Settings.copy(ModBlocks.CHECKERED_OBSIDIAN).luminance(value -> 15)
     );
+    public static final Block AGONIZED_GLASS = register("agonized_glass", TransparentBlock::new,
+            AbstractBlock.Settings.copy(Blocks.GLASS).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
+    );
+    public static final Block FORCEFIELD = register("forcefield", TransparentBlock::new,
+            AbstractBlock.Settings.copy(Blocks.GLASS).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
+    );
+    public static final Block FORCEFIELD_WATER = register("forcefield_water", TransparentBlock::new,
+            AbstractBlock.Settings.copy(Blocks.GLASS).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
+    );
+
     public static final Block PORTAL_GLASS_OPAQUE = register("portal_glass", Block::new, AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS));
     public static final Block PORTAL_GLASS_TRANSPARENT = register("portal_glass_trans", TransparentBlock::new,
             AbstractBlock.Settings.copy(PORTAL_GLASS_OPAQUE).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
