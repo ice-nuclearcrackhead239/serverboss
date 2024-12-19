@@ -54,6 +54,10 @@ public class ModItemGroups {
                 entries.add(ModBlocks.PORTAL_GLASS_TRANSPARENT);
                 entries.add(ModBlocks.VOID_LAMP);
                 entries.add(ModBlocks.SMOOTH_STONE_STAIRS);
+                entries.add(ModBlocks.RIVERBRICKS);
+                entries.add(ModBlocks.RIVERTILES);
+                entries.add(ModBlocks.RIVEREYES);
+                entries.add(ModBlocks.CHISELED_POLISHED_BLACKSTONE_EYES);
                 entries.add(ModItems.WATER_SILK);
             })
             .build();

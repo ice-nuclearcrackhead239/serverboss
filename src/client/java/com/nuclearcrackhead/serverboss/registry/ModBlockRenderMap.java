@@ -28,6 +28,10 @@ public class ModBlockRenderMap {
                 ModBlocks.CHECKERED_OBSIDIAN,
                 ModBlocks.CHISELED_OBSIDIAN,
                 ModBlocks.OBSIDIAN_LIGHT_STRIP,
+                ModBlocks.RIVERBRICKS,
+                ModBlocks.RIVERTILES,
+                ModBlocks.RIVEREYES,
+                ModBlocks.CHISELED_POLISHED_BLACKSTONE_EYES,
                 ModBlocks.VOID_LAMP
         );
 

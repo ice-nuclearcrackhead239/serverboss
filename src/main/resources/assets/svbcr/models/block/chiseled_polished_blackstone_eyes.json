@@ -1,0 +1,7 @@
+{
+  "parent": "svbcr:block/cube_all_e",
+  "textures": {
+    "all": "svbcr:block/blackstone_eyes",
+    "all_e": "svbcr:block/blackstone_eyes_e"
+  }
+}

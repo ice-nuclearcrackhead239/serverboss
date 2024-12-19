@@ -48,6 +48,10 @@ public class ModBlocks {
     );
     public static final Block CHECKERED_OBSIDIAN = register("checkered_obsidian", Block::new, AbstractBlock.Settings.copy(Blocks.OBSIDIAN));
     public static final Block CHISELED_OBSIDIAN = register("chiseled_obsidian", Block::new, AbstractBlock.Settings.copy(ModBlocks.CHECKERED_OBSIDIAN));
+    public static final Block RIVERBRICKS = register("river_bricks", Block::new, AbstractBlock.Settings.copy(Blocks.POLISHED_BLACKSTONE_BRICKS));
+    public static final Block RIVERTILES = register("river_tiles", Block::new, AbstractBlock.Settings.copy(Blocks.POLISHED_BLACKSTONE));
+    public static final Block RIVEREYES = register("river_eyes", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE));
+    public static final Block CHISELED_POLISHED_BLACKSTONE_EYES = register("chiseled_polished_blackstone_eyes", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE));
     public static final Block OBSIDIAN_LIGHT_STRIP = register("obsidian_light", PillarBlock::new,
             AbstractBlock.Settings.copy(ModBlocks.CHECKERED_OBSIDIAN).luminance(value -> 15)
     );
