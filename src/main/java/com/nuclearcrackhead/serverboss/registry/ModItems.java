@@ -37,8 +37,8 @@ public class ModItems {
 
     //public static final Item AXEMACHINE_SPAWN_EGG = new SpawnEggItem(ModEntities.AXEMACHINE, 0xff0000, 0x0000ff, new Item.Settings());
     // ↑ dont do that. it will crash t he game on initialization -mikii/adenator
-    public static final Item AXEMACHINE_SPAWN_EGG = register("axemachine_spawn_egg",
-            settings -> new SpawnEggItem(ModEntities.AXEMACHINE, 0x3a363a, 0x5b0000, settings), new Item.Settings()
+    public static final Item AXEMACHINE_SPAWN_EGG = register("axemachine_spawn_egg", //original primary 3a363a
+            settings -> new SpawnEggItem(ModEntities.AXEMACHINE, 0xffffff, 0x5b0000, settings), new Item.Settings()
     );
     public static final Item BATTERY_SPAWN_EGG = register("battery_spawn_egg",
             settings -> new SpawnEggItem(ModEntities.BATTERY, 0xFFFFFF, 0xFF00FF, settings), new Item.Settings()

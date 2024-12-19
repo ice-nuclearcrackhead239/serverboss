@@ -29,8 +29,8 @@
   "entity.svbcr.axemachine": "Axemachine",
   "entity.svbcr.battery": "Battery",
 
-  "item.svbcr.axemachine_spawn_egg": "Axemachine Spawn Egg",
-  "item.svbcr.battery_spawn_egg": "Battery Spawn Egg",
+  "item.svbcr.axemachine_spawn_egg": "Axemachine Spawn",
+  "item.svbcr.battery_spawn_egg": "Battery Spawn",
 
   "item.svbcr.example_item": "Example Item",
   "item.svbcr.radioactive_bucket": "Radioactive Waste Barrel",
