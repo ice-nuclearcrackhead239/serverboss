@@ -49,11 +49,7 @@ public class ForcefieldBlock extends TransparentBlock implements Waterloggable {
     }
 
     private VoxelShape getForcefieldShape(Boolean open) {
-        if (open) {
-            return VoxelShapes.empty();
-        } else {
-            return VoxelShapes.fullCube();
-        }
+        return open ? VoxelShapes.empty() : VoxelShapes.fullCube();
     }
 
     @Override
@@ -82,7 +78,7 @@ public class ForcefieldBlock extends TransparentBlock implements Waterloggable {
 
     @Override
     protected FluidState getFluidState(BlockState state) {
-        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(true) : super.getFluidState(state);
+        return (state.get(WATERLOGGED) && state.get(OPEN)) ? Fluids.WATER.getStill(true) : super.getFluidState(state);
     }
 
     @Override
