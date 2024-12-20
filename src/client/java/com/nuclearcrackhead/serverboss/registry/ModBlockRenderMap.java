@@ -39,7 +39,7 @@ public class ModBlockRenderMap {
                 ModBlocks.PORTAL_GLASS_TRANSPARENT,
                 ModBlocks.AGONIZED_GLASS,
                 ModBlocks.FORCEFIELD,
-                ModBlocks.FORCEFIELD_WATER,
+                //ModBlocks.FORCEFIELD_WATER,
                 ModBlocks.FLESH_MESH,
                 ModBlocks.WATER_SILK
         );

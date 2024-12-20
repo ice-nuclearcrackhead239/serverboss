@@ -52,7 +52,7 @@ public class ForcefieldBlock extends TransparentBlock implements Waterloggable {
         if (open) {
             return VoxelShapes.empty();
         } else {
-            return Block.createCuboidShape(0,0,0,16,16,16);
+            return VoxelShapes.fullCube();
         }
     }
 
@@ -64,6 +64,11 @@ public class ForcefieldBlock extends TransparentBlock implements Waterloggable {
     @Override
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return getForcefieldShape(state.get(OPEN));
+    }
+
+    @Override
+    protected BlockRenderType getRenderType(BlockState state) {
+        return state.get(OPEN) ? BlockRenderType.INVISIBLE : BlockRenderType.MODEL;
     }
 
     @Nullable
