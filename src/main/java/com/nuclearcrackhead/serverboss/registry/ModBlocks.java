@@ -52,7 +52,7 @@ public class ModBlocks {
     public static final Block FLESH_HOLES = register("flesh_holes", Block::new,
             AbstractBlock.Settings.create().velocityMultiplier(0.9F).jumpVelocityMultiplier(0.9F).sounds(BlockSoundGroup.HONEY)
     );
-    public static final Block FLESH_MESH = register("flesh_mesh", TransparentBlock::new,
+    public static final Block FLESH_MESH = register("flesh_mesh", MeshBlock::new,
             AbstractBlock.Settings.create().velocityMultiplier(0.9F).jumpVelocityMultiplier(0.9F).sounds(BlockSoundGroup.HONEY).nonOpaque()
     );
     public static final Block FLESH_SPINE = register("flesh_spine", SpineBlock::new,
