@@ -7,6 +7,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -37,7 +38,6 @@ public class ModItemGroups {
                 entries.add(ModBlocks.SLUDGE);
 				entries.add(ModBlocks.SPIKE_BLOCK);
                 entries.add(ModBlocks.FORCEFIELD);
-                entries.add(ModBlocks.FORCEFIELD_WATER);
             })
             .build();
 
@@ -72,10 +72,19 @@ public class ModItemGroups {
             })
             .build();
 
+    public static final ItemGroup SVBCR_GROUP_DEVTOOLS = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(Items.DEBUG_STICK))
+            .displayName(Text.translatable("itemGroup.svbcr.devtools"))
+            .entries((context, entries) -> {
+                entries.add(ModItems.DEV_FORCEFIELD_BELL);
+            })
+            .build();
+
 
     public static void init() {
         Registry.register(Registries.ITEM_GROUP, Identifier.of(SVBCR.MOD_ID, "funcblocks"), SVBCR_GROUP_FUNCBLOCKS);
         Registry.register(Registries.ITEM_GROUP, Identifier.of(SVBCR.MOD_ID, "decoblocks"), SVBCR_GROUP_DECOBLOCKS);
+        Registry.register(Registries.ITEM_GROUP, Identifier.of(SVBCR.MOD_ID, "devtools"), SVBCR_GROUP_DEVTOOLS);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.add(ModBlocks.EXAMPLE_BLOCK);

@@ -16,7 +16,7 @@ public class BatteryEntity extends PathAwareEntity {
     @Override
     public void tick() {
         super.tick();
-        this.idleAnimationState.start(this.age);
+        this.idleAnimationState.startIfNotRunning(this.age);
     }
 
 }

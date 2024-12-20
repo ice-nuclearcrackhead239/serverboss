@@ -1,11 +1,9 @@
 package com.nuclearcrackhead.serverboss.registry;
 
 import com.nuclearcrackhead.serverboss.SVBCR;
-import com.nuclearcrackhead.serverboss.registry.ModBlocks;
+import com.nuclearcrackhead.serverboss.content.item.dev.ForcefieldBellItem;
 import com.nuclearcrackhead.serverboss.content.item.ExampleItem;
 import com.nuclearcrackhead.serverboss.content.item.GcpDotTestingItem;
-import net.fabricmc.fabric.api.item.v1.FabricItem;
-import net.minecraft.fluid.Fluid;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -46,6 +44,9 @@ public class ModItems {
 
     //blocks that don't already have an associated item
     public static final Item WATER_SILK = register("water_silk", settings -> new PlaceableOnWaterItem(ModBlocks.WATER_SILK, settings), new Item.Settings());
+
+    // dev tool items -mikii/adenator
+    public static final Item DEV_FORCEFIELD_BELL = register("forcefield_bell", ForcefieldBellItem::new, new Item.Settings().useCooldown(2.0F));
 
     public static Item register(String path, Function<Item.Settings, Item> function, Item.Settings settings) {
         Identifier id = SVBCR.of(path);

@@ -1,7 +1,16 @@
 {
 	"variants": {
-		"": {
+		"waterlogged=false,open=false": {
 			"model": "svbcr:block/forcefield"
+		},
+		"waterlogged=true,open=false": {
+			"model": "svbcr:block/forcefield_water"
+		},
+		"waterlogged=false,open=true": {
+			"model": "svbcr:block/gone"
+		},
+		"waterlogged=true,open=true": {
+			"model": "svbcr:block/gone"
 		}
 	}
 }

@@ -30,6 +30,8 @@
   "block.svbcr.flesh_holes": "Flesh Holes",
   "block.svbcr.agonized_glass": "Agonized Glass",
   "block.svbcr.forcefield": "Forcefield",
+  "block.svbcr.forcefield.tooltip": "Togglable by [room_brush controller]",
+  "block.svbcr.forcefield.tooltip2": "Can be waterlogged to turn into water",
   "block.svbcr.forcefield_water": "Forcefield (Underwater)",
   "block.svbcr.wastebarrel": "Large Radioactive Waste Barrel",
   "block.svbcr.water_silk": "Water Silk",
@@ -47,11 +49,15 @@
   "item.svbcr.battery_spawn_egg": "Battery Spawn",
 
   "item.svbcr.example_item": "Example Item",
+  "item.svbcr.forcefield_bell": "Forcefield Bell",
+  "item.svbcr.forcefield_bell.tooltip": "Force nearby forcefield blocks (within 15 blocks)",
+  "item.svbcr.forcefield_bell.tooltip2": "to be solid, useful for removal",
   "item.svbcr.radioactive_bucket": "Radioactive Waste Barrel",
   "item.svbcr.water_silk": "Water Silk",
 
-  "itemGroup.svbcr.decorational_blocks": "Serverboss Decoration Blocks",
-  "itemGroup.svbcr.functional_blocks": "Serverboss Functional Blocks",
+  "itemGroup.svbcr.decorational_blocks": "SVB:CR Decoration Blocks",
+  "itemGroup.svbcr.devtools": "SVB:CR Dev Tools",
+  "itemGroup.svbcr.functional_blocks": "SVB:CR Functional Blocks",
 
   "subtitles.block.agony.activate": "Agony",
   "subtitles.block.sludge.slide": "Sliding down sludge"
