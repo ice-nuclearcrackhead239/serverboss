@@ -1,5 +1,5 @@
 {
-  "parent": "svbcr:block/door_top_right",
+  "parent": "svbcr:block/door_thin_top_right",
   "textures": {
     "all": "svbcr:block/demonic_gate"
   }

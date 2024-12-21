@@ -1,0 +1,15 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "#bottom"
+    },
+    "elements": [
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 0, 16, 16 ],
+            "faces": {
+                "east":  { "uv": [    0, 8,  8, 16 ], "texture": "#all" },
+                "west":  { "uv": [    8, 8,  0, 16 ], "texture": "#all", "cullface": "west" }
+            }
+        }
+    ]
+}

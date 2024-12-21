@@ -67,7 +67,7 @@ public class ModBlocks {
     public static final Block SLUDGE = register("sludge", Sludge::new,
             AbstractBlock.Settings.create().velocityMultiplier(0.8F).jumpVelocityMultiplier(0.5F).slipperiness(0.992F).sounds(BlockSoundGroup.HONEY).nonOpaque()
     );
-    public static final Block DEMONIC_GATE = registerBlock("demonic_gate", settings -> new DoorBlock(BlockSetType.IRON, settings),
+    public static final Block DEMONIC_GATE = registerBlock("demonic_gate", settings -> new ThinDoorBlock(BlockSetType.IRON, settings),
             AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK).nonOpaque().pistonBehavior(PistonBehavior.DESTROY)
     );
 
