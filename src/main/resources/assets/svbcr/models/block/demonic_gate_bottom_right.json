@@ -1,7 +1,6 @@
 {
-  "parent": "minecraft:block/door_bottom_right",
+  "parent": "svbcr:block/door_bottom_right",
   "textures": {
-    "bottom": "svbcr:block/demonic_gate_bottom",
-    "top": "svbcr:block/demonic_gate_top"
+    "all": "svbcr:block/demonic_gate"
   }
 }
