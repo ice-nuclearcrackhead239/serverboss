@@ -29,8 +29,15 @@ public class ModBlockRenderMap {
                 ModBlocks.CHISELED_OBSIDIAN,
                 ModBlocks.OBSIDIAN_LIGHT_STRIP,
                 ModBlocks.RIVERBRICKS,
+                ModBlocks.RIVERBRICKLETS,
+                ModBlocks.RIVERLAMP,
                 ModBlocks.RIVERTILES,
                 ModBlocks.RIVEREYES,
+                ModBlocks.RIVERSTONE,
+                ModBlocks.AGONY_LANTERN,
+                ModBlocks.ROPE,
+                ModBlocks.NETHERITE_CHAIN,
+                ModBlocks.DEMONIC_GATE,
                 ModBlocks.CHISELED_POLISHED_BLACKSTONE_EYES,
                 ModBlocks.VOID_LAMP
         );

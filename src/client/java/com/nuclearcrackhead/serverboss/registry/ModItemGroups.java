@@ -45,6 +45,8 @@ public class ModItemGroups {
             .icon(() -> new ItemStack(ModBlocks.EXAMPLE_BLOCK))
             .displayName(Text.translatable("itemGroup.svbcr.decorational_blocks"))
             .entries((context, entries) -> {
+                entries.add(ModBlocks.ROPE);
+                entries.add(ModItems.WATER_SILK);
                 entries.add(ModBlocks.EXAMPLE_BLOCK);
                 entries.add(ModBlocks.WASTEBARREL);
                 entries.add(ModBlocks.WHITE);
@@ -56,10 +58,19 @@ public class ModItemGroups {
                 entries.add(ModBlocks.PORTAL_GLASS_TRANSPARENT);
                 entries.add(ModBlocks.VOID_LAMP);
                 entries.add(ModBlocks.SMOOTH_STONE_STAIRS);
-                entries.add(ModBlocks.RIVERBRICKS);
                 entries.add(ModBlocks.RIVERTILES);
                 entries.add(ModBlocks.RIVEREYES);
+                entries.add(ModBlocks.RIVERLAMP);
+                entries.add(ModBlocks.RIVERBRICKS);
+                entries.add(ModBlocks.RIVERBRICKLETS);
+                entries.add(ModBlocks.RIVERSTONE);
+                entries.add(ModBlocks.AGONY_LANTERN);
+                entries.add(ModBlocks.NETHERITE_CHAIN);
                 entries.add(ModBlocks.CHISELED_POLISHED_BLACKSTONE_EYES);
+                entries.add(ModBlocks.POLISHED_BLACKSTONE_BRICKLETS);
+                entries.add(ModBlocks.DEMONIC_BOOKSHELF);
+                entries.add(ModBlocks.DEMONIC_POLISHED_CHISELED_BLACKSTONE);
+                entries.add(ModItems.DEMONIC_GATE);
                 entries.add(ModBlocks.AGONIZED_GLASS);
                 entries.add(ModBlocks.FLESH);
                 entries.add(ModBlocks.FLESH_EYES);
@@ -68,7 +79,6 @@ public class ModItemGroups {
                 entries.add(ModBlocks.FLESH_HOLES);
                 entries.add(ModBlocks.FLESH_MESH);
                 entries.add(ModBlocks.FLESH_SPINE);
-                entries.add(ModItems.WATER_SILK);
             })
             .build();
 

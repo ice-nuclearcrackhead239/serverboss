@@ -44,6 +44,7 @@ public class ModItems {
 
     //blocks that don't already have an associated item
     public static final Item WATER_SILK = register("water_silk", settings -> new PlaceableOnWaterItem(ModBlocks.WATER_SILK, settings), new Item.Settings());
+    public static final Item DEMONIC_GATE = register("demonic_gate", settings -> new TallBlockItem(ModBlocks.DEMONIC_GATE, settings), new Item.Settings());
 
     // dev tool items -mikii/adenator
     public static final Item DEV_FORCEFIELD_BELL = register("forcefield_bell", ForcefieldBellItem::new, new Item.Settings().useCooldown(2.0F));

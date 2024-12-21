@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "svbcr:block/agony_lantern"
+    },
+    "hanging=true": {
+      "model": "svbcr:block/agony_lantern_hanging"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "svbcr:block/rope",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "svbcr:block/rope"
+    },
+    "axis=z": {
+      "model": "svbcr:block/rope",
+      "x": 90
+    }
+  }
+}

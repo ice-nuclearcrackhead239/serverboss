@@ -67,12 +67,25 @@ public class ModBlocks {
     public static final Block SLUDGE = register("sludge", Sludge::new,
             AbstractBlock.Settings.create().velocityMultiplier(0.8F).jumpVelocityMultiplier(0.5F).slipperiness(0.992F).sounds(BlockSoundGroup.HONEY).nonOpaque()
     );
+    public static final Block DEMONIC_GATE = registerBlock("demonic_gate", settings -> new DoorBlock(BlockSetType.IRON, settings),
+            AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK).nonOpaque().pistonBehavior(PistonBehavior.DESTROY)
+    );
+
     public static final Block CHECKERED_OBSIDIAN = register("checkered_obsidian", Block::new, AbstractBlock.Settings.copy(Blocks.OBSIDIAN));
     public static final Block CHISELED_OBSIDIAN = register("chiseled_obsidian", Block::new, AbstractBlock.Settings.copy(ModBlocks.CHECKERED_OBSIDIAN));
     public static final Block RIVERBRICKS = register("river_bricks", Block::new, AbstractBlock.Settings.copy(Blocks.POLISHED_BLACKSTONE_BRICKS));
+    public static final Block RIVERBRICKLETS = register("river_bricklets", Block::new, AbstractBlock.Settings.copy(Blocks.POLISHED_BLACKSTONE_BRICKS));
+    public static final Block RIVERLAMP = register("river_lamp", Block::new, AbstractBlock.Settings.copy(Blocks.POLISHED_BLACKSTONE).luminance(value -> 15));
     public static final Block RIVERTILES = register("river_tiles", Block::new, AbstractBlock.Settings.copy(Blocks.POLISHED_BLACKSTONE));
     public static final Block RIVEREYES = register("river_eyes", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE));
-    public static final Block CHISELED_POLISHED_BLACKSTONE_EYES = register("chiseled_polished_blackstone_eyes", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE));
+    public static final Block DEMONIC_BOOKSHELF = register("demonic_bookshelf", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE));
+    public static final Block RIVERSTONE = register("river_stone", Block::new, AbstractBlock.Settings.copy(Blocks.BLACKSTONE));
+    public static final Block AGONY_LANTERN = register("agony_lantern", LanternBlock::new, AbstractBlock.Settings.copy(Blocks.LANTERN));
+    public static final Block NETHERITE_CHAIN = register("netherite_chain", ChainBlock::new, AbstractBlock.Settings.copy(Blocks.CHAIN));
+    public static final Block ROPE = register("rope", ChainBlock::new, AbstractBlock.Settings.copy(Blocks.CHAIN).sounds(BlockSoundGroup.WOOL));
+    public static final Block CHISELED_POLISHED_BLACKSTONE_EYES = register("chiseled_polished_blackstone_eyes", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE).luminance(value -> 8));
+    public static final Block POLISHED_BLACKSTONE_BRICKLETS = register("polished_blackstone_bricklets", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE));
+    public static final Block DEMONIC_POLISHED_CHISELED_BLACKSTONE = register("demonic_chiseled_polished_blackstone", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE));
     public static final Block OBSIDIAN_LIGHT_STRIP = register("obsidian_light", PillarBlock::new,
             AbstractBlock.Settings.copy(ModBlocks.CHECKERED_OBSIDIAN).luminance(value -> 15)
     );
