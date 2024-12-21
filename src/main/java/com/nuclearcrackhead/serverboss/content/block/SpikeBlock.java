@@ -30,12 +30,24 @@ import net.minecraft.util.math.ColorHelper;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 
 import java.util.List;
 
 public class SpikeBlock extends BlockWithEntity {
+	public static final BooleanProperty ACTIVE = BooleanProperty.of("active");
+	public static final int SPIKE_DAMAGE = 5;
+
 	public SpikeBlock(Settings settings) {
 		super(settings);
+
+		setDefaultState(getDefaultState().with(ACTIVE, false));
+	}
+
+	@Override
+	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+		builder.add(ACTIVE);
 	}
 	
 	public static final MapCodec<SpikeBlock> CODEC = createCodec(SpikeBlock::new);
@@ -68,9 +80,11 @@ public class SpikeBlock extends BlockWithEntity {
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
 		BlockEntity blockEntity = world.getBlockEntity(pos);
 		if (blockEntity instanceof SpikeBlockEntity spikeBlockEntity) {
-			spikeBlockEntity.spawnSpike(world, entity);
+			spikeBlockEntity.spawnSpike(world, pos, state, entity);
 		}
-
+		if (state.get(ACTIVE) && entity instanceof LivingEntity livingEntity) {
+			livingEntity.serverDamage(entity.getDamageSources().create(ModDamageTypes.SPIKE_DAMAGE, null), SPIKE_DAMAGE);
+		}
         super.onSteppedOn(world, pos, state, entity);
     }
 }

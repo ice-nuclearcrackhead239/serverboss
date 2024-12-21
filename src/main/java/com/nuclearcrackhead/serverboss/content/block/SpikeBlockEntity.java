@@ -16,20 +16,24 @@ public class SpikeBlockEntity extends BlockEntity {
 		super(ModBlockEntityTypes.SPIKE_BLOCK, pos, state);
 	}
 	
+	public static final int SPIKE_DELAY = 10; // tick delay between stepping and spawning spikes
+	public static final int SPIKE_DURATION = 80; // tick length of time the spike exists
 	protected int spikeTimer = 0;
 	
-	public void spawnSpike(World world, Entity entity) {
+	public void spawnSpike(World world, BlockPos pos, BlockState state, Entity entity) {
 		if (spikeTimer == 0) {
-			SVBCR.LOGGER.info("spawned");
+			spikeTimer = SPIKE_DELAY + SPIKE_DURATION;
 		}
-		spikeTimer = 40;
 	}
 	
 	public static void tick(World world, BlockPos pos, BlockState state, SpikeBlockEntity blockEntity) {
 		if (blockEntity.spikeTimer > 0) {
 			blockEntity.spikeTimer--;
+			if (blockEntity.spikeTimer == SPIKE_DURATION) {
+				world.setBlockState(pos, state.with(SpikeBlock.ACTIVE, true));
+			}
 			if (blockEntity.spikeTimer == 0) {
-				SVBCR.LOGGER.info("despawned");
+				world.setBlockState(pos, state.with(SpikeBlock.ACTIVE, false));
 			}
 		}
 	}

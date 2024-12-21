@@ -1,7 +1,10 @@
 {
 	"variants": {
-		"": {
-			"model": "svbcr:block/spike_block"
+		"active=true": {
+			"model": "svbcr:block/spikeblock_active"
+		},
+		"active=false": {
+			"model": "svbcr:block/spikeblock_inactive"
 		}
 	}
 }

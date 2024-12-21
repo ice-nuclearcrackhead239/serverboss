@@ -12,5 +12,6 @@ public class ModDamageTypes {
     public static void init() {}
 
     public static final RegistryKey<DamageType> AGONY_DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of("svbcr", "agony"));
+    public static final RegistryKey<DamageType> SPIKE_DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of("svbcr", "spike"));
 
 }

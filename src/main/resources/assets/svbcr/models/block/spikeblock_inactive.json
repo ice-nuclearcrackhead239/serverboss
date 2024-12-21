@@ -1,0 +1,23 @@
+{
+	"credit": "I hate minecraft models!",
+	"textures": {
+		"0": "svbcr:block/spikeblock_bottom",
+		"1": "svbcr:block/spikeblock_side",
+		"2": "svbcr:block/spikeblock_top",
+		"particle": "svbcr:block/spikeblock_bottom"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0"}
+			}
+		}
+	]
+}
