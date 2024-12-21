@@ -2,7 +2,6 @@ package com.nuclearcrackhead.serverboss.registry;
 import com.nuclearcrackhead.serverboss.SVBCR;
 import com.nuclearcrackhead.serverboss.content.block.*;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -131,8 +130,7 @@ public class ModBlocks {
         Identifier id = SVBCR.of(path);
         RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, id);
         settings.registryKey(blockKey);
-        Block block = Registry.register(Registries.BLOCK, blockKey, function.apply(settings));
-        return block;
+        return Registry.register(Registries.BLOCK, blockKey, function.apply(settings));
     }
 
     protected static boolean always(BlockState state, BlockView world, BlockPos pos){
