@@ -94,9 +94,6 @@ public class ModBlocks {
     public static final Block FORCEFIELD = register("forcefield", ForcefieldBlock::new,
             AbstractBlock.Settings.copy(Blocks.GLASS).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
     );
-    //public static final Block FORCEFIELD_WATER = register("forcefield_water", TransparentBlock::new,
-    //        AbstractBlock.Settings.copy(Blocks.GLASS).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
-    //);
 
     public static final Block PORTAL_GLASS_OPAQUE = register("portal_glass", Block::new, AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS));
     public static final Block PORTAL_GLASS_TRANSPARENT = register("portal_glass_trans", TransparentBlock::new,
