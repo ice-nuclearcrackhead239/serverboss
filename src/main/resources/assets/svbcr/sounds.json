@@ -29,5 +29,35 @@
         "type": "event"
       }
     ]
+  },
+  "block.spike_block.trigger": {
+    "subtitle": "subtitles.block.spike_block.trigger",
+    "sounds": [
+      {
+        "name": "block.lever.click",
+        "type": "event"
+      }
+    ]
+  },
+  "block.spike_block.up": {
+    "subtitle": "subtitles.block.spike_block.up",
+    "sounds": [
+      {
+        "name": "item.trident.throw",
+        "type": "event",
+        "volume": 0.75
+      }
+    ]
+  },
+  "block.spike_block.down": {
+    "subtitle": "subtitles.block.spike_block.down",
+    "sounds": [
+      {
+        "name": "block.lever.click",
+        "type": "event",
+        "volume": 0.5,
+        "pitch": 0.5
+      }
+    ]
   }
 }
