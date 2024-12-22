@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=east": {
+			"model": "svbcr:block/blackstone_pedestal",
+			"y": 90
+		},
+		"facing=north": {
+			"model": "svbcr:block/blackstone_pedestal"
+		},
+		"facing=south": {
+			"model": "svbcr:block/blackstone_pedestal",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "svbcr:block/blackstone_pedestal",
+			"y": 270
+		}
+	}
+}

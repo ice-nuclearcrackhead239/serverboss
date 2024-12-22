@@ -22,6 +22,7 @@ import static com.nuclearcrackhead.serverboss.registry.ModFluids.RADIOACTIVE_STI
 public class SVBCRClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
+		ModBlockEntityRenderers.init();
 		ModItemGroups.init();
 		ModBlockRenderMap.init();
 		ModEntityRenderers.init();

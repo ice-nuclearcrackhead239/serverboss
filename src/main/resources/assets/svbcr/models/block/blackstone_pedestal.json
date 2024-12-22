@@ -1,8 +1,16 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
+	"display": {
+		"firstperson_righthand": {
+			"rotation": [ 0, 135, 0 ],
+			"translation": [ 0, 0, 0 ],
+			"scale": [ 0.4, 0.4, 0.4 ]
+		}
+	},
 	"textures": {
-		"9": "svbcr:block/blackstone_pedestal"
+		"9": "svbcr:block/blackstone_pedestal",
+		"particle": "svbcr:block/blackstone_pedestal"
 	},
 	"elements": [
 		{
