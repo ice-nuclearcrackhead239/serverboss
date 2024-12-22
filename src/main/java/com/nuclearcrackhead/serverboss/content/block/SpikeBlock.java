@@ -79,8 +79,9 @@ public class SpikeBlock extends BlockWithEntity {
 	@Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
 		BlockEntity blockEntity = world.getBlockEntity(pos);
-		if (blockEntity instanceof SpikeBlockEntity spikeBlockEntity) {
+		if (blockEntity instanceof SpikeBlockEntity spikeBlockEntity && entity instanceof LivingEntity livingEntity) {
 			spikeBlockEntity.spawnSpike(world, pos, state, entity);
+			//livingEntity is here so it doesn't try to activate on, say, an item being on top
 		}
 		if (state.get(ACTIVE) && entity instanceof LivingEntity livingEntity) {
 			livingEntity.serverDamage(entity.getDamageSources().create(ModDamageTypes.SPIKE_DAMAGE, null), SPIKE_DAMAGE);
