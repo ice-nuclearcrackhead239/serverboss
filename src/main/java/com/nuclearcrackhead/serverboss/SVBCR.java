@@ -17,6 +17,7 @@ public class SVBCR implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModPackets.init();
 		ModItems.init();
 		ModFluids.init();
 		ModBlocks.init();

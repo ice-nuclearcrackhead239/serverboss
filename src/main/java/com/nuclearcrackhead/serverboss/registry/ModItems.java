@@ -1,9 +1,8 @@
 package com.nuclearcrackhead.serverboss.registry;
 
 import com.nuclearcrackhead.serverboss.SVBCR;
-import com.nuclearcrackhead.serverboss.content.item.dev.ForcefieldBellItem;
-import com.nuclearcrackhead.serverboss.content.item.ExampleItem;
-import com.nuclearcrackhead.serverboss.content.item.GcpDotTestingItem;
+import com.nuclearcrackhead.serverboss.content.item.dev.*;
+import com.nuclearcrackhead.serverboss.content.item.*;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -48,6 +47,9 @@ public class ModItems {
 
     // dev tool items -mikii/adenator
     public static final Item DEV_FORCEFIELD_BELL = register("forcefield_bell", ForcefieldBellItem::new, new Item.Settings().useCooldown(2.0F));
+
+    // GUNS YEE HAW
+    public static final Item PISTOL = register("pistol", Pistol::new, new Item.Settings());
 
     public static Item register(String path, Function<Item.Settings, Item> function, Item.Settings settings) {
         Identifier id = SVBCR.of(path);
