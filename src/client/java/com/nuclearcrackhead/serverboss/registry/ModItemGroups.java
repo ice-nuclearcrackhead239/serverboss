@@ -3,7 +3,6 @@ package com.nuclearcrackhead.serverboss.registry;
 import com.nuclearcrackhead.serverboss.SVBCR;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
@@ -26,7 +25,6 @@ public class ModItemGroups {
         HAUNTED items
         UNUSUAL items
         CRACKED items
-        developer tools
     */
 
     public static final ItemGroup SVBCR_GROUP_FUNCBLOCKS = FabricItemGroup.builder()
@@ -71,6 +69,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.DEMONIC_BOOKSHELF);
                 entries.add(ModBlocks.DEMONIC_POLISHED_CHISELED_BLACKSTONE);
                 entries.add(ModItems.DEMONIC_GATE);
+                entries.add(ModBlocks.BLACKSTONE_PEDESTAL);
                 entries.add(ModBlocks.AGONIZED_GLASS);
                 entries.add(ModBlocks.FLESH);
                 entries.add(ModBlocks.FLESH_EYES);
