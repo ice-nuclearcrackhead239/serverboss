@@ -43,6 +43,8 @@ public class ModItemGroups {
             .icon(() -> new ItemStack(ModBlocks.EXAMPLE_BLOCK))
             .displayName(Text.translatable("itemGroup.svbcr.decorational_blocks"))
             .entries((context, entries) -> {
+                entries.add(ModBlocks.LOAM);
+                entries.add(ModBlocks.SILT);
                 entries.add(ModBlocks.ROPE);
                 entries.add(ModItems.WATER_SILK);
                 entries.add(ModBlocks.EXAMPLE_BLOCK);
