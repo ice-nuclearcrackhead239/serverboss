@@ -49,11 +49,18 @@
   "block.svbcr.white.tooltip": "Displays purely as white",
   "block.svbcr.white.tooltip2": "Additonally emits light",
 
+  "death.attack.agony": "%s was crushed by grief",
+  "death.attack.agony.player": "%s was crushed by grief whilst trying to escape %s",
+  "death.attack.dev_kill": "%s died mysteriously",
+  "death.attack.dev_kill.player": "%s died whilst trying to escape %s",
+  "death.attack.dev_void": "%s couldn't be saved from falling",
+  "death.attack.dev_void.player": "%s lost to %s in Super Smash Bros.",
+  "death.attack.fractured": "%s fell apart",
+  "death.attack.fractured.player": "%s was left to crumble by %s",
   "death.attack.spike": "%s was impaled",
   "death.attack.spike.player": "%s was impaled whilst trying to escape %s",
 
-  "death.attack.agony": "%s was crushed by grief",
-  "death.attack.agony.player": "%s was crushed by grief whilst trying to escape %s",
+  "effect.svbcr.fractured": "Fractured",
 
   "entity.svbcr.axemachine": "Axemachine",
   "entity.svbcr.battery": "Battery",
