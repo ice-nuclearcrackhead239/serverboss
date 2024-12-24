@@ -57,7 +57,7 @@
   "death.attack.dev_kill.player": "%s died whilst trying to escape %s",
   "death.attack.dev_void": "%s couldn't be saved from falling",
   "death.attack.dev_void.player": "%s lost to %s in Super Smash Bros.",
-  "death.attack.fractured": "%s fell apart",
+  "death.attack.fractured": "%s has shattered into innumerable pieces",
   "death.attack.fractured.player": "%s was left to crumble by %s",
   "death.attack.spike": "%s was impaled",
   "death.attack.spike.player": "%s was impaled whilst trying to escape %s",
