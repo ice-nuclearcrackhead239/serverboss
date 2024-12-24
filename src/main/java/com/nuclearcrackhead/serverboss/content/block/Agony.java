@@ -58,7 +58,7 @@ public class Agony extends Block {
         if (entity instanceof LivingEntity livingEntity && world instanceof ServerWorld serverWorld) { //bypass check removed since i don't think it's supposed to not agony you if you sneak
             livingEntity.damage(serverWorld, entity.getDamageSources().create(ModDamageTypes.AGONY_DAMAGE, null), livingEntity.getMaxHealth() / 7);
             serverWorld.spawnParticles(new DustParticleEffect(ColorHelper.fromFloats(1, 1, 0, 0), 2), livingEntity.getPos().getX(), livingEntity.getPos().getY(), livingEntity.getPos().getZ(), 4, 0.2, 0, 0.2, 0);
-            if (!world.isClient && (livingEntity.hurtTime == livingEntity.maxHurtTime)) {
+            if (!world.isClient && (livingEntity.hurtTime == 10)) {
                 world.playSound(null, pos, ModSounds.BLOCK_AGONY_ACTIVATE_FANGSNAP, SoundCategory.BLOCKS);
                 world.playSound(null, pos, ModSounds.BLOCK_AGONY_ACTIVATE_ZOMBIESTEP, SoundCategory.BLOCKS);
             }
