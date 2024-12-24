@@ -1,7 +1,9 @@
 package com.nuclearcrackhead.serverboss.registry;
 
+import com.nuclearcrackhead.serverboss.SVBCR;
 import com.nuclearcrackhead.serverboss.content.entity.AxemachineEntity;
 import com.nuclearcrackhead.serverboss.content.entity.BatteryEntity;
+import com.nuclearcrackhead.serverboss.content.entity.LithostructDroneEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -13,17 +15,22 @@ import net.minecraft.util.Identifier;
 public class ModEntities {
 
     public static final EntityType<AxemachineEntity> AXEMACHINE = Registry.register(
-            Registries.ENTITY_TYPE, Identifier.of("svbcr", "axemachine"),
-            EntityType.Builder.create(AxemachineEntity::new, SpawnGroup.MISC).dimensions(0.6f, 2.1f).build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of("svbcr","axemachine")))
+            Registries.ENTITY_TYPE, SVBCR.of("axemachine"),
+            EntityType.Builder.create(AxemachineEntity::new, SpawnGroup.MISC).dimensions(0.6f, 2.1f).build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), SVBCR.of("axemachine")))
     );
     public static final EntityType<BatteryEntity> BATTERY = Registry.register(
-            Registries.ENTITY_TYPE, Identifier.of("svbcr", "battery"),
-            EntityType.Builder.create(BatteryEntity::new, SpawnGroup.MISC).dimensions(1.2f, 1.6f).build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of("svbcr","battery")))
+            Registries.ENTITY_TYPE, SVBCR.of("battery"),
+            EntityType.Builder.create(BatteryEntity::new, SpawnGroup.MISC).dimensions(1.2f, 1.6f).build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), SVBCR.of("battery")))
+    );
+    public static final EntityType<LithostructDroneEntity> LITHOSTRUCT_DRONE = Registry.register(
+            Registries.ENTITY_TYPE, SVBCR.of("lithostruct_drone"),
+            EntityType.Builder.create(LithostructDroneEntity::new, SpawnGroup.MISC).dimensions(1f, 1.5f).build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), SVBCR.of("lithostruct_drone")))
     );
 
     public static void init() {
         FabricDefaultAttributeRegistry.register(AXEMACHINE, AxemachineEntity.createMobAttributes());
-        FabricDefaultAttributeRegistry.register(BATTERY, AxemachineEntity.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(BATTERY, BatteryEntity.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(LITHOSTRUCT_DRONE, LithostructDroneEntity.createMobAttributes());
     }
 
 }

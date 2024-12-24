@@ -8,4 +8,6 @@ import net.minecraft.entity.AnimationState;
 @Environment(EnvType.CLIENT)
 public class BatteryEntityRenderState extends LivingEntityRenderState {
     public final AnimationState idleAnimationState = new AnimationState();
+
+    public BatteryEntityRenderState() {}
 }

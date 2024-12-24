@@ -1,13 +1,8 @@
 package com.nuclearcrackhead.serverboss.content.model.entity;
 
-import com.nuclearcrackhead.serverboss.content.entity.AxemachineEntity;
 import com.nuclearcrackhead.serverboss.content.render.entity.state.AxemachineEntityRenderState;
 import net.minecraft.client.model.*;
-import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.BipedEntityModel;
-import net.minecraft.client.render.entity.model.EntityModel;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.Entity;
 
 // Made with Blockbench 4.11.2
 // Exported for Minecraft version 1.17+ for Yarn
