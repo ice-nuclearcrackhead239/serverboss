@@ -13,9 +13,11 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.math.Box;
 import net.minecraft.entity.projectile.ProjectileUtil;
+import net.minecraft.server.world.ServerWorld;
 
 import com.nuclearcrackhead.serverboss.SVBCR;
 import com.nuclearcrackhead.serverboss.registry.ModEntities;
+import com.nuclearcrackhead.serverboss.registry.ModDamageTypes;
 
 public class BulletEntity extends ProjectileEntity {
 	public int damage = 1;
@@ -60,11 +62,15 @@ public class BulletEntity extends ProjectileEntity {
 	}
 
 	public void onBlockCollision(BlockPos blockPos, BlockState blockState) {
-		SVBCR.LOGGER.info("hit block");
+		discard();
 	}
 
 	public void onEntityCollision(EntityHitResult result) {
-		SVBCR.LOGGER.info("hit entity {}", result.getEntity());
+		if (getWorld() instanceof ServerWorld serverWorld) {
+			if (result.getEntity() instanceof LivingEntity livingEntity) {
+				livingEntity.damage(serverWorld, livingEntity.getDamageSources().create(ModDamageTypes.BULLET_DAMAGE, this), damage);
+			}
+		}
 	}
 
 	@Override
@@ -82,8 +88,8 @@ public class BulletEntity extends ProjectileEntity {
 				}
 			}
 		}
-		
-		EntityHitResult result = ProjectileUtil.getEntityCollision(world, this, bulletPos, bulletPos.add(velocity), getBoundingBox(), this::canHit);
+
+		EntityHitResult result = ProjectileUtil.getEntityCollision(world, this, bulletPos, bulletPos.add(velocity), getBoundingBox().stretch(getVelocity()).expand(1.0), this::canHit);
 		if (result != null) {
 			onEntityCollision(result);
 		}

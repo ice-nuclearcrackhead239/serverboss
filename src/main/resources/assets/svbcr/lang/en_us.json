@@ -84,6 +84,8 @@
 
   "death.attack.agony": "%s was crushed by grief",
   "death.attack.agony.player": "%s was crushed by grief whilst trying to escape %s",
+  "death.attack.bullet": "%s was shot",
+  "death.attack.bullet.player": "%s was shot by %s",
   "death.attack.dev_kill": "%s died mysteriously",
   "death.attack.dev_kill.player": "%s died whilst trying to escape %s",
   "death.attack.dev_void": "%s couldn't be saved from falling",
@@ -100,6 +102,7 @@
   "entity.svbcr.battery": "Battery",
   "entity.svbcr.lithostruct_drone": "Lithostruct Drone",
   "entity.svbcr.lithostruct_sentry": "Lithostruct Sentry",
+  "entity.svbcr.bullet": "Bullet",
 
   "item.svbcr.axemachine_spawn_egg": "Axemachine Spawn",
   "item.svbcr.battery_spawn_egg": "Battery Spawn",
