@@ -24,7 +24,7 @@ public class BulletEntity extends ProjectileEntity {
 	public BulletEntity(World world, LivingEntity owner) {
 		super(ModEntities.BULLET, world);
 		this.setOwner(owner);
-		this.setPosition(owner.getPos());
+		this.setPosition(owner.getEyePos().add(0, ((double) -2 / 16), 0));
 	}
 
 	public BulletEntity setDirection(float pitch, float yaw) {
