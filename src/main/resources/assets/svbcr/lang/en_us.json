@@ -93,8 +93,8 @@
   "death.attack.spike": "%s was impaled",
   "death.attack.spike.player": "%s was impaled whilst trying to escape %s",
 
-  "effect.svbcr.bounce_boost": "Bounce Boost",
   "effect.svbcr.fractured": "Fractured",
+  "effect.svbcr.soaring": "Soaring",
 
   "entity.svbcr.axemachine": "Axemachine",
   "entity.svbcr.battery": "Battery",
@@ -121,8 +121,10 @@
   "itemGroup.svbcr.functional_blocks": "SVB:CR Functional Blocks",
 
   "subtitles.block.agony.activate": "Agony",
+  "subtitles.block.bounce_pad.launch": "Bounce Pad launches",
   "subtitles.block.sludge.slide": "Sliding down sludge",
+  "subtitles.block.speed_pad.launch": "Speed Pad launches",
   "subtitles.block.spike_block.down": "Spikes retract",
-  "subtitles.block.spike_block.trigger": "Spike block clicks",
+  "subtitles.block.spike_block.trigger": "Spike Block clicks",
   "subtitles.block.spike_block.up": "Spikes appear"
 }

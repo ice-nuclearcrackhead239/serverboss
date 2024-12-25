@@ -15,6 +15,6 @@ public class ModStatusEffects {
     public static void init() {}
 
     public static final RegistryEntry<StatusEffect> FRACTURED = Registry.registerReference(Registries.STATUS_EFFECT, SVBCR.of("fractured"), new FracturedStatusEffect());
-    public static final RegistryEntry<StatusEffect> BOUNCE_BOOST = Registry.registerReference(Registries.STATUS_EFFECT, SVBCR.of("bounce_boost"), new GenericStatusEffect(StatusEffectCategory.BENEFICIAL, 0x3ac0ff).addAttributeModifier(EntityAttributes.FALL_DAMAGE_MULTIPLIER, SVBCR.of("effect.bounce_boost"), -1.0F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+    public static final RegistryEntry<StatusEffect> SOARING = Registry.registerReference(Registries.STATUS_EFFECT, SVBCR.of("soaring"), new SoaringStatusEffect().addAttributeModifier(EntityAttributes.FALL_DAMAGE_MULTIPLIER, SVBCR.of("effect.soaring"), -1.0F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 
 }
