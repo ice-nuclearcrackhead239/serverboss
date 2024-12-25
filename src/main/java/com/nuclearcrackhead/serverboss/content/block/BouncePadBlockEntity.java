@@ -26,7 +26,7 @@ public class BouncePadBlockEntity extends BlockEntity {
             entity.setVelocity(entity.getVelocity().add(0, 1.5, 0));
             world.playSoundAtBlockCenter(pos, ModSounds.BLOCK_BOUNCE_PAD, SoundCategory.BLOCKS, 1.0f, 1.0f, true);
             if (entity instanceof LivingEntity livingEntity && !world.isClient()) {
-                livingEntity.addStatusEffect(new StatusEffectInstance(ModStatusEffects.SOARING, 60, 0));
+                livingEntity.addStatusEffect(new StatusEffectInstance(ModStatusEffects.SOARING, 200, 0));
             }
             world.setBlockState(pos, state.with(BouncePadBlock.ACTIVE, false));
             cooldown = BOUNCE_COOLDOWN;
