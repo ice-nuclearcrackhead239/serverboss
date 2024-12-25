@@ -7,6 +7,12 @@ import net.minecraft.world.World;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.block.BlockState;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.math.Box;
+import net.minecraft.entity.projectile.ProjectileUtil;
 
 import com.nuclearcrackhead.serverboss.SVBCR;
 import com.nuclearcrackhead.serverboss.registry.ModEntities;
@@ -45,17 +51,44 @@ public class BulletEntity extends ProjectileEntity {
 		float g = -MathHelper.sin(pitch * (float) (Math.PI / 180.0));
 		float h = MathHelper.cos(yaw * (float) (Math.PI / 180.0)) * MathHelper.cos(pitch * (float) (Math.PI / 180.0));
 		Vec3d vel = new Vec3d(f, g, h).multiply(speed);
-		SVBCR.LOGGER.info("{}", vel);
 		setVelocity(vel);
-	}
-
-	public void tick() {
-		setPosition(getPos().add(getVelocity()));
 	}
 
 	public BulletEntity setDamage(int damage) {
 		this.damage = damage;
 		return this;
+	}
+
+	public void onBlockCollision(BlockPos blockPos, BlockState blockState) {
+		SVBCR.LOGGER.info("hit block");
+	}
+
+	public void onEntityCollision(EntityHitResult result) {
+		SVBCR.LOGGER.info("hit entity {}", result.getEntity());
+	}
+
+	@Override
+	public void tick() {
+		World world = getWorld();
+		BlockPos blockPos = getBlockPos();
+		BlockState blockState = world.getBlockState(blockPos);
+		VoxelShape collisionShape = blockState.getCollisionShape(world, blockPos);
+		Vec3d bulletPos = getPos();
+		Vec3d velocity = getVelocity();
+		if (!blockState.isAir() && !collisionShape.isEmpty()) {
+			for (Box box : collisionShape.getBoundingBoxes()) {
+				if (box.offset(blockPos).contains(bulletPos)) {
+					onBlockCollision(blockPos, blockState);
+				}
+			}
+		}
+		
+		EntityHitResult result = ProjectileUtil.getEntityCollision(world, this, bulletPos, bulletPos.add(velocity), getBoundingBox(), this::canHit);
+		if (result != null) {
+			onEntityCollision(result);
+		}
+
+		setPosition(bulletPos.add(velocity));
 	}
 
 	@Override

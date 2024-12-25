@@ -7,7 +7,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ActionResult;
 
-import com.nuclearcrackhead.serverboss.SVBCR;
 import com.nuclearcrackhead.serverboss.content.entity.*;
 
 public class Pistol extends Item implements IAttackItem {
@@ -19,7 +18,6 @@ public class Pistol extends Item implements IAttackItem {
 		if (!world.isClient) {
 			BulletEntity bulletEntity = new BulletEntity(world, user).setDirection(user.getPitch(), user.getYaw()).setDamage(2).setSpeed(2);
 			world.spawnEntity(bulletEntity);
-			SVBCR.LOGGER.info("spawned");
 		}
 	}
 
