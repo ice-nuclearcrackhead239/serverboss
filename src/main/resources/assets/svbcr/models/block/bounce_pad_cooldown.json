@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "svbcr:block/bounce_pad_cooldown"
+  }
+}
