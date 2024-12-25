@@ -1,56 +1,49 @@
 {
   "variants": {
-    "orientation=down_east": {
-      "model": "svbcr:block/speed_pad",
-      "x": 90,
-      "y": 90
-    },
-    "orientation=down_north": {
+    "facing=down,active=true": {
       "model": "svbcr:block/speed_pad",
       "x": 90
     },
-    "orientation=down_south": {
-      "model": "svbcr:block/speed_pad",
-      "x": 90,
-      "y": 180
-    },
-    "orientation=down_west": {
-      "model": "svbcr:block/speed_pad",
-      "x": 90,
-      "y": 270
-    },
-    "orientation=east_up": {
+    "facing=east,active=true": {
       "model": "svbcr:block/speed_pad",
       "y": 90
     },
-    "orientation=north_up": {
+    "facing=north,active=true": {
       "model": "svbcr:block/speed_pad"
     },
-    "orientation=south_up": {
+    "facing=south,active=true": {
       "model": "svbcr:block/speed_pad",
       "y": 180
     },
-    "orientation=up_east": {
-      "model": "svbcr:block/speed_pad",
-      "x": 270,
-      "y": 270
-    },
-    "orientation=up_north": {
-      "model": "svbcr:block/speed_pad",
-      "x": 270,
-      "y": 180
-    },
-    "orientation=up_south": {
+    "facing=up,active=true": {
       "model": "svbcr:block/speed_pad",
       "x": 270
     },
-    "orientation=up_west": {
+    "facing=west,active=true": {
       "model": "svbcr:block/speed_pad",
-      "x": 270,
+      "y": 270
+    },
+    "facing=down,active=false": {
+      "model": "svbcr:block/speed_pad_cooldown",
+      "x": 90
+    },
+    "facing=east,active=false": {
+      "model": "svbcr:block/speed_pad_cooldown",
       "y": 90
     },
-    "orientation=west_up": {
-      "model": "svbcr:block/speed_pad",
+    "facing=north,active=false": {
+      "model": "svbcr:block/speed_pad_cooldown"
+    },
+    "facing=south,active=false": {
+      "model": "svbcr:block/speed_pad_cooldown",
+      "y": 180
+    },
+    "facing=up,active=false": {
+      "model": "svbcr:block/speed_pad_cooldown",
+      "x": 270
+    },
+    "facing=west,active=false": {
+      "model": "svbcr:block/speed_pad_cooldown",
       "y": 270
     }
   }

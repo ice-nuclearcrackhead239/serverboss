@@ -11,6 +11,7 @@ public class ModParticleFactories {
         ParticleFactoryRegistry.getInstance().register(ModParticles.AGONY_SOUL, SoulParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.SOARING, SoaringParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.BOUNCE, BounceParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.SPEED_BLAST, BounceParticle.Factory::new);
     }
 
 }
