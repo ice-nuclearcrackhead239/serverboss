@@ -99,7 +99,7 @@ public class ModBlocks {
 	public static final Block POLISHED_BLACKSTONE_BRICKLETS_SLAB = register("polished_blackstone_bricklets_slab", SlabBlock::new,
 			AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE));
 	public static final Block POLISHED_BLACKSTONE_BRICKLETS_STAIRS = mojangStairsSuckMyBalls("polished_blackstone_bricklets_stairs", POLISHED_BLACKSTONE_BRICKLETS);
-	public static final Block BOUNCE_PAD = register("bounce_pad", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE).luminance(value -> 12));
+	public static final Block BOUNCE_PAD = register("bounce_pad", BouncePadBlock::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE).luminance(value -> 12));
 	public static final Block INDENTED_POLISHED_BLACKSTONE = register("indented_polished_blackstone", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE));
 	public static final Block SPEED_PAD = register("speed_pad", SpineBlock::new,
 			AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE).luminance(value -> 12)
