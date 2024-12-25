@@ -39,7 +39,7 @@ import static net.minecraft.state.property.Properties.ORIENTATION;
 public class SpineBlock extends Block {
     private static final EnumProperty<Orientation> ORIENTATION;
     public static final MapCodec<Agony> CODEC = createCodec(Agony::new);
-    protected static final VoxelShape SHAPE = Block.createCuboidShape((double)1.0F, (double)0.0F, (double)1.0F, (double)16.0F, (double)15.0F, (double)16.0F);
+    protected static final VoxelShape SHAPE = Block.createCuboidShape((double)0.0F, (double)0.0F, (double)0.0F, (double)16.0F, (double)16.0F, (double)16.0F);
 
     public MapCodec<Agony> getCodec() {
         return CODEC;

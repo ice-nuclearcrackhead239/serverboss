@@ -92,6 +92,24 @@ public class ModBlocks {
 	public static final Block CHISELED_POLISHED_BLACKSTONE_EYES = register("chiseled_polished_blackstone_eyes", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE).luminance(value -> 8));
 	public static final Block POLISHED_BLACKSTONE_BRICKLETS = register("polished_blackstone_bricklets", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE));
 	public static final Block DEMONIC_POLISHED_CHISELED_BLACKSTONE = register("demonic_chiseled_polished_blackstone", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE));
+	public static final Block POLISHED_BLACKSTONE_PILLAR = register("polished_blackstone_pillar", SpineBlock::new,
+			AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE)
+	);
+	public static final Block SMOOTH_BLACKSTONE = register("smooth_blackstone", Block::new, AbstractBlock.Settings.copy(Blocks.BLACKSTONE));
+	public static final Block POLISHED_BLACKSTONE_BRICKLETS_SLAB = register("polished_blackstone_bricklets_slab", SlabBlock::new,
+			AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE));
+	public static final Block POLISHED_BLACKSTONE_BRICKLETS_STAIRS = mojangStairsSuckMyBalls("polished_blackstone_bricklets_stairs", POLISHED_BLACKSTONE_BRICKLETS);
+	public static final Block BOUNCE_PAD = register("bounce_pad", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE).luminance(value -> 12));
+	public static final Block INDENTED_POLISHED_BLACKSTONE = register("indented_polished_blackstone", Block::new, AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE));
+	public static final Block SPEED_PAD = register("speed_pad", SpineBlock::new,
+			AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE).luminance(value -> 12)
+	);
+	public static final Block CRIMSON_STALKS = registerBlock("crimson_stalks", TallRootsBlock::new, AbstractBlock.Settings.copy(Blocks.CRIMSON_ROOTS));
+
+	public static final Block CHISELED_NETHERITE = register("chiseled_netherite", Block::new, AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK));
+	public static final Block POLISHED_NETHERITE = register("polished_netherite", Block::new, AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK));
+	public static final Block CRYSTALLINE_DIAMOND = register("crystalline_diamond", Block::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK).sounds(BlockSoundGroup.GLASS));
+
 	public static final Block OBSIDIAN_LIGHT_STRIP = register("obsidian_light", PillarBlock::new,
 			AbstractBlock.Settings.copy(ModBlocks.CHECKERED_OBSIDIAN).luminance(value -> 15)
 	);
@@ -129,6 +147,11 @@ public class ModBlocks {
 				.registryKey(itemKey);
 		Registry.register(Registries.ITEM, itemKey, new BlockItem(block, itemSettings));
 		return block;
+	}
+
+	//FUCK YOU CHICKENSHIT ADMINISTRATORS
+	public static Block mojangStairsSuckMyBalls(String id, Block base){
+		return register(id, (settings) -> new StairsBlock(base.getDefaultState(), settings), AbstractBlock.Settings.copy(base));
 	}
 
 	// registers ONLY the block. because ice was having trouble with water silk -mikii/adenator

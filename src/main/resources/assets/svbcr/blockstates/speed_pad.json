@@ -1,0 +1,57 @@
+{
+  "variants": {
+    "orientation=down_east": {
+      "model": "svbcr:block/speed_pad",
+      "x": 90,
+      "y": 90
+    },
+    "orientation=down_north": {
+      "model": "svbcr:block/speed_pad",
+      "x": 90
+    },
+    "orientation=down_south": {
+      "model": "svbcr:block/speed_pad",
+      "x": 90,
+      "y": 180
+    },
+    "orientation=down_west": {
+      "model": "svbcr:block/speed_pad",
+      "x": 90,
+      "y": 270
+    },
+    "orientation=east_up": {
+      "model": "svbcr:block/speed_pad",
+      "y": 90
+    },
+    "orientation=north_up": {
+      "model": "svbcr:block/speed_pad"
+    },
+    "orientation=south_up": {
+      "model": "svbcr:block/speed_pad",
+      "y": 180
+    },
+    "orientation=up_east": {
+      "model": "svbcr:block/speed_pad",
+      "x": 270,
+      "y": 270
+    },
+    "orientation=up_north": {
+      "model": "svbcr:block/speed_pad",
+      "x": 270,
+      "y": 180
+    },
+    "orientation=up_south": {
+      "model": "svbcr:block/speed_pad",
+      "x": 270
+    },
+    "orientation=up_west": {
+      "model": "svbcr:block/speed_pad",
+      "x": 270,
+      "y": 90
+    },
+    "orientation=west_up": {
+      "model": "svbcr:block/speed_pad",
+      "y": 270
+    }
+  }
+}

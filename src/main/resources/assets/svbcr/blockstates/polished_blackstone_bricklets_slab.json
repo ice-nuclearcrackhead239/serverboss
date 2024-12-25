@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "svbcr:block/polished_blackstone_bricklets_slab"
+    },
+    "type=double": {
+      "model": "svbcr:block/polished_blackstone_bricklets"
+    },
+    "type=top": {
+      "model": "svbcr:block/polished_blackstone_bricklets_slab_top"
+    }
+  }
+}

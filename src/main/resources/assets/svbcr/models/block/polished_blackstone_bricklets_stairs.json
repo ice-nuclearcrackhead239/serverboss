@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "svbcr:block/polished_blackstone_bricklets",
+    "side": "svbcr:block/polished_blackstone_bricklets",
+    "top": "svbcr:block/polished_blackstone_bricklets"
+  }
+}

@@ -36,6 +36,8 @@ public class ModItemGroups {
                 entries.add(ModBlocks.SLUDGE);
 				entries.add(ModBlocks.SPIKE_BLOCK);
                 entries.add(ModBlocks.FORCEFIELD);
+                entries.add(ModBlocks.SPEED_PAD);
+                entries.add(ModBlocks.BOUNCE_PAD);
             })
             .build();
 
@@ -51,6 +53,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.WASTEBARREL);
                 entries.add(ModBlocks.WHITE);
                 entries.add(ModBlocks.BLACK);
+                entries.add(ModBlocks.CRYSTALLINE_DIAMOND);
                 entries.add(ModBlocks.CHECKERED_OBSIDIAN);
                 entries.add(ModBlocks.CHISELED_OBSIDIAN);
                 entries.add(ModBlocks.OBSIDIAN_LIGHT_STRIP);
@@ -66,13 +69,21 @@ public class ModItemGroups {
                 entries.add(ModBlocks.RIVERSTONE);
                 entries.add(ModBlocks.AGONY_LANTERN);
                 entries.add(ModBlocks.NETHERITE_CHAIN);
+                entries.add(ModBlocks.SMOOTH_BLACKSTONE);
                 entries.add(ModBlocks.CHISELED_POLISHED_BLACKSTONE_EYES);
                 entries.add(ModBlocks.POLISHED_BLACKSTONE_BRICKLETS);
+                entries.add(ModBlocks.POLISHED_BLACKSTONE_BRICKLETS_SLAB);
+                entries.add(ModBlocks.POLISHED_BLACKSTONE_BRICKLETS_STAIRS);
+                entries.add(ModBlocks.POLISHED_BLACKSTONE_PILLAR);
+                entries.add(ModBlocks.INDENTED_POLISHED_BLACKSTONE);
                 entries.add(ModBlocks.DEMONIC_BOOKSHELF);
                 entries.add(ModBlocks.DEMONIC_POLISHED_CHISELED_BLACKSTONE);
                 entries.add(ModItems.DEMONIC_GATE);
                 entries.add(ModBlocks.BLACKSTONE_PEDESTAL);
                 entries.add(ModBlocks.AGONIZED_GLASS);
+                entries.add(ModBlocks.CHISELED_NETHERITE);
+                entries.add(ModBlocks.POLISHED_NETHERITE);
+                entries.add(ModItems.CRIMSON_STALKS);
                 entries.add(ModBlocks.FLESH);
                 entries.add(ModBlocks.FLESH_EYES);
                 entries.add(ModBlocks.FLESH_GUTS);

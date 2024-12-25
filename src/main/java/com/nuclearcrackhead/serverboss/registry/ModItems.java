@@ -43,6 +43,7 @@ public class ModItems {
 
     //blocks that don't already have an associated item
     public static final Item WATER_SILK = register("water_silk", settings -> new PlaceableOnWaterItem(ModBlocks.WATER_SILK, settings), new Item.Settings());
+    public static final Item CRIMSON_STALKS = register("crimson_stalks", settings -> new TallBlockItem(ModBlocks.CRIMSON_STALKS, settings), new Item.Settings());
     public static final Item DEMONIC_GATE = register("demonic_gate", settings -> new TallBlockItem(ModBlocks.DEMONIC_GATE, settings), new Item.Settings());
 
     // dev tool items -mikii/adenator

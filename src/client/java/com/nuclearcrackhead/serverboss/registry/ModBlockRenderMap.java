@@ -39,6 +39,9 @@ public class ModBlockRenderMap {
                 ModBlocks.NETHERITE_CHAIN,
                 ModBlocks.DEMONIC_GATE,
                 ModBlocks.CHISELED_POLISHED_BLACKSTONE_EYES,
+                ModBlocks.SPEED_PAD,
+                ModBlocks.BOUNCE_PAD,
+                ModBlocks.CRIMSON_STALKS,
                 ModBlocks.VOID_LAMP
         );
 
