@@ -1,5 +1,6 @@
 {
   "block.glass.step": {
+    "subtitles": "subtitles.block.generic.footsteps",
     "sounds": [
       "newglass/glass1",
       "newglass/glass2",
@@ -11,6 +12,7 @@
     "replace": true
   },
   "block.glass.hit": {
+    "subtitles": "subtitles.block.generic.hit",
     "sounds": [
       "newglass/glass1",
       "newglass/glass2",
@@ -33,6 +35,7 @@
     "replace": true
   },
   "block.glass.place": {
+    "subtitle": "subtitles.block.generic.place",
     "sounds": [
       "newglass/glass1",
       "newglass/glass2",

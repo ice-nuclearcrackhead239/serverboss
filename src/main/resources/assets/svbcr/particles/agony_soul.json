@@ -1,15 +1,15 @@
 {
   "textures": [
-    "minecraft:agony_soul_0",
-    "minecraft:agony_soul_1",
-    "minecraft:agony_soul_2",
-    "minecraft:agony_soul_3",
-    "minecraft:agony_soul_4",
-    "minecraft:agony_soul_5",
-    "minecraft:agony_soul_6",
-    "minecraft:agony_soul_7",
-    "minecraft:agony_soul_8",
-    "minecraft:agony_soul_9",
-    "minecraft:agony_soul_10"
+    "svbcr:agony_soul_0",
+    "svbcr:agony_soul_1",
+    "svbcr:agony_soul_2",
+    "svbcr:agony_soul_3",
+    "svbcr:agony_soul_4",
+    "svbcr:agony_soul_5",
+    "svbcr:agony_soul_6",
+    "svbcr:agony_soul_7",
+    "svbcr:agony_soul_8",
+    "svbcr:agony_soul_9",
+    "svbcr:agony_soul_10"
   ]
 }

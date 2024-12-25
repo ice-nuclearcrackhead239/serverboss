@@ -17,6 +17,8 @@ public class ModSounds {
     public static final SoundEvent BLOCK_SPIKE_BLOCK_TRIGGER = registerSound("block.spike_block.trigger");
     public static final SoundEvent BLOCK_SPIKE_BLOCK_UP = registerSound("block.spike_block.up");
     public static final SoundEvent BLOCK_SPIKE_BLOCK_DOWN = registerSound("block.spike_block.down");
+    public static final SoundEvent BLOCK_BOUNCE_PAD = registerSound("block.bounce_pad.launch");
+    public static final SoundEvent BLOCK_SPEED_PAD = registerSound("block.speed_pad.launch");
 
     private static SoundEvent registerSound(String id) {
         Identifier identifier = Identifier.of(SVBCR.MOD_ID, id);

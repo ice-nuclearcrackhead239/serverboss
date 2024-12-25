@@ -59,5 +59,13 @@
         "pitch": 0.5
       }
     ]
+  },
+  "block.bounce_pad.launch": {
+    "subtitle": "subtitles.block.bounce_pad.launch",
+    "sounds": ["svbcr:block/bounce_pad"]
+  },
+  "block.speed_pad.launch": {
+    "subtitle": "subtitles.block.speed_pad.launch",
+    "sounds": ["svbcr:block/speed_pad"]
   }
 }
