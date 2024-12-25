@@ -16,7 +16,7 @@ public class Pistol extends Item implements IAttackItem {
 
 	public void onPrimaryFire(World world, PlayerEntity user, ItemStack stack) {
 		if (!world.isClient) {
-			BulletEntity bulletEntity = new BulletEntity(world, user).setDirection(user.getPitch(), user.getYaw()).setDamage(2).setSpeed(2);
+			BulletEntity bulletEntity = new BulletEntity(world, user).setDirection(user.getPitch(), user.getYaw()).setDamage(5).setSpeed(2);
 			world.spawnEntity(bulletEntity);
 		}
 	}
