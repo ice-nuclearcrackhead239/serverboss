@@ -9,7 +9,7 @@ import net.minecraft.util.ActionResult;
 
 import com.nuclearcrackhead.serverboss.content.entity.*;
 
-public class Pistol extends Item implements IAttackItem {
+public class Pistol extends Item implements IAttackItem, IGun {
 	public Pistol(Settings settings) {
 		super(settings);
 	}
