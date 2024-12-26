@@ -3,46 +3,36 @@ package com.nuclearcrackhead.serverboss.mixin.client;
 import net.minecraft.client.render.item.HeldItemRenderer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.Arm;
 import net.minecraft.item.ItemStack;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.util.Hand;
 import net.minecraft.client.render.item.ItemRenderer;
-import net.minecraft.item.ModelTransformationMode;
-import net.minecraft.client.render.OverlayTexture;
-import net.minecraft.util.math.RotationAxis;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.render.entity.EntityRenderDispatcher;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.Shadow;
-import org.jetbrains.annotations.Nullable;
 
-import com.nuclearcrackhead.serverboss.content.item.IGun;
+import com.nuclearcrackhead.serverboss.registry.ModItemRenderers;
+import com.nuclearcrackhead.serverboss.content.render.item.ISvbItemRenderer;
 
 @Mixin(HeldItemRenderer.class)
 public class HeldItemRendererMixin {
 	@Shadow ItemRenderer itemRenderer;
 
+	@Inject(at = @At("RETURN"), method = "<init>")
+	private void onNew(MinecraftClient client, EntityRenderDispatcher entityRenderDispatcher, ItemRenderer itemRenderer, CallbackInfo ci) {
+		ModItemRenderers.init();
+	}
+
 	@Inject(at = @At("HEAD"), method = "renderFirstPersonItem", cancellable = true)
 	private void renderGun(AbstractClientPlayerEntity player, float tickDelta, float pitch, Hand hand, float swingProgress, ItemStack item, float equipProgress, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
-		if (item.getItem() instanceof IGun gun) {
-			matrices.push();
-			float milestone = 0.2f;
-			matrices.translate(1.0f, 0, 0);
-			if (swingProgress < milestone) {
-				float sectionProgress = swingProgress * (1f/milestone);
-				matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(sectionProgress * 45));
-			} else {
-				float sectionProgress = (swingProgress - milestone) * (1f/(1f-milestone));
-				matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees((1 - sectionProgress) * 45));
-			}
-			matrices.translate(-0.5, -0.5, -0.5);
-			itemRenderer.renderItem(player, item, ModelTransformationMode.FIRST_PERSON_RIGHT_HAND, false, matrices, vertexConsumers, player.getWorld(), light, OverlayTexture.DEFAULT_UV, 2);
-			matrices.pop();
+		ISvbItemRenderer renderer = ModItemRenderers.get(item.getItem());
+		if (renderer != null) {
+			renderer.render(matrices, vertexConsumers, player, item, swingProgress, equipProgress, hand, light);
 			ci.cancel();
 		}
 	}
