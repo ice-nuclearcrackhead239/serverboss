@@ -10,6 +10,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.item.ModelTransformationMode;
 import net.minecraft.client.render.OverlayTexture;
+import net.minecraft.util.math.RotationAxis;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -30,8 +31,16 @@ public class HeldItemRendererMixin {
 	private void renderGun(AbstractClientPlayerEntity player, float tickDelta, float pitch, Hand hand, float swingProgress, ItemStack item, float equipProgress, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
 		if (item.getItem() instanceof IGun gun) {
 			matrices.push();
-			matrices.translate(0.5, -0.5, -0.5);
-			matrices.translate(0, swingProgress, 0);
+			float milestone = 0.2f;
+			matrices.translate(1.0f, 0, 0);
+			if (swingProgress < milestone) {
+				float sectionProgress = swingProgress * (1f/milestone);
+				matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(sectionProgress * 45));
+			} else {
+				float sectionProgress = (swingProgress - milestone) * (1f/(1f-milestone));
+				matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees((1 - sectionProgress) * 45));
+			}
+			matrices.translate(-0.5, -0.5, -0.5);
 			itemRenderer.renderItem(player, item, ModelTransformationMode.FIRST_PERSON_RIGHT_HAND, false, matrices, vertexConsumers, player.getWorld(), light, OverlayTexture.DEFAULT_UV, 2);
 			matrices.pop();
 			ci.cancel();
