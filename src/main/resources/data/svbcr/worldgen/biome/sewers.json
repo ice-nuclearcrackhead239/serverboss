@@ -1,0 +1,25 @@
+{
+  "carvers": [],
+  "downfall": 0,
+  "effects": {
+    "fog_color": 11510906,
+    "grass_color": 8417064,
+    "foliage_color": 11442701,
+    "ambient_sound": {
+      "sound_id": "svbcr:ambient.shroomy_sewers.loop",
+      "range": 1
+    },
+    "sky_color": 9607066,
+    "water_color": 11948560,
+    "water_fog_color": 4076328,
+    "additions_sound": {
+      "sound": "minecraft:ambient.basalt_deltas.additions",
+      "tick_chance": 0.01
+    }
+  },
+  "features": [],
+  "has_precipitation": true,
+  "spawn_costs": {},
+  "spawners": {},
+  "temperature": 0.3
+}

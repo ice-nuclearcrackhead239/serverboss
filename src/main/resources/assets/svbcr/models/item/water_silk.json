@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "svbcr:block/water_silk"
+		"layer0": "svbcr:item/water_silk"
 	}
 }

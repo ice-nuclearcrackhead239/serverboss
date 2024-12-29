@@ -1,0 +1,7 @@
+{
+	"parent": "svbcr:block/cube_all_e",
+	"textures": {
+		"all": "svbcr:block/forbidden_wallpaper",
+		"all_e": "svbcr:block/forbidden_wallpaper_e"
+	}
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "svbcr:block/mycelia_stalks_bottom"
+    },
+    "half=upper": {
+      "model": "svbcr:block/mycelia_stalks_top"
+    }
+  }
+}

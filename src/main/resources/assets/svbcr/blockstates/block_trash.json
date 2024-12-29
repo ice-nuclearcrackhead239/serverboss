@@ -1,0 +1,23 @@
+{
+  "variants": {
+    "":
+    [
+      {
+        "model": "svbcr:block/block_trash",
+        "y": 0
+      },
+      {
+        "model": "svbcr:block/block_trash",
+        "y": 90
+      },
+      {
+        "model": "svbcr:block/block_trash",
+        "y": 180
+      },
+      {
+        "model": "svbcr:block/block_trash",
+        "y": 270
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+	"variants": {
+		"":
+		[
+			{
+				"model": "svbcr:block/prop_pebbles",
+				"y": 0
+			},
+			{
+				"model": "svbcr:block/prop_pebbles",
+				"y": 90
+			},
+			{
+				"model": "svbcr:block/prop_pebbles",
+				"y": 180
+			},
+			{
+				"model": "svbcr:block/prop_pebbles",
+				"y": 270
+			}
+		]
+	}
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "svbcr:block/iron_plating",
+    "side": "svbcr:block/iron_plating",
+    "top": "svbcr:block/iron_plating"
+  }
+}

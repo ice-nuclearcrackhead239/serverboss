@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "svbcr:block/glowing_mushrooms"
+  }
+}

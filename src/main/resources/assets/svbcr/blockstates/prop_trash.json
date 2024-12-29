@@ -1,0 +1,74 @@
+{
+	"variants": {
+		"floating=false":
+		[
+			{
+				"model": "svbcr:block/prop_trash",
+				"y": 0
+			},
+			{
+				"model": "svbcr:block/prop_trash",
+				"y": 90
+			},
+			{
+				"model": "svbcr:block/prop_trash",
+				"y": 180
+			},
+			{
+				"model": "svbcr:block/prop_trash",
+				"y": 270
+			},
+			{
+				"model": "svbcr:block/prop_junk",
+				"y": 0
+			},
+			{
+				"model": "svbcr:block/prop_junk",
+				"y": 90
+			},
+			{
+				"model": "svbcr:block/prop_junk",
+				"y": 180
+			},
+			{
+				"model": "svbcr:block/prop_junk",
+				"y": 270
+			}
+		],
+		"floating=true":
+		[
+			{
+				"model": "svbcr:block/prop_trash_low",
+				"y": 0
+			},
+			{
+				"model": "svbcr:block/prop_trash_low",
+				"y": 90
+			},
+			{
+				"model": "svbcr:block/prop_trash_low",
+				"y": 180
+			},
+			{
+				"model": "svbcr:block/prop_trash_low",
+				"y": 270
+			},
+			{
+				"model": "svbcr:block/prop_junk_low",
+				"y": 0
+			},
+			{
+				"model": "svbcr:block/prop_junk_low",
+				"y": 90
+			},
+			{
+				"model": "svbcr:block/prop_junk_low",
+				"y": 180
+			},
+			{
+				"model": "svbcr:block/prop_junk_low",
+				"y": 270
+			}
+		]
+	}
+}

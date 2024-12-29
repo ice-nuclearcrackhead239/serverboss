@@ -42,14 +42,29 @@ public class ModBlockRenderMap {
                 ModBlocks.SPEED_PAD,
                 ModBlocks.BOUNCE_PAD,
                 ModBlocks.CRIMSON_STALKS,
-                ModBlocks.VOID_LAMP
+                ModBlocks.WARPED_STALKS,
+                ModBlocks.TRASH,
+                ModBlocks.TRASH_SPREAD,
+                ModBlocks.FIREBLU,
+                ModBlocks.GRAVEL_PATCH,
+                ModBlocks.VOID_LAMP,
+                ModBlocks.GLOWING_MUSHROOMS,
+                ModBlocks.METAL_LADDER,
+                ModBlocks.MYCELIA,
+                ModBlocks.MYCELIA_BLOOM,
+                ModBlocks.MYCELIA_STALKS,
+                ModBlocks.MYCELIAL_EYE
         );
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
                 ModBlocks.PORTAL_GLASS_TRANSPARENT,
+                ModBlocks.DARK_GLASS,
                 ModBlocks.AGONIZED_GLASS,
                 ModBlocks.FORCEFIELD,
+                ModBlocks.JELLY_TRANSLUCENT,
                 //ModBlocks.FORCEFIELD_WATER,
+                ModBlocks.PUDDLE,
+                ModBlocks.DUST,
                 ModBlocks.FLESH_MESH,
                 ModBlocks.WATER_SILK
         );

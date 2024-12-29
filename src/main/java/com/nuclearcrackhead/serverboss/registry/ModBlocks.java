@@ -39,6 +39,42 @@ public class ModBlocks {
 			AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS)
 	);
 
+	//9 hour work week
+	public static final Block BLACK_WALLPAPER = register("black_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.BLACK_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block NAVY_WALLPAPER = register("navy_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.BLUE_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block GREEN_WALLPAPER = register("green_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.GREEN_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block CYAN_WALLPAPER = register("cyan_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.CYAN_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block BROWN_WALLPAPER = register("brown_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.BROWN_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block PURPLE_WALLPAPER = register("purple_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.PURPLE_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block PINK_WALLPAPER = register("pink_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.PINK_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block SILVER_WALLPAPER = register("silver_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block ASH_WALLPAPER = register("ash_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.GRAY_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block ORANGE_WALLPAPER = register("orange_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.ORANGE_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block YELLOW_WALLPAPER = register("yellow_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.YELLOW_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block WHITE_WALLPAPER = register("white_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.WHITE_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block RED_WALLPAPER = register("red_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.RED_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block BLUE_WALLPAPER = register("blue_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block MAGENTA_WALLPAPER = register("magenta_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.MAGENTA_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block LIME_WALLPAPER = register("lime_wallpaper", Block::new,
+			AbstractBlock.Settings.copy(Blocks.LIME_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+	public static final Block FIREBLU = register("fireblu", Block::new,
+			AbstractBlock.Settings.copy(Blocks.BLUE_WOOL).sounds(BlockSoundGroup.NETHER_WOOD)	);
+
 	public static final Block AGONY = register("agony", Agony::new,
 			AbstractBlock.Settings.create().velocityMultiplier(0.6F).jumpVelocityMultiplier(0.9F).emissiveLighting(ModBlocks::always).luminance(value -> 13).sounds(BlockSoundGroup.HONEY)
 	);
@@ -76,6 +112,12 @@ public class ModBlocks {
 	public static final Block SILT = register("silt", Block::new,
 			AbstractBlock.Settings.create().sounds(BlockSoundGroup.SAND)
 	);
+	public static final Block RUST = register("rust", Block::new,
+			AbstractBlock.Settings.create().sounds(BlockSoundGroup.SAND)
+	);
+	public static final Block BLOCK_TRASH = register("block_trash", Block::new,
+			AbstractBlock.Settings.create().sounds(BlockSoundGroup.SUSPICIOUS_GRAVEL)
+	);
 
 	public static final Block CHECKERED_OBSIDIAN = register("checkered_obsidian", Block::new, AbstractBlock.Settings.copy(Blocks.OBSIDIAN));
 	public static final Block CHISELED_OBSIDIAN = register("chiseled_obsidian", Block::new, AbstractBlock.Settings.copy(ModBlocks.CHECKERED_OBSIDIAN));
@@ -105,10 +147,20 @@ public class ModBlocks {
 			AbstractBlock.Settings.copy(Blocks.CHISELED_POLISHED_BLACKSTONE).luminance(value -> 12)
 	);
 	public static final Block CRIMSON_STALKS = registerBlock("crimson_stalks", TallRootsBlock::new, AbstractBlock.Settings.copy(Blocks.CRIMSON_ROOTS));
+	public static final Block WARPED_STALKS = registerBlock("warped_stalks", TallRootsBlock::new, AbstractBlock.Settings.copy(Blocks.CRIMSON_ROOTS));
 
 	public static final Block CHISELED_NETHERITE = register("chiseled_netherite", Block::new, AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK));
 	public static final Block POLISHED_NETHERITE = register("polished_netherite", Block::new, AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK));
 	public static final Block CRYSTALLINE_DIAMOND = register("crystalline_diamond", Block::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK).sounds(BlockSoundGroup.GLASS));
+	public static final Block SMOOTH_IRON = register("smooth_iron", Block::new, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK));
+	public static final Block TILED_IRON = register("tiled_iron", Block::new, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK));
+
+	public static final Block LOPER_BRICKS = register("loper_bricks", Block::new, AbstractBlock.Settings.copy(Blocks.STONE_BRICKS));
+
+	public static final Block B_DEV_ORANGE = register("b_dev_orange", Block::new, AbstractBlock.Settings.copy(Blocks.STONE));
+	public static final Block B_DEV_ASH = register("b_dev_ash", Block::new, AbstractBlock.Settings.copy(Blocks.STONE));
+	public static final Block B_DEV_WHITE = register("b_dev_white", Block::new, AbstractBlock.Settings.copy(Blocks.STONE));
+
 
 	public static final Block OBSIDIAN_LIGHT_STRIP = register("obsidian_light", PillarBlock::new,
 			AbstractBlock.Settings.copy(ModBlocks.CHECKERED_OBSIDIAN).luminance(value -> 15)
@@ -126,10 +178,52 @@ public class ModBlocks {
 	);
 	public static final Block SPIKE_BLOCK = register("spike_block", SpikeBlock::new, AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL));
 
+	public static final Block JELLY = register("jelly", Block::new,
+			AbstractBlock.Settings.copy(Blocks.HONEY_BLOCK).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
+	);
+
+	public static final Block JELLY_TRANSLUCENT = register("jelly_translucent", TransparentBlock::new,
+			AbstractBlock.Settings.copy(Blocks.HONEY_BLOCK).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
+	);
+
 	public static final Block VOID_LAMP = register("void_lamp", Block::new,
 			AbstractBlock.Settings.create().emissiveLighting(ModBlocks::always).luminance(value -> 15).sounds(BlockSoundGroup.STONE)
 	);
 	public static final Block WATER_SILK = registerBlock("water_silk", WaterSilk::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.DARK_GREEN).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block DRIFTWOOD = registerBlock("prop_driftwood", PropFloating::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block TRASH = registerBlock("prop_trash", PropFloating::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block TRASH_SPREAD = registerBlock("prop_trash_spread", PropFloating::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block PUDDLE = registerBlock("prop_puddle", PropPuddle::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.PUDDLE).nonOpaque().pistonBehavior(PistonBehavior.DESTROY).slipperiness(0.998F).velocityMultiplier(1.1F));
+	public static final Block GRAVEL_PATCH = registerBlock("prop_gravel_patch", Prop::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block DUST = registerBlock("prop_dust", Prop::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block PEBBLES = registerBlock("prop_pebbles", Prop::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+
+	public static final Block MYCELIA = registerBlock("mycelia", RootsBlock::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.STEM).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block MYCELIAL_EYE = registerBlock("mycelial_eye", RootsBlock::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.STEM).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block MYCELIA_STALKS = registerBlock("mycelia_stalks", TallRootsBlock::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.STEM).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block MYCELIA_BLOOM = registerBlock("mycelia_bloom", RootsBlock::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.STEM).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+
+	public static final Block IRON_PLATING = register("iron_plating", Block::new, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK));
+	public static final Block IRON_PLATING_SLAB = register("iron_plating_slab", SlabBlock::new,
+			AbstractBlock.Settings.copy(Blocks.IRON_BLOCK));
+	public static final Block IRON_PLATING_STAIRS = mojangStairsSuckMyBalls("iron_plating_stairs", IRON_PLATING);
+
+	public static final Block DARK_GLASS = register("dark_glass", TransparentBlock::new, AbstractBlock.Settings.copy(Blocks.GLASS));
+
+	public static final Block HAZARD_MARKER = register("hazard_marker", Block::new, AbstractBlock.Settings.copy(Blocks.GOLD_BLOCK));
+	public static final Block HAZARD_MARKER_SLAB = register("hazard_marker_slab", SlabBlock::new,
+			AbstractBlock.Settings.copy(Blocks.GOLD_BLOCK));
+	public static final Block HAZARD_MARKER_STAIRS = mojangStairsSuckMyBalls("hazard_marker_stairs", HAZARD_MARKER);
+
+	public static final Block GLOWING_MUSHROOMS = registerBlock("glowing_mushrooms", Prop::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.LIME).breakInstantly().nonOpaque().pistonBehavior(PistonBehavior.DESTROY).luminance(value -> 13));
+	public static final Block GLOWING_MUSHROOM_BLOCK = register("glowing_mushroom_block", Block::new,
+			AbstractBlock.Settings.create().emissiveLighting(ModBlocks::always).luminance(value -> 15).sounds(BlockSoundGroup.STEM)
+	);
+	public static final Block GLOWING_MUSHROOM_STEM = register("glowing_mushroom_stem", Block::new,
+			AbstractBlock.Settings.create().emissiveLighting(ModBlocks::always).luminance(value -> 12).sounds(BlockSoundGroup.STEM)
+	);
+
+	public static final Block METAL_LADDER = register("metal_ladder", LadderBlock::new, AbstractBlock.Settings.create().notSolid().strength(0.4F).sounds(ModSoundGroups.METAL_LADDER).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 
 	public static final Block SMOOTH_STONE_STAIRS = register("smooth_stone_stairs", settings -> new StairsBlock(Blocks.SMOOTH_STONE.getDefaultState(), settings),
 			AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE)

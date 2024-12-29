@@ -44,7 +44,24 @@ public class ModItems {
     //blocks that don't already have an associated item
     public static final Item WATER_SILK = register("water_silk", settings -> new PlaceableOnWaterItem(ModBlocks.WATER_SILK, settings), new Item.Settings());
     public static final Item CRIMSON_STALKS = register("crimson_stalks", settings -> new TallBlockItem(ModBlocks.CRIMSON_STALKS, settings), new Item.Settings());
+    public static final Item WARPED_STALKS = register("warped_stalks", settings -> new TallBlockItem(ModBlocks.WARPED_STALKS, settings), new Item.Settings());
     public static final Item DEMONIC_GATE = register("demonic_gate", settings -> new TallBlockItem(ModBlocks.DEMONIC_GATE, settings), new Item.Settings());
+
+    public static final Item PROP_TRASH = register("prop_trash", settings -> new BlockItem(ModBlocks.TRASH, settings), new Item.Settings());
+    public static final Item PROP_TRASH_SPREAD = register("prop_trash_spread", settings -> new BlockItem(ModBlocks.TRASH_SPREAD, settings), new Item.Settings());
+    public static final Item PROP_DRIFTWOOD = register("prop_driftwood", settings -> new BlockItem(ModBlocks.DRIFTWOOD, settings), new Item.Settings());
+    public static final Item PROP_DUST = register("prop_dust", settings -> new BlockItem(ModBlocks.DUST, settings), new Item.Settings());
+    public static final Item PROP_PUDDLE = register("prop_puddle", settings -> new BlockItem(ModBlocks.PUDDLE, settings), new Item.Settings());
+    public static final Item PROP_GRAVEL_PATCH = register("prop_gravel_patch", settings -> new BlockItem(ModBlocks.GRAVEL_PATCH, settings), new Item.Settings());
+    public static final Item PROP_PEBBLES = register("prop_pebbles", settings -> new BlockItem(ModBlocks.PEBBLES, settings), new Item.Settings());
+
+
+    public static final Item GLOWING_MUSHROOMS = register("glowing_mushrooms", settings -> new BlockItem(ModBlocks.GLOWING_MUSHROOMS, settings), new Item.Settings());
+
+    public static final Item MYCELIA = register("mycelia", settings -> new BlockItem(ModBlocks.MYCELIA, settings), new Item.Settings());
+    public static final Item MYCELIAL_EYE = register("mycelial_eye", settings -> new BlockItem(ModBlocks.MYCELIAL_EYE, settings), new Item.Settings());
+    public static final Item MYCELIA_BLOOM = register("mycelia_bloom", settings -> new BlockItem(ModBlocks.MYCELIA_BLOOM, settings), new Item.Settings());
+    public static final Item MYCELIA_STALKS = register("mycelia_stalks", settings -> new BlockItem(ModBlocks.MYCELIA_STALKS, settings), new Item.Settings());
 
     // dev tool items -mikii/adenator
     public static final Item DEV_FORCEFIELD_BELL = register("forcefield_bell", ForcefieldBellItem::new, new Item.Settings().useCooldown(2.0F));

@@ -1,0 +1,42 @@
+{
+	"variants": {
+		"floating=false":
+		[
+			{
+				"model": "svbcr:block/prop_driftwood",
+				"y": 0
+			},
+			{
+				"model": "svbcr:block/prop_driftwood",
+				"y": 90
+			},
+			{
+				"model": "svbcr:block/prop_driftwood",
+				"y": 180
+			},
+			{
+				"model": "svbcr:block/prop_driftwood",
+				"y": 270
+			}
+		],
+		"floating=true":
+		[
+			{
+				"model": "svbcr:block/prop_driftwood_low",
+				"y": 0
+			},
+			{
+				"model": "svbcr:block/prop_driftwood_low",
+				"y": 90
+			},
+			{
+				"model": "svbcr:block/prop_driftwood_low",
+				"y": 180
+			},
+			{
+				"model": "svbcr:block/prop_driftwood_low",
+				"y": 270
+			}
+		]
+	}
+}

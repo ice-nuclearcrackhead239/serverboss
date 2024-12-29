@@ -33,18 +33,18 @@ public class SpeedPadBlockEntity extends BlockEntity {
             Direction dir = state.get(SpeedPadBlock.FACING);
             switch (dir) {
                 case NORTH:
-                    dirForce = new Vec3d(0,0,-2);
+                    dirForce = new Vec3d(0,0,-3);
                     break;
                 case EAST:
-                    dirForce = new Vec3d(2,0,0);
+                    dirForce = new Vec3d(3,0,0);
                     break;
                 case SOUTH:
-                    dirForce = new Vec3d(0,0,2);
+                    dirForce = new Vec3d(0,0,3);
                     break;
                 case WEST:
-                    dirForce = new Vec3d(-2,0,0);
+                    dirForce = new Vec3d(-3,0,0);
             }
-            entity.setVelocity(entity.getVelocity().add(dirForce).add(0, 0.35, 0));
+            entity.setVelocity(entity.getVelocity().add(dirForce).add(0, 0.4, 0));
             world.playSound(null, pos, ModSounds.BLOCK_SPEED_PAD, SoundCategory.BLOCKS, 1.0f, 1.0f);
             if (world instanceof ServerWorld serverWorld) {
                 Vec3d center = pos.toCenterPos();

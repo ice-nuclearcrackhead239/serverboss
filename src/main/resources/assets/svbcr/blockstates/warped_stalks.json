@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "svbcr:block/warped_stalks_bottom"
+    },
+    "half=upper": {
+      "model": "svbcr:block/warped_stalks_top"
+    }
+  }
+}

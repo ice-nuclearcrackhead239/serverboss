@@ -1,0 +1,87 @@
+{
+  "variants": {
+    "facing=east":[
+      {
+        "model": "svbcr:block/metal_ladder",
+        "y": 90
+      },
+      {
+        "model": "svbcr:block/metal_ladder1",
+        "y": 90
+      },
+      {
+        "model": "svbcr:block/metal_ladder2",
+        "y": 90
+      },
+      {
+        "model": "svbcr:block/metal_ladder3",
+        "y": 90
+      },
+      {
+        "model": "svbcr:block/metal_ladder4",
+        "y": 90
+      }
+    ],
+    "facing=north":[
+      {
+        "model": "svbcr:block/metal_ladder"
+      },
+      {
+        "model": "svbcr:block/metal_ladder1"
+      },
+      {
+        "model": "svbcr:block/metal_ladder2"
+      },
+      {
+        "model": "svbcr:block/metal_ladder3"
+      },
+      {
+        "model": "svbcr:block/metal_ladder4"
+      }
+    ],
+    "facing=south":[
+      {
+        "model": "svbcr:block/metal_ladder",
+        "y": 180
+      },
+      {
+        "model": "svbcr:block/metal_ladder1",
+        "y": 180
+      },
+      {
+        "model": "svbcr:block/metal_ladder2",
+        "y": 180
+      },
+      {
+        "model": "svbcr:block/metal_ladder3",
+        "y": 180
+      },
+      {
+        "model": "svbcr:block/metal_ladder4",
+        "y": 180
+      }
+    ],
+    "facing=west":[
+      {
+        "model": "svbcr:block/metal_ladder",
+        "y": 270
+      },
+      {
+        "model": "svbcr:block/metal_ladder1",
+        "y": 270
+      },
+      {
+        "model": "svbcr:block/metal_ladder2",
+        "y": 270
+      },
+      {
+        "model": "svbcr:block/metal_ladder3",
+        "y": 270
+      },
+      {
+        "model": "svbcr:block/metal_ladder4",
+        "y": 270
+      }
+    ]
+  }
+}

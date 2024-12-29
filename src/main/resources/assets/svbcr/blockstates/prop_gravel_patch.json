@@ -1,0 +1,23 @@
+{
+	"variants": {
+		"":
+		[
+			{
+				"model": "svbcr:block/prop_gravel_patch",
+				"y": 0
+			},
+			{
+				"model": "svbcr:block/prop_gravel_patch",
+				"y": 90
+			},
+			{
+				"model": "svbcr:block/prop_gravel_patch",
+				"y": 180
+			},
+			{
+				"model": "svbcr:block/prop_gravel_patch",
+				"y": 270
+			}
+		]
+	}
+}

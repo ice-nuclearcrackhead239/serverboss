@@ -7,6 +7,7 @@ import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
+import net.minecraft.util.Colors;
 import net.minecraft.world.biome.GrassColors;
 
 public class ModColorProviders {
@@ -15,7 +16,7 @@ public class ModColorProviders {
     public static void init() {
         //blocks
         ColorProviderRegistry.BLOCK.register(
-                (state, view, pos, tintIndex) -> view != null && pos != null ? BiomeColors.getGrassColor(view, pos) : GrassColors.getDefaultColor(),
+                (state, view, pos, tintIndex) -> view != null && pos != null ? BiomeColors.getGrassColor(view, pos) : Colors.WHITE,
                 ModBlocks.WATER_SILK
         );
 

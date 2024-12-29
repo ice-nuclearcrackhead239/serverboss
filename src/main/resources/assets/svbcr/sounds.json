@@ -67,5 +67,23 @@
   "block.speed_pad.launch": {
     "subtitle": "subtitles.block.speed_pad.launch",
     "sounds": ["svbcr:block/speed_pad"]
+  },
+  "ambient.shroomy_sewers.loop": {
+    "sounds": [
+      {
+        "name": "minecraft:ambient/nether/basalt_deltas/ambience",
+        "stream": true,
+        "pitch": 2
+      }
+    ]
+  },
+  "block.metal_ladder.step": {
+    "sounds": [
+      "svbcr:block/metal_ladder-01",
+      "svbcr:block/metal_ladder-02",
+      "svbcr:block/metal_ladder-03",
+      "svbcr:block/metal_ladder-04"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
   }
 }
