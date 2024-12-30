@@ -12,12 +12,14 @@ public class ModParticles {
     public static final SimpleParticleType SOARING = FabricParticleTypes.simple();
     public static final SimpleParticleType BOUNCE = FabricParticleTypes.simple();
     public static final SimpleParticleType SPEED_BLAST = FabricParticleTypes.simple();
+    public static final SimpleParticleType HUB_FLAME = FabricParticleTypes.simple();
 
     public static void init() {
         Registry.register(Registries.PARTICLE_TYPE, SVBCR.of("agony_soul"), AGONY_SOUL);
         Registry.register(Registries.PARTICLE_TYPE, SVBCR.of("soaring"), SOARING);
         Registry.register(Registries.PARTICLE_TYPE, SVBCR.of("bounce"), BOUNCE);
         Registry.register(Registries.PARTICLE_TYPE, SVBCR.of("speedpad"), SPEED_BLAST);
+        Registry.register(Registries.PARTICLE_TYPE, SVBCR.of("hub_flame"), HUB_FLAME);
     }
 
 }

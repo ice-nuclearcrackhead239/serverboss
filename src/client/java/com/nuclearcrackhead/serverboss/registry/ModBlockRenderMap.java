@@ -53,7 +53,11 @@ public class ModBlockRenderMap {
                 ModBlocks.MYCELIA,
                 ModBlocks.MYCELIA_BLOOM,
                 ModBlocks.MYCELIA_STALKS,
-                ModBlocks.MYCELIAL_EYE
+                ModBlocks.MYCELIA_STALKS,
+                ModBlocks.MYCELIAL_EYE,
+                ModBlocks.HUB_GLASS,
+                ModBlocks.HUB_TORCH,
+                ModBlocks.HUB_WALL_TORCH
         );
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
@@ -67,6 +71,10 @@ public class ModBlockRenderMap {
                 ModBlocks.DUST,
                 ModBlocks.FLESH_MESH,
                 ModBlocks.WATER_SILK
+        );
+
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getEndGateway(),
+                ModBlocks.SKYBOX_SPACE
         );
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), RADIOACTIVE_STILL, RADIOACTIVE_FLOWING);

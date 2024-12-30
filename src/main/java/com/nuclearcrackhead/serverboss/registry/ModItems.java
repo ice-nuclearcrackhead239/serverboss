@@ -3,13 +3,17 @@ package com.nuclearcrackhead.serverboss.registry;
 import com.nuclearcrackhead.serverboss.SVBCR;
 import com.nuclearcrackhead.serverboss.content.item.dev.*;
 import com.nuclearcrackhead.serverboss.content.item.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 import static com.nuclearcrackhead.serverboss.registry.ModFluids.RADIOACTIVE_STILL;
@@ -54,7 +58,7 @@ public class ModItems {
     public static final Item PROP_PUDDLE = register("prop_puddle", settings -> new BlockItem(ModBlocks.PUDDLE, settings), new Item.Settings());
     public static final Item PROP_GRAVEL_PATCH = register("prop_gravel_patch", settings -> new BlockItem(ModBlocks.GRAVEL_PATCH, settings), new Item.Settings());
     public static final Item PROP_PEBBLES = register("prop_pebbles", settings -> new BlockItem(ModBlocks.PEBBLES, settings), new Item.Settings());
-
+    public static final Item HUB_TORCH = register((Block)ModBlocks.HUB_TORCH, (BiFunction)((block, settings) -> new VerticallyAttachableBlockItem((Block) block, ModBlocks.HUB_WALL_TORCH, Direction.DOWN, (Item.Settings) settings)));
 
     public static final Item GLOWING_MUSHROOMS = register("glowing_mushrooms", settings -> new BlockItem(ModBlocks.GLOWING_MUSHROOMS, settings), new Item.Settings());
 
@@ -68,6 +72,27 @@ public class ModItems {
 
     // GUNS YEE HAW
     public static final Item PISTOL = register("pistol", Pistol::new, new Item.Settings());
+
+    public static Item register(Block block, BiFunction<Block, Item.Settings, Item> factory) {
+        return register(block, factory, new Item.Settings());
+    }
+
+    public static Item register(Block block, BiFunction<Block, Item.Settings, Item> factory, Item.Settings settings) {
+        return register((RegistryKey)keyOf(block.getRegistryEntry().registryKey()), (Function)((itemSettings) -> (Item)factory.apply(block, (Item.Settings) itemSettings)), settings.useBlockPrefixedTranslationKey());
+    }
+
+    private static RegistryKey<Item> keyOf(RegistryKey<Block> blockKey) {
+        return RegistryKey.of(RegistryKeys.ITEM, blockKey.getValue());
+    }
+
+    public static Item register(RegistryKey<Item> key, Function<Item.Settings, Item> factory, Item.Settings settings) {
+        Item item = (Item)factory.apply(settings.registryKey(key));
+        if (item instanceof BlockItem blockItem) {
+            blockItem.appendBlocks(Item.BLOCK_ITEMS, item);
+        }
+
+        return (Item)Registry.register(Registries.ITEM, key, item);
+    }
 
     public static Item register(String path, Function<Item.Settings, Item> function, Item.Settings settings) {
         Identifier id = SVBCR.of(path);

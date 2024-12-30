@@ -140,6 +140,16 @@ public class ModItemGroups {
                 entries.add(ModBlocks.MAGENTA_WALLPAPER);
                 entries.add(ModBlocks.PINK_WALLPAPER);
                 entries.add(ModBlocks.FIREBLU);
+                entries.add(ModBlocks.HUB_BRICKS_4);
+                entries.add(ModBlocks.HUB_BRICKS_3);
+                entries.add(ModBlocks.HUB_BRICKS_2);
+                entries.add(ModBlocks.HUB_BRICKS_1);
+                entries.add(ModBlocks.HUB_TILES);
+                entries.add(ModBlocks.HUB_TILE_YELLOW);
+                entries.add(ModBlocks.HUB_TILE_BLUE);
+                entries.add(ModBlocks.HUB_GLASS);
+                entries.add(ModItems.HUB_TORCH);
+                entries.add(ModBlocks.SKYBOX_SPACE);
                 entries.add(ModBlocks.EXAMPLE_BLOCK);
             })
             .build();

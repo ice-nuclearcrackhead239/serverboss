@@ -5,6 +5,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -209,6 +210,20 @@ public class ModBlocks {
 	public static final Block IRON_PLATING_STAIRS = mojangStairsSuckMyBalls("iron_plating_stairs", IRON_PLATING);
 
 	public static final Block DARK_GLASS = register("dark_glass", TransparentBlock::new, AbstractBlock.Settings.copy(Blocks.GLASS));
+
+	//todo shader stupid shit i stupdishi GRRRRR AAAAAAA i hate this
+	public static final Block SKYBOX_SPACE = register("skybox_space", EndGatewayBlock::new, AbstractBlock.Settings.create().mapColor(MapColor.BLACK).noCollision().luminance((state) -> 15).strength(-1.0F, 3600000.0F).dropsNothing().pistonBehavior(PistonBehavior.BLOCK));
+
+	public static final Block HUB_TORCH = registerBlock("hub_torch", (settings) -> new TorchBlock(ModParticles.HUB_FLAME, settings), AbstractBlock.Settings.create().noCollision().breakInstantly().luminance((state) -> 15).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block HUB_WALL_TORCH = registerBlock("hub_wall_torch", (settings) -> new WallTorchBlock(ModParticles.HUB_FLAME, settings), AbstractBlock.Settings.create().noCollision().breakInstantly().luminance((state) -> 15).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block HUB_BRICKS_1 = register("hub_bricks_1", Block::new, AbstractBlock.Settings.copy(Blocks.STONE_BRICKS));
+	public static final Block HUB_BRICKS_2 = register("hub_bricks_2", Block::new, AbstractBlock.Settings.copy(Blocks.STONE_BRICKS));
+	public static final Block HUB_BRICKS_3 = register("hub_bricks_3", Block::new, AbstractBlock.Settings.copy(Blocks.STONE_BRICKS));
+	public static final Block HUB_BRICKS_4 = register("hub_bricks_4", Block::new, AbstractBlock.Settings.copy(Blocks.STONE_BRICKS));
+	public static final Block HUB_TILES = register("hub_tiles", Block::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK));
+	public static final Block HUB_TILE_YELLOW = register("hub_tile_yellow", Block::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK));
+	public static final Block HUB_TILE_BLUE = register("hub_tile_blue", Block::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK));
+	public static final Block HUB_GLASS = register("hub_glass", Block::new, AbstractBlock.Settings.copy(Blocks.GLASS));
 
 	public static final Block HAZARD_MARKER = register("hazard_marker", Block::new, AbstractBlock.Settings.copy(Blocks.GOLD_BLOCK));
 	public static final Block HAZARD_MARKER_SLAB = register("hazard_marker_slab", SlabBlock::new,

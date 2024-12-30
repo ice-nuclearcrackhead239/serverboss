@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "svbcr:block/hub_wall_torch"
+    },
+    "facing=north": {
+      "model": "svbcr:block/hub_wall_torch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "svbcr:block/hub_wall_torch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "svbcr:block/hub_wall_torch",
+      "y": 180
+    }
+  }
+}
