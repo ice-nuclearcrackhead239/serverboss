@@ -64,6 +64,7 @@ public class ModBlockRenderMap {
                 ModBlocks.FUMO_HEAPONS,
                 ModBlocks.FUMO_JOSE,
                 ModBlocks.FUMO_AVARITA,
+                ModBlocks.FUMO_MIKII,
                 ModBlocks.VOID_LAMP //moving to end again simply so i can copypaste without having to worry about removing the last ,
         );
 

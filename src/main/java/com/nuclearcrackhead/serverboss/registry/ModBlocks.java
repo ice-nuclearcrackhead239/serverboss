@@ -254,6 +254,7 @@ public class ModBlocks {
 	public static final Block FUMO_OBI = register("fumo_obi", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 	public static final Block FUMO_AVARITA = register("fumo_avarita", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 	public static final Block FUMO_DERZOX = register("fumo_derzox", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_MIKII = register("fumo_mikii", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 
 	public static Block register(String path, Function<AbstractBlock.Settings, Block> function, AbstractBlock.Settings settings) {
 		Block block = registerBlock(path, function, settings);

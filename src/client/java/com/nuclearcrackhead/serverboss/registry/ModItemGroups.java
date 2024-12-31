@@ -173,6 +173,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.FUMO_OBI);
                 entries.add(ModBlocks.FUMO_AVARITA);
                 entries.add(ModBlocks.FUMO_DERZOX);
+                entries.add(ModBlocks.FUMO_MIKII);
             })
             .build();
 
