@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "svbcr:block/fumo_derzox",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "svbcr:block/fumo_derzox"
+    },
+    "facing=south": {
+      "model": "svbcr:block/fumo_derzox",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "svbcr:block/fumo_derzox",
+      "y": 270
+    }
+  }
+}

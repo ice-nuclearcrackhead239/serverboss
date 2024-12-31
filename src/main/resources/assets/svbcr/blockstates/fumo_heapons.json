@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "svbcr:block/fumo_heapons",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "svbcr:block/fumo_heapons"
+    },
+    "facing=south": {
+      "model": "svbcr:block/fumo_heapons",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "svbcr:block/fumo_heapons",
+      "y": 270
+    }
+  }
+}

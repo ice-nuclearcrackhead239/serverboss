@@ -92,6 +92,7 @@
   "block.svbcr.hub_tiles": "Hub Tiles",
   "block.svbcr.hub_tile_yellow": "Hub Tile (Yellow)",
   "block.svbcr.hub_tile_blue": "Hub Tile (Blue)",
+  "block.svbcr.hub_torch": "Hub Torch",
   "block.svbcr.hub_glass": "Hub Glass",
   "block.svbcr.forcefield": "Forcefield",
   "block.svbcr.forcefield.tooltip": "Togglable by [room_brush controller]",
@@ -134,6 +135,14 @@
   "block.svbcr.white.tooltip": "Displays purely as white",
   "block.svbcr.white.tooltip2": "Additonally emits light",
 
+  "block.svbcr.fumo_ice": "Ice",
+  "block.svbcr.fumo_obi": "Obi",
+  "block.svbcr.fumo_soumeh": "Soumeh",
+  "block.svbcr.fumo_derzox": "Derzox",
+  "block.svbcr.fumo_heapons": "Heapons",
+  "block.svbcr.fumo_jose": "Jose",
+  "block.svbcr.fumo_avarita": "Avarita",
+
   "death.attack.agony": "%s was crushed by grief",
   "death.attack.agony.player": "%s was crushed by grief whilst trying to escape %s",
   "death.attack.bullet": "%s was shot",
@@ -174,6 +183,7 @@
   "item.svbcr.mycelia_bloom": "Mycelia Bloom",
   "item.svbcr.mycelial_eye": "Mycelial Eye",
   "item.svbcr.mycelia": "Mycelia",
+  "item.svbcr.hub_torch": "Hub Torch",
 
   "item.svbcr.pistol": "Pistol",
   
@@ -190,6 +200,7 @@
   "itemGroup.svbcr.decorational_blocks": "SVB:CR Decoration Blocks",
   "itemGroup.svbcr.devtools": "SVB:CR Dev Tools",
   "itemGroup.svbcr.functional_blocks": "SVB:CR Functional Blocks",
+  "itemGroup.svbcr.fumos": "SVB:CR Fumos",
 
   "subtitles.block.agony.activate": "Agony",
   "subtitles.block.bounce_pad.launch": "Bounce Pad launches",

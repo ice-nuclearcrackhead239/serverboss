@@ -191,13 +191,13 @@ public class ModBlocks {
 			AbstractBlock.Settings.create().emissiveLighting(ModBlocks::always).luminance(value -> 15).sounds(BlockSoundGroup.STONE)
 	);
 	public static final Block WATER_SILK = registerBlock("water_silk", WaterSilk::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.DARK_GREEN).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
-	public static final Block DRIFTWOOD = registerBlock("prop_driftwood", PropFloating::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
-	public static final Block TRASH = registerBlock("prop_trash", PropFloating::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
-	public static final Block TRASH_SPREAD = registerBlock("prop_trash_spread", PropFloating::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block DRIFTWOOD = registerBlock("prop_driftwood", PropFloating::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.WOOD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block TRASH = registerBlock("prop_trash", PropFloating::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.SUSPICIOUS_GRAVEL).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block TRASH_SPREAD = registerBlock("prop_trash_spread", PropFloating::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.SUSPICIOUS_GRAVEL).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 	public static final Block PUDDLE = registerBlock("prop_puddle", PropPuddle::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.PUDDLE).nonOpaque().pistonBehavior(PistonBehavior.DESTROY).slipperiness(0.998F).velocityMultiplier(1.1F));
-	public static final Block GRAVEL_PATCH = registerBlock("prop_gravel_patch", Prop::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
-	public static final Block DUST = registerBlock("prop_dust", Prop::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
-	public static final Block PEBBLES = registerBlock("prop_pebbles", Prop::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block GRAVEL_PATCH = registerBlock("prop_gravel_patch", Prop::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.GRAVEL).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block DUST = registerBlock("prop_dust", Prop::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.SAND).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block PEBBLES = registerBlock("prop_pebbles", Prop::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.STONE).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 
 	public static final Block MYCELIA = registerBlock("mycelia", RootsBlock::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.STEM).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 	public static final Block MYCELIAL_EYE = registerBlock("mycelial_eye", RootsBlock::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.STEM).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
@@ -245,6 +245,15 @@ public class ModBlocks {
 	);
 
 	public static final Block BLACKSTONE_PEDESTAL = register("blackstone_pedestal", BlackstonePedestal::new, AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE));
+
+	//fumos from this point on
+	public static final Block FUMO_HEAPONS = register("fumo_heapons", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_SOUMEH = register("fumo_soumeh", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_ICE = register("fumo_ice", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_JOSE = register("fumo_jose", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_OBI = register("fumo_obi", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_AVARITA = register("fumo_avarita", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_DERZOX = register("fumo_derzox", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 
 	public static Block register(String path, Function<AbstractBlock.Settings, Block> function, AbstractBlock.Settings settings) {
 		Block block = registerBlock(path, function, settings);

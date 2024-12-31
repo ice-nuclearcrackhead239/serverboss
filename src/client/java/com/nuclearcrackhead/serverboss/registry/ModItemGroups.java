@@ -162,11 +162,26 @@ public class ModItemGroups {
             })
             .build();
 
+    public static final ItemGroup SVBCR_FUMOS = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(ModBlocks.FUMO_ICE))
+            .displayName(Text.translatable("itemGroup.svbcr.fumos"))
+            .entries((context, entries) -> {
+                entries.add(ModBlocks.FUMO_HEAPONS);
+                entries.add(ModBlocks.FUMO_SOUMEH);
+                entries.add(ModBlocks.FUMO_ICE);
+                entries.add(ModBlocks.FUMO_JOSE);
+                entries.add(ModBlocks.FUMO_OBI);
+                entries.add(ModBlocks.FUMO_AVARITA);
+                entries.add(ModBlocks.FUMO_DERZOX);
+            })
+            .build();
+
 
     public static void init() {
         Registry.register(Registries.ITEM_GROUP, Identifier.of(SVBCR.MOD_ID, "funcblocks"), SVBCR_GROUP_FUNCBLOCKS);
         Registry.register(Registries.ITEM_GROUP, Identifier.of(SVBCR.MOD_ID, "decoblocks"), SVBCR_GROUP_DECOBLOCKS);
         Registry.register(Registries.ITEM_GROUP, Identifier.of(SVBCR.MOD_ID, "devtools"), SVBCR_GROUP_DEVTOOLS);
+        Registry.register(Registries.ITEM_GROUP, Identifier.of(SVBCR.MOD_ID, "fumos"), SVBCR_FUMOS);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.add(ModBlocks.EXAMPLE_BLOCK);

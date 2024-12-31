@@ -47,7 +47,6 @@ public class ModBlockRenderMap {
                 ModBlocks.TRASH_SPREAD,
                 ModBlocks.FIREBLU,
                 ModBlocks.GRAVEL_PATCH,
-                ModBlocks.VOID_LAMP,
                 ModBlocks.GLOWING_MUSHROOMS,
                 ModBlocks.METAL_LADDER,
                 ModBlocks.MYCELIA,
@@ -57,7 +56,15 @@ public class ModBlockRenderMap {
                 ModBlocks.MYCELIAL_EYE,
                 ModBlocks.HUB_GLASS,
                 ModBlocks.HUB_TORCH,
-                ModBlocks.HUB_WALL_TORCH
+                ModBlocks.HUB_WALL_TORCH,
+                ModBlocks.FUMO_ICE,
+                ModBlocks.FUMO_OBI,
+                ModBlocks.FUMO_SOUMEH,
+                ModBlocks.FUMO_DERZOX,
+                ModBlocks.FUMO_HEAPONS,
+                ModBlocks.FUMO_JOSE,
+                ModBlocks.FUMO_AVARITA,
+                ModBlocks.VOID_LAMP //moving to end again simply so i can copypaste without having to worry about removing the last ,
         );
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),

@@ -85,5 +85,15 @@
       "svbcr:block/metal_ladder-04"
     ],
     "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.fumo.place": {
+    "sounds": [
+      "svbcr:block/squish"
+    ]
+  },
+  "block.fumo.break": {
+    "sounds": [
+      "svbcr:block/explode"
+    ]
   }
 }
