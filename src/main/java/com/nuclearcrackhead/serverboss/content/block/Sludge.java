@@ -134,8 +134,8 @@ public class Sludge extends TranslucentBlock {
                 entity.playSound(ModSounds.BLOCK_SLUDGE_SLIDE, 1.0F, 0.75F);
             }
 
-            if (!world.isClient && world.random.nextInt(5) == 0) {
-                world.sendEntityStatus(entity, (byte)53);
+            if (world.isClient && world.random.nextInt(5) == 0) {
+		addRegularParticles(entity);
             }
         }
 
