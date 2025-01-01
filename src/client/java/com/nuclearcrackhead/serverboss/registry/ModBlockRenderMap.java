@@ -24,7 +24,6 @@ public class ModBlockRenderMap {
         ));
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-                ModBlocks.SLUDGE,
                 ModBlocks.CHECKERED_OBSIDIAN,
                 ModBlocks.CHISELED_OBSIDIAN,
                 ModBlocks.OBSIDIAN_LIGHT_STRIP,
@@ -35,7 +34,6 @@ public class ModBlockRenderMap {
                 ModBlocks.RIVEREYES,
                 ModBlocks.RIVERSTONE,
                 ModBlocks.AGONY_LANTERN,
-                ModBlocks.ROPE,
                 ModBlocks.NETHERITE_CHAIN,
                 ModBlocks.DEMONIC_GATE,
                 ModBlocks.CHISELED_POLISHED_BLACKSTONE_EYES,
