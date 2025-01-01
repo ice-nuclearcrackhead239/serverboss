@@ -179,6 +179,8 @@ public class ModBlocks {
 	);
 	public static final Block SPIKE_BLOCK = register("spike_block", SpikeBlock::new, AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL));
 
+	public static final Block BARBED_WIRE = register("barbed_wire", BarbedWire::new, AbstractBlock.Settings.create().noCollision());
+
 	public static final Block JELLY = register("jelly", Block::new,
 			AbstractBlock.Settings.copy(Blocks.HONEY_BLOCK).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
 	);

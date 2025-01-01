@@ -134,6 +134,8 @@
   "block.svbcr.white": "Pure White",
   "block.svbcr.white.tooltip": "Displays purely as white",
   "block.svbcr.white.tooltip2": "Additonally emits light",
+  "block.svbcr.barbed_wire": "Barbed Wire",
+  "block.svbcr.barbed_wire.tooltip": "Damages things that try walking through it",
 
   "block.svbcr.fumo_ice": "Ice",
   "block.svbcr.fumo_obi": "Obi",
@@ -156,6 +158,8 @@
   "death.attack.fractured.player": "%s was left to crumble by %s",
   "death.attack.spike": "%s was impaled",
   "death.attack.spike.player": "%s was impaled whilst trying to escape %s",
+  "death.attack.barbed_wire": "%s was caught in barbed wire",
+  "death.attack.barbed_wire.player": "%s was caught in barbed wire whilst trying to escape %s",
 
   "effect.svbcr.fractured": "Fractured",
   "effect.svbcr.soaring": "Soaring",

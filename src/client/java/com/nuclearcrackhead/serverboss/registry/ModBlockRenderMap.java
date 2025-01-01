@@ -57,6 +57,7 @@ public class ModBlockRenderMap {
                 ModBlocks.HUB_GLASS,
                 ModBlocks.HUB_TORCH,
                 ModBlocks.HUB_WALL_TORCH,
+		ModBlocks.BARBED_WIRE,
                 ModBlocks.FUMO_ICE,
                 ModBlocks.FUMO_OBI,
                 ModBlocks.FUMO_SOUMEH,

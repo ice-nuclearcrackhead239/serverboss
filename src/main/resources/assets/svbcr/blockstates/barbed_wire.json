@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "svbcr:block/barbed_wire"
+    },
+    "facing=south": {
+      "model": "svbcr:block/barbed_wire"
+    },
+    "facing=east": {
+      "model": "svbcr:block/barbed_wire",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "svbcr:block/barbed_wire",
+      "y": 90
+    }
+  }
+}
