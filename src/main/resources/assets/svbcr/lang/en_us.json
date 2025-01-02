@@ -189,6 +189,10 @@
   "item.svbcr.mycelial_eye": "Mycelial Eye",
   "item.svbcr.mycelia": "Mycelia",
   "item.svbcr.hub_torch": "Hub Torch",
+  "item.svbcr.wrench": "Wrench",
+  "item.svbcr.wrench.tooltip": "Modifies certain SVB:CR blocks, allowing",
+  "item.svbcr.wrench.tooltip2": "adjusting properties or defining cuboid regions",
+  "item.svbcr.wrench.tooltip3": "// UNFINISHED",
 
   "item.svbcr.pistol": "Pistol",
   

@@ -155,13 +155,14 @@ public class ModItemGroups {
 			})
 			.build();
 
-	public static final ItemGroup SVBCR_GROUP_DEVTOOLS = FabricItemGroup.builder()
-			.icon(() -> new ItemStack(Items.DEBUG_STICK))
-			.displayName(Text.translatable("itemGroup.svbcr.devtools"))
-			.entries((context, entries) -> {
-				entries.add(ModItems.DEV_FORCEFIELD_BELL);
-			})
-			.build();
+    public static final ItemGroup SVBCR_GROUP_DEVTOOLS = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(ModItems.DEV_WRENCH))
+            .displayName(Text.translatable("itemGroup.svbcr.devtools"))
+            .entries((context, entries) -> {
+                entries.add(ModItems.DEV_WRENCH);
+                entries.add(ModItems.DEV_FORCEFIELD_BELL);
+            })
+            .build();
 
 	public static final ItemGroup SVBCR_FUMOS = FabricItemGroup.builder()
 			.icon(() -> new ItemStack(ModBlocks.FUMO_ICE))

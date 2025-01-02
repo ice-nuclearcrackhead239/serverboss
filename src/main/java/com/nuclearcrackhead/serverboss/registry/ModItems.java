@@ -58,7 +58,7 @@ public class ModItems {
     public static final Item PROP_PUDDLE = register("prop_puddle", settings -> new BlockItem(ModBlocks.PUDDLE, settings), new Item.Settings());
     public static final Item PROP_GRAVEL_PATCH = register("prop_gravel_patch", settings -> new BlockItem(ModBlocks.GRAVEL_PATCH, settings), new Item.Settings());
     public static final Item PROP_PEBBLES = register("prop_pebbles", settings -> new BlockItem(ModBlocks.PEBBLES, settings), new Item.Settings());
-    public static final Item HUB_TORCH = register((Block)ModBlocks.HUB_TORCH, (BiFunction)((block, settings) -> new VerticallyAttachableBlockItem((Block) block, ModBlocks.HUB_WALL_TORCH, Direction.DOWN, (Item.Settings) settings)));
+    public static final Item HUB_TORCH = register(ModBlocks.HUB_TORCH, ((block, settings) -> new VerticallyAttachableBlockItem( block, ModBlocks.HUB_WALL_TORCH, Direction.DOWN, settings)));
 
     public static final Item GLOWING_MUSHROOMS = register("glowing_mushrooms", settings -> new BlockItem(ModBlocks.GLOWING_MUSHROOMS, settings), new Item.Settings());
 
@@ -68,7 +68,8 @@ public class ModItems {
     public static final Item MYCELIA_STALKS = register("mycelia_stalks", settings -> new BlockItem(ModBlocks.MYCELIA_STALKS, settings), new Item.Settings());
 
     // dev tool items -mikii/adenator
-    public static final Item DEV_FORCEFIELD_BELL = register("forcefield_bell", ForcefieldBellItem::new, new Item.Settings().useCooldown(2.0F));
+    public static final Item DEV_WRENCH = register("wrench", WrenchItem::new, new Item.Settings().maxCount(1));
+    public static final Item DEV_FORCEFIELD_BELL = register("forcefield_bell", ForcefieldBellItem::new, new Item.Settings().maxCount(1).useCooldown(2.0F));
 
     // GUNS YEE HAW
     public static final Item PISTOL = register("pistol", Pistol::new, new Item.Settings());
