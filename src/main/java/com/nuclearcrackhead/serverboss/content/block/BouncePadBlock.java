@@ -88,7 +88,7 @@ public class BouncePadBlock extends BlockWithEntity {
             }
             return ActionResult.SUCCESS;
         } else {
-            return ActionResult.PASS_TO_DEFAULT_BLOCK_ACTION;
+            return ActionResult.PASS;
         }
     }
 
