@@ -2,6 +2,7 @@ package com.nuclearcrackhead.serverboss.content.block;
 
 import com.mojang.serialization.MapCodec;
 import com.nuclearcrackhead.serverboss.registry.ModBlockEntityTypes;
+import com.nuclearcrackhead.serverboss.registry.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
@@ -10,13 +11,17 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -73,6 +78,22 @@ public class BouncePadBlock extends BlockWithEntity {
     @Override
     public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
         entity.handleFallDamage(fallDistance, 0.2F, world.getDamageSources().fall());
+    }
+
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult result) {
+        if (player.getActiveItem() == ModItems.DEV_WRENCH.getDefaultStack()) {
+            if (!world.isClient) {
+                NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
+
+                if (screenHandlerFactory != null) {
+                    player.openHandledScreen(screenHandlerFactory);
+                }
+            }
+            return ActionResult.SUCCESS;
+        } else {
+            return ActionResult.PASS_TO_DEFAULT_BLOCK_ACTION;
+        }
     }
 
 }
