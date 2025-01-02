@@ -84,11 +84,7 @@ public class BouncePadBlock extends BlockWithEntity {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult result) {
         if (player.getActiveItem() == ModItems.DEV_WRENCH.getDefaultStack()) {
             if (!world.isClient) {
-                NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
-
-                if (screenHandlerFactory != null) {
-                    player.openHandledScreen(screenHandlerFactory);
-                }
+                //figure SOMETHING out.
             }
             return ActionResult.SUCCESS;
         } else {

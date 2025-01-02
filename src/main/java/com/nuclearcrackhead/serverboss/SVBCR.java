@@ -28,6 +28,5 @@ public class SVBCR implements ModInitializer {
 		ModEntities.init();
 		ModParticles.init();
 		ModStatusEffects.init();
-		ModScreenHandlers.init();
 	}
 }
