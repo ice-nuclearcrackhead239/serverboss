@@ -1,3 +1,5 @@
+import net.fabricmc.loom.util.gradle.SourceSetHelper;
+
 plugins {
 	id 'fabric-loom' version '1.9-SNAPSHOT'
 	id 'maven-publish'
@@ -91,4 +93,10 @@ publishing {
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
 	}
+}
+
+javadoc {
+	source sourceSets.main.allJava
+	source SourceSetHelper.getSourceSetByName("client", project).allJava
+	classpath = project.files(SourceSetHelper.getSourceSetByName("client", project).getCompileClasspath())
 }

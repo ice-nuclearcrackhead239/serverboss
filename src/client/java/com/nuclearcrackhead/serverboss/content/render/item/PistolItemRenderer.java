@@ -11,6 +11,11 @@ import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.util.Hand;
 import net.minecraft.client.MinecraftClient;
 
+/**
+ * The pistol item renderer.
+ *
+ * @author Finxx
+ */
 public class PistolItemRenderer implements ISvbItemRenderer {
 	public ItemRenderer itemRenderer;
 
