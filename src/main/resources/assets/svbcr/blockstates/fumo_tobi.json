@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "svbcr:block/fumo_tobi",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "svbcr:block/fumo_tobi"
+    },
+    "facing=south": {
+      "model": "svbcr:block/fumo_tobi",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "svbcr:block/fumo_tobi",
+      "y": 270
+    }
+  }
+}

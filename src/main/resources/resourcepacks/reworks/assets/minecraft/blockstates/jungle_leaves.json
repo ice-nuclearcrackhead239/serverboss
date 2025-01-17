@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minecraft:block/jungle_leaves",
+        "weight": 1
+      },
+      {
+        "model": "minecraft:block/jungle_leaves_2",
+        "weight": 7
+      }
+    ]
+  }
+}

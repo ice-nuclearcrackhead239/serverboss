@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "svbcr:block/fumo_kaori",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "svbcr:block/fumo_kaori"
+    },
+    "facing=south": {
+      "model": "svbcr:block/fumo_kaori",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "svbcr:block/fumo_kaori",
+      "y": 270
+    }
+  }
+}

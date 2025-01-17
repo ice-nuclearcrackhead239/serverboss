@@ -23,7 +23,7 @@ public class ModBlocks {
 
 	public static Block RADIOACTIVE = register("radioactive",
 			settings -> new FluidBlock(ModFluids.RADIOACTIVE_STILL, settings),
-			AbstractBlock.Settings.copy(Blocks.WATER).emissiveLighting(ModBlocks::always).luminance(value -> 10)
+			AbstractBlock.Settings.copy(Blocks.WATER).emissiveLighting(ModBlocks::always).luminance(value -> 13)
 	);
 	public static final Block EXAMPLE_BLOCK = register("example_block", ExampleBlock::new,
 			AbstractBlock.Settings.create()
@@ -155,6 +155,23 @@ public class ModBlocks {
 	public static final Block CRYSTALLINE_DIAMOND = register("crystalline_diamond", Block::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK).sounds(BlockSoundGroup.GLASS));
 	public static final Block SMOOTH_IRON = register("smooth_iron", Block::new, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK));
 	public static final Block TILED_IRON = register("tiled_iron", Block::new, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK));
+	public static final Block CHECKERBOARD = register("checkerboard", Block::new, AbstractBlock.Settings.copy(Blocks.QUARTZ_BRICKS));
+	public static final Block ASPHALT = register("asphalt", Block::new, AbstractBlock.Settings.copy(Blocks.BLACKSTONE));
+
+	public static final Block IRON_GRATING = register("iron_grating", MeshBlock::new,
+			AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL).nonOpaque()
+	);
+
+	public static final Block SMOOTH_STONE_BRICKS = register("smooth_stone_bricks", Block::new, AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE));
+	public static final Block SMOOTH_STONE_BRICKLETS = register("smooth_stone_bricklets", Block::new, AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE));
+	public static final Block SMOOTH_STONE_TILES = register("smooth_stone_tiles", Block::new, AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE));
+	public static final Block SMOOTH_STONE_QUADS = register("smooth_stone_quads", Block::new, AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE));
+	public static final Block CRACKED_SMOOTH_STONE_BRICKS = register("cracked_smooth_stone_bricks", Block::new, AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE));
+	public static final Block IRRADIATED_SMOOTH_STONE_BRICKS = register("irradiated_smooth_stone_bricks", Block::new, AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE));
+	public static final Block SMOOTH_STONE_PILLAR = register("smooth_stone_pillar", SpineBlock::new, AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE));
+	public static final Block POLISHED_SMOOTH_STONE = register("polished_smooth_stone", Block::new, AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE));
+	public static final Block CHISELED_SMOOTH_STONE = register("chiseled_smooth_stone", Block::new, AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE));
+	public static final Block STONE_PATHWAY = register("stone_pathway", Block::new, AbstractBlock.Settings.copy(Blocks.STONE_BRICKS));
 
 	public static final Block LOPER_BRICKS = register("loper_bricks", Block::new, AbstractBlock.Settings.copy(Blocks.STONE_BRICKS));
 
@@ -257,6 +274,17 @@ public class ModBlocks {
 	public static final Block FUMO_AVARITA = register("fumo_avarita", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 	public static final Block FUMO_DERZOX = register("fumo_derzox", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 	public static final Block FUMO_MIKII = register("fumo_mikii", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_RIKA = register("fumo_rika", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_TOBI = register("fumo_tobi", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_KAORI = register("fumo_kaori", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_SPEEDER = register("fumo_speeder", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_BERYL = register("fumo_beryl", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_ISM = register("fumo_ism", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_ILYA = register("fumo_ilya", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block FUMO_FRESHLY = register("fumo_freshly", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+
+	public static final Block CRIMSON_VEINS = register("crimson_veins", VineBlock::new, AbstractBlock.Settings.create().mapColor(MapColor.DARK_RED).replaceable().noCollision().ticksRandomly().strength(0.2F).sounds(BlockSoundGroup.VINE).burnable().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block WARPED_WIREFRAME = register("warped_wireframe", VineBlock::new, AbstractBlock.Settings.create().mapColor(MapColor.DARK_RED).replaceable().noCollision().ticksRandomly().strength(0.2F).sounds(BlockSoundGroup.VINE).burnable().pistonBehavior(PistonBehavior.DESTROY));
 
 	public static Block register(String path, Function<AbstractBlock.Settings, Block> function, AbstractBlock.Settings settings) {
 		Block block = registerBlock(path, function, settings);

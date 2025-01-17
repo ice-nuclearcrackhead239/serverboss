@@ -1,0 +1,7 @@
+{
+  "parent": "svbcr:block/cube_all_e",
+  "textures": {
+    "all": "minecraft:block/magma_block",
+    "all_e": "minecraft:block/magma_block_e"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minecraft:block/moss_flowers_1",
+        "weight": 1
+      },
+      {
+        "model": "minecraft:block/moss_flowers_2",
+        "weight": 1
+      },
+      {
+        "model": "minecraft:block/moss_flowers_3",
+        "weight": 1
+      },
+      {
+        "model": "minecraft:block/mossy_cobblestone",
+        "weight": 14
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "svbcr:block/fumo_generic",
+	"textures": {
+		"0": "svbcr:block/fumos/fumo_tobi",
+		"particle": "svbcr:block/fumos/fumo_tobi"
+	}
+}

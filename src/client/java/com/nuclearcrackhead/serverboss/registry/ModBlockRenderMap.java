@@ -3,6 +3,7 @@ package com.nuclearcrackhead.serverboss.registry;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 
@@ -55,7 +56,10 @@ public class ModBlockRenderMap {
                 ModBlocks.HUB_GLASS,
                 ModBlocks.HUB_TORCH,
                 ModBlocks.HUB_WALL_TORCH,
-		ModBlocks.BARBED_WIRE,
+                ModBlocks.CRIMSON_VEINS,
+                ModBlocks.WARPED_WIREFRAME,
+                ModBlocks.IRON_GRATING,
+		        ModBlocks.BARBED_WIRE,
                 ModBlocks.FUMO_ICE,
                 ModBlocks.FUMO_OBI,
                 ModBlocks.FUMO_SOUMEH,
@@ -64,6 +68,13 @@ public class ModBlockRenderMap {
                 ModBlocks.FUMO_JOSE,
                 ModBlocks.FUMO_AVARITA,
                 ModBlocks.FUMO_MIKII,
+                ModBlocks.FUMO_SPEEDER,
+                ModBlocks.FUMO_TOBI,
+                ModBlocks.FUMO_ISM,
+                ModBlocks.FUMO_BERYL,
+                ModBlocks.FUMO_ILYA,
+                ModBlocks.FUMO_FRESHLY,
+                Blocks.MAGMA_BLOCK, //DONT ASK
                 ModBlocks.VOID_LAMP //moving to end again simply so i can copypaste without having to worry about removing the last ,
         );
 
@@ -72,6 +83,8 @@ public class ModBlockRenderMap {
                 ModBlocks.DARK_GLASS,
                 ModBlocks.AGONIZED_GLASS,
                 ModBlocks.FORCEFIELD,
+                ModBlocks.FUMO_RIKA, //glasses
+                ModBlocks.FUMO_KAORI,
                 ModBlocks.JELLY_TRANSLUCENT,
                 //ModBlocks.FORCEFIELD_WATER,
                 ModBlocks.PUDDLE,
