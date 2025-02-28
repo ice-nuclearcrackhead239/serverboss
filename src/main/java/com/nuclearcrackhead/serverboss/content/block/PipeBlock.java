@@ -7,7 +7,6 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.state.property.Property;
 import net.minecraft.util.CachedMapper;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
@@ -114,6 +113,7 @@ public class PipeBlock extends Block {
         BlockState state = world.getBlockState(pos);
         Block block = state.getBlock();
         if (block instanceof PipeBlock) return true;
+        if (world.getFluidState(pos).isOf(Fluids.WATER)) return false;
         return !state.isTransparent();
     }
 
