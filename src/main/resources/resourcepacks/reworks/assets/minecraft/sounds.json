@@ -45,5 +45,130 @@
       "newglass/glass6"
     ],
     "replace": true
+  },
+  "block.metal.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      {
+      	"name": "newmetal/metal_step-01",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_step-02",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_step-03",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_step-04",
+        "pitch": 1
+      }
+    ],
+    "replace": true
+  },
+  "block.metal.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      {
+      	"name": "newmetal/metal_break-01",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_break-02",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_break-03",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_break-04",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_break-05",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_break-06",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_break-07",
+        "pitch": 1
+      }
+    ],
+    "replace": true
+  },
+  "block.metal.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      {
+      	"name": "newmetal/metal_hit-01",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_hit-02",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_hit-03",
+        "pitch": 1
+      }
+    ],
+    "replace": true
+  },
+  "block.metal.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      {
+      	"name": "newmetal/metal_hit-01",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_hit-02",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_hit-03",
+        "pitch": 1
+      }
+    ],
+    "replace": true
+  },
+  "block.metal.fall": {
+    "sounds": [
+      {
+      	"name": "newmetal/metal_break-01",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_break-02",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_break-03",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_break-04",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_break-05",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_break-06",
+        "pitch": 1
+      },
+      {
+      	"name": "newmetal/metal_break-07",
+        "pitch": 1
+      }
+    ],
+    "replace": true
   }
 }

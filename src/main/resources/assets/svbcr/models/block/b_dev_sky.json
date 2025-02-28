@@ -1,0 +1,6 @@
+{
+  "parent": "svbcr:block/skybox",
+  "textures": {
+    "all": "svbcr:block/b_dev_sky"
+  }
+}

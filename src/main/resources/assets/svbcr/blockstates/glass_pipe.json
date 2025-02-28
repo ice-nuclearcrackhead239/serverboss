@@ -1,0 +1,126 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "OR": [
+          {
+            "up": "true",
+            "east": "true"
+          },
+          {
+            "up": "true",
+            "west": "true"
+          },
+          {
+            "up": "true",
+            "south": "true"
+          },
+          {
+            "up": "true",
+            "north": "true"
+          },
+          {
+            "west": "true",
+            "south": "true"
+          },
+          {
+            "west": "true",
+            "north": "true"
+          },
+          {
+            "west": "true",
+            "down": "true"
+          },
+          {
+            "east": "true",
+            "south": "true"
+          },
+          {
+            "east": "true",
+            "south": "true"
+          },
+          {
+            "east": "true",
+            "down": "true"
+          },
+          {
+            "south": "true",
+            "down": "true"
+          },
+          {
+            "north": "true",
+            "down": "true"
+          },
+          {
+            "north": "true",
+            "east": "true"
+          },
+          {
+            "north": "false",
+            "south": "false",
+            "east": "false",
+            "west": "false",
+            "up": "false",
+            "down": "false"
+          }
+        ]
+      },
+      "apply": {
+        "model": "svbcr:block/glass_pipe/connector"
+      }
+    },
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": {
+        "model": "svbcr:block/glass_pipe/positive",
+        "x": -90
+      }
+    },
+    {
+      "when": {
+        "down": "true"
+      },
+      "apply": {
+        "model": "svbcr:block/glass_pipe/negative",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "svbcr:block/glass_pipe/negative",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "svbcr:block/glass_pipe/positive"
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "svbcr:block/glass_pipe/positive",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "svbcr:block/glass_pipe/negative",
+        "y": -90
+      }
+    }
+  ]
+}

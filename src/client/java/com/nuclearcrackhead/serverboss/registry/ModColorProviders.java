@@ -2,6 +2,7 @@ package com.nuclearcrackhead.serverboss.registry;
 
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.world.BiomeColors;
@@ -17,7 +18,27 @@ public class ModColorProviders {
         //blocks
         ColorProviderRegistry.BLOCK.register(
                 (state, view, pos, tintIndex) -> view != null && pos != null ? BiomeColors.getGrassColor(view, pos) : Colors.WHITE,
+                ModBlocks.B_DEV_SKY
+        );
+        ColorProviderRegistry.BLOCK.register(
+                (state, view, pos, tintIndex) -> view != null && pos != null ? BiomeColors.getGrassColor(view, pos) : Colors.WHITE,
                 ModBlocks.WATER_SILK
+        );
+        ColorProviderRegistry.BLOCK.register(
+                (state, view, pos, tintIndex) -> view != null && pos != null ? BiomeColors.getWaterColor(view, pos) : Colors.WHITE,
+                ModBlocks.PUDDLE
+        );
+
+
+        ColorProviderRegistry.BLOCK.register(
+                (state, view, pos, tintIndex) -> view != null && pos != null ? BiomeColors.getGrassColor(view, pos) : Colors.WHITE,
+                Blocks.SEAGRASS
+        );
+
+
+        ColorProviderRegistry.BLOCK.register(
+                (state, view, pos, tintIndex) -> view != null && pos != null ? BiomeColors.getGrassColor(view, pos) : Colors.WHITE,
+                Blocks.TALL_SEAGRASS
         );
 
         //items

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "svbcr:block/b_dev_clear"
+    }
+  }
+}

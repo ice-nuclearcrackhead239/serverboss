@@ -49,6 +49,10 @@ public class ModItemGroups {
                 entries.add(ModBlocks.LOAM);
                 entries.add(ModBlocks.SILT);
                 entries.add(ModBlocks.ROPE);
+                entries.add(ModItems.LARGE_TORCH);
+                entries.add(ModBlocks.BUTTERCUPS);
+                entries.add(ModBlocks.OBSTERINE);
+                entries.add(ModBlocks.AXTERIA);
                 entries.add(ModItems.WATER_SILK);
                 entries.add(ModItems.PROP_DRIFTWOOD);
                 entries.add(ModItems.PROP_PUDDLE);
@@ -61,6 +65,8 @@ public class ModItemGroups {
                 entries.add(ModBlocks.B_DEV_ORANGE);
                 entries.add(ModBlocks.B_DEV_ASH);
                 entries.add(ModBlocks.B_DEV_WHITE);
+                entries.add(ModBlocks.B_DEV_CLEAR);
+                entries.add(ModBlocks.B_DEV_SKY);
                 entries.add(ModBlocks.CHECKERBOARD);
                 entries.add(ModItems.GLOWING_MUSHROOMS);
                 entries.add(ModBlocks.GLOWING_MUSHROOM_BLOCK);
@@ -80,10 +86,23 @@ public class ModItemGroups {
                 entries.add(ModBlocks.IRON_PLATING_SLAB);
                 entries.add(ModBlocks.IRON_PLATING_STAIRS);
                 entries.add(ModBlocks.IRON_GRATING);
+                entries.add(ModBlocks.IRON_PIPE);
+                entries.add(ModBlocks.COPPER_PIPE);
+                entries.add(ModBlocks.GLASS_PIPE);
+                entries.add(ModBlocks.GEARBOX);
+                entries.add(ModBlocks.MOTHERBOARD);
+                entries.add(ModBlocks.CIRCUITS);
+                entries.add(ModBlocks.CABLE);
+                //entries.add(ModBlocks.ELECTRIC); later ^2
+                //entries.add(ModBlocks.IRON_FENCE); later
+                entries.add(ModBlocks.CORRUGATED_IRON);
+                entries.add(ModBlocks.CORRUGATED_IRON_BLOCK);
                 entries.add(ModBlocks.SMOOTH_IRON);
                 entries.add(ModBlocks.TILED_IRON);
+                entries.add(ModBlocks.BARBED_WIRE);
                 entries.add(ModBlocks.WHITE);
                 entries.add(ModBlocks.BLACK);
+                entries.add(ModBlocks.PORTAL_LEGACY);
                 entries.add(ModBlocks.CRYSTALLINE_DIAMOND);
                 entries.add(ModBlocks.CHECKERED_OBSIDIAN);
                 entries.add(ModBlocks.CHISELED_OBSIDIAN);
@@ -127,6 +146,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.AGONIZED_GLASS);
                 entries.add(ModBlocks.CHISELED_NETHERITE);
                 entries.add(ModBlocks.POLISHED_NETHERITE);
+                entries.add(ModBlocks.NETHERITE_PIPE);
                 entries.add(ModItems.CRIMSON_STALKS);
                 entries.add(ModBlocks.CRIMSON_VEINS);
                 entries.add(ModItems.WARPED_STALKS);
@@ -155,6 +175,9 @@ public class ModItemGroups {
                 entries.add(ModBlocks.MAGENTA_WALLPAPER);
                 entries.add(ModBlocks.PINK_WALLPAPER);
                 entries.add(ModBlocks.FIREBLU);
+                entries.add(ModBlocks.CORRU);
+                entries.add(ModBlocks.PALE_CORRU);
+                entries.add(ModItems.WATER_LILY);
                 entries.add(ModBlocks.HUB_BRICKS_4);
                 entries.add(ModBlocks.HUB_BRICKS_3);
                 entries.add(ModBlocks.HUB_BRICKS_2);
@@ -164,7 +187,6 @@ public class ModItemGroups {
                 entries.add(ModBlocks.HUB_TILE_BLUE);
                 entries.add(ModBlocks.HUB_GLASS);
                 entries.add(ModItems.HUB_TORCH);
-                entries.add(ModBlocks.SKYBOX_SPACE);
                 entries.add(ModBlocks.EXAMPLE_BLOCK);
             })
             .build();

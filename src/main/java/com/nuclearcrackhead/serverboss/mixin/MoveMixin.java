@@ -21,6 +21,8 @@ public abstract class MoveMixin extends LivingEntity implements DataTracked {
     protected MoveMixin(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
+
+    //@Inject(method = "Lnet/minecraft/entity/LivingEntity;applyClimbingSpeed(Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;", at = @At("RETURN"), cancellable = true)
 /*
     @Inject(method = "getVelocityMultiplier()F", at = @At("RETURN"), cancellable = true)
     private void injected(CallbackInfoReturnable<Float> cir) {

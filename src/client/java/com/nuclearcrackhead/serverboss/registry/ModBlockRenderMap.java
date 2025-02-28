@@ -55,11 +55,19 @@ public class ModBlockRenderMap {
                 ModBlocks.MYCELIAL_EYE,
                 ModBlocks.HUB_GLASS,
                 ModBlocks.HUB_TORCH,
+                ModBlocks.LARGE_TORCH,
                 ModBlocks.HUB_WALL_TORCH,
                 ModBlocks.CRIMSON_VEINS,
                 ModBlocks.WARPED_WIREFRAME,
                 ModBlocks.IRON_GRATING,
 		        ModBlocks.BARBED_WIRE,
+                ModBlocks.PORTAL_LEGACY,
+                ModBlocks.ELECTRIC,
+                ModBlocks.WATER_LILY,
+                ModBlocks.OBSTERINE,
+                ModBlocks.AXTERIA,
+                ModBlocks.BUTTERCUPS,
+                ModBlocks.GLASS_PIPE,
                 ModBlocks.FUMO_ICE,
                 ModBlocks.FUMO_OBI,
                 ModBlocks.FUMO_SOUMEH,
@@ -90,6 +98,7 @@ public class ModBlockRenderMap {
                 ModBlocks.PUDDLE,
                 ModBlocks.DUST,
                 ModBlocks.FLESH_MESH,
+                ModBlocks.B_DEV_CLEAR,
                 ModBlocks.WATER_SILK
         );
 

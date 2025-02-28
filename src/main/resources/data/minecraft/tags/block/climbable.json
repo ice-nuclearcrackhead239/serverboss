@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "svbcr:metal_ladder"
+    "svbcr:metal_ladder",
+    "svbcr:rope",
+    "svbcr:netherite_chain",
+    "minecraft:chain"
   ]
 }

@@ -52,6 +52,7 @@ public class ModItems {
     public static final Item DEMONIC_GATE = register("demonic_gate", settings -> new TallBlockItem(ModBlocks.DEMONIC_GATE, settings), new Item.Settings());
 
     public static final Item PROP_TRASH = register("prop_trash", settings -> new BlockItem(ModBlocks.TRASH, settings), new Item.Settings());
+    public static final Item LARGE_TORCH = register("large_torch", settings -> new BlockItem(ModBlocks.LARGE_TORCH, settings), new Item.Settings());
     public static final Item PROP_TRASH_SPREAD = register("prop_trash_spread", settings -> new BlockItem(ModBlocks.TRASH_SPREAD, settings), new Item.Settings());
     public static final Item PROP_DRIFTWOOD = register("prop_driftwood", settings -> new BlockItem(ModBlocks.DRIFTWOOD, settings), new Item.Settings());
     public static final Item PROP_DUST = register("prop_dust", settings -> new BlockItem(ModBlocks.DUST, settings), new Item.Settings());
@@ -61,6 +62,9 @@ public class ModItems {
     public static final Item HUB_TORCH = register(ModBlocks.HUB_TORCH, ((block, settings) -> new VerticallyAttachableBlockItem( block, ModBlocks.HUB_WALL_TORCH, Direction.DOWN, settings)));
 
     public static final Item GLOWING_MUSHROOMS = register("glowing_mushrooms", settings -> new BlockItem(ModBlocks.GLOWING_MUSHROOMS, settings), new Item.Settings());
+
+    public static final Item WATER_LILY = register("water_lily", settings -> new PlaceableOnWaterItem(ModBlocks.WATER_LILY, settings), new Item.Settings());
+
 
     public static final Item MYCELIA = register("mycelia", settings -> new BlockItem(ModBlocks.MYCELIA, settings), new Item.Settings());
     public static final Item MYCELIAL_EYE = register("mycelial_eye", settings -> new BlockItem(ModBlocks.MYCELIAL_EYE, settings), new Item.Settings());

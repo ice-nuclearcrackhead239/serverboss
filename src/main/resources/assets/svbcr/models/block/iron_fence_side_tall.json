@@ -1,0 +1,21 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"1": "svbcr:block/iron_fence_side_tall",
+		"particle": "svbcr:block/iron_fence_side"
+	},
+	"elements": [
+		{
+			"name": "wall",
+			"from": [8, 0, 0],
+			"to": [8, 16, 8],
+			"faces": {
+				"north": {"uv": [8, 2, 8, 16], "texture": "#1", "cullface": "north"},
+				"east": {"uv": [4, 0, 12, 16], "texture": "#1"},
+				"west": {"uv": [4, 0, 12, 16], "texture": "#1"},
+				"up": {"uv": [8, 0, 8, 8], "texture": "#1"},
+				"down": {"uv": [8, 8, 8, 16], "texture": "#1", "cullface": "down"}
+			}
+		}
+	]
+}
