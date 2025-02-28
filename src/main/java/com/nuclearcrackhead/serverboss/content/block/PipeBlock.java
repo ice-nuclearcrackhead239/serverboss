@@ -113,7 +113,7 @@ public class PipeBlock extends Block {
         BlockState state = world.getBlockState(pos);
         Block block = state.getBlock();
         if (block instanceof PipeBlock) return true;
-        if (world.getFluidState(pos).isOf(Fluids.WATER)) return false;
+        if (!world.getFluidState(pos).isEmpty()) return false;
         return !state.isTransparent();
     }
 
