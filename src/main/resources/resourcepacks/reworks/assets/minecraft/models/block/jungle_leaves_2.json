@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/leaf_generic",
   "textures": {
-    "all": "minecraft:block/jungle_leaves_2"
+    "leaf": "minecraft:block/jungle_leaves_2",
+    "fuzz": "minecraft:block/jungle_leaf_fuzz_2",
+    "particle": "minecraft:block/jungle_leaves_2"
   }
 }

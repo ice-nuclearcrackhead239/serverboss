@@ -68,6 +68,12 @@ public class ModBlockRenderMap {
                 ModBlocks.AXTERIA,
                 ModBlocks.BUTTERCUPS,
                 ModBlocks.GLASS_PIPE,
+                ModBlocks.NETHERITE_BARS,
+                ModBlocks.COPPER_BARS,
+                ModBlocks.HAZARD_TAPE,
+                ModBlocks.FLESH_POLYP,
+                ModBlocks.FLESH_PUSTULE,
+                ModBlocks.FLESH_CAPILLARIES,
                 ModBlocks.FUMO_ICE,
                 ModBlocks.FUMO_OBI,
                 ModBlocks.FUMO_SOUMEH,
@@ -86,6 +92,10 @@ public class ModBlockRenderMap {
                 ModBlocks.VOID_LAMP //moving to end again simply so i can copypaste without having to worry about removing the last ,
         );
 
+        /*BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getLightning(),
+                ModBlocks.VOLUMETRIC_LIGHT
+        );*/
+
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
                 ModBlocks.PORTAL_GLASS_TRANSPARENT,
                 ModBlocks.DARK_GLASS,
@@ -99,6 +109,7 @@ public class ModBlockRenderMap {
                 ModBlocks.DUST,
                 ModBlocks.FLESH_MESH,
                 ModBlocks.B_DEV_CLEAR,
+                ModBlocks.VOLUMETRIC_LIGHT,
                 ModBlocks.WATER_SILK
         );
 

@@ -65,6 +65,9 @@ public class ModItems {
 
     public static final Item WATER_LILY = register("water_lily", settings -> new PlaceableOnWaterItem(ModBlocks.WATER_LILY, settings), new Item.Settings());
 
+    public static final Item FLESH_POLYP = register("flesh_polyp", settings -> new BlockItem(ModBlocks.FLESH_POLYP, settings), new Item.Settings());
+    public static final Item FLESH_PUSTULE = register("flesh_pustule", settings -> new BlockItem(ModBlocks.FLESH_PUSTULE, settings), new Item.Settings());
+    public static final Item FLESH_CAPILLARIES = register("flesh_capillaries", settings -> new BlockItem(ModBlocks.FLESH_CAPILLARIES, settings), new Item.Settings());
 
     public static final Item MYCELIA = register("mycelia", settings -> new BlockItem(ModBlocks.MYCELIA, settings), new Item.Settings());
     public static final Item MYCELIAL_EYE = register("mycelial_eye", settings -> new BlockItem(ModBlocks.MYCELIAL_EYE, settings), new Item.Settings());

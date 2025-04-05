@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/leaf_generic",
+  "textures": {
+    "leaf": "minecraft:block/cherry_leaves",
+    "fuzz": "minecraft:block/cherry_leaf_fuzz",
+    "particle": "minecraft:block/cherry_leaves"
+  }
+}

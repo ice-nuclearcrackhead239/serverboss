@@ -17,9 +17,14 @@ public class ModColorProviders {
     public static void init() {
         //blocks
         ColorProviderRegistry.BLOCK.register(
-                (state, view, pos, tintIndex) -> view != null && pos != null ? BiomeColors.getGrassColor(view, pos) : Colors.WHITE,
+                (state, view, pos, tintIndex) -> view != null && pos != null ? view.getBiomeFabric(pos).value().getSkyColor() : Colors.WHITE,
                 ModBlocks.B_DEV_SKY
         );
+        ColorProviderRegistry.BLOCK.register(
+                (state, view, pos, tintIndex) -> view != null && pos != null ? view.getBiomeFabric(pos).value().getSkyColor() : Colors.WHITE,
+                ModBlocks.VOLUMETRIC_LIGHT
+        );
+
         ColorProviderRegistry.BLOCK.register(
                 (state, view, pos, tintIndex) -> view != null && pos != null ? BiomeColors.getGrassColor(view, pos) : Colors.WHITE,
                 ModBlocks.WATER_SILK

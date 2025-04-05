@@ -78,9 +78,11 @@ public class ModItemGroups {
                 entries.add(ModBlocks.BLOCK_TRASH);
                 entries.add(ModBlocks.RUST);
                 entries.add(ModBlocks.WASTEBARREL);
+                entries.add(ModBlocks.RADIOACTIVE_PIPE);
                 entries.add(ModBlocks.HAZARD_MARKER);
                 entries.add(ModBlocks.HAZARD_MARKER_SLAB);
                 entries.add(ModBlocks.HAZARD_MARKER_STAIRS);
+                entries.add(ModBlocks.HAZARD_TAPE);
                 entries.add(ModBlocks.METAL_LADDER);
                 entries.add(ModBlocks.IRON_PLATING);
                 entries.add(ModBlocks.IRON_PLATING_SLAB);
@@ -88,6 +90,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.IRON_GRATING);
                 entries.add(ModBlocks.IRON_PIPE);
                 entries.add(ModBlocks.COPPER_PIPE);
+                entries.add(ModBlocks.COPPER_BARS);
                 entries.add(ModBlocks.GLASS_PIPE);
                 entries.add(ModBlocks.GEARBOX);
                 entries.add(ModBlocks.MOTHERBOARD);
@@ -124,6 +127,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.SMOOTH_STONE_PILLAR);
                 entries.add(ModBlocks.CHISELED_SMOOTH_STONE);
                 entries.add(ModBlocks.STONE_PATHWAY);
+                entries.add(ModBlocks.ASH);
                 entries.add(ModBlocks.RIVERTILES);
                 entries.add(ModBlocks.RIVEREYES);
                 entries.add(ModBlocks.RIVERLAMP);
@@ -147,6 +151,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.CHISELED_NETHERITE);
                 entries.add(ModBlocks.POLISHED_NETHERITE);
                 entries.add(ModBlocks.NETHERITE_PIPE);
+                entries.add(ModBlocks.NETHERITE_BARS);
                 entries.add(ModItems.CRIMSON_STALKS);
                 entries.add(ModBlocks.CRIMSON_VEINS);
                 entries.add(ModItems.WARPED_STALKS);
@@ -158,6 +163,10 @@ public class ModItemGroups {
                 entries.add(ModBlocks.FLESH_HOLES);
                 entries.add(ModBlocks.FLESH_MESH);
                 entries.add(ModBlocks.FLESH_SPINE);
+                entries.add(ModBlocks.FLESH_TOOTH);
+                entries.add(ModItems.FLESH_POLYP);
+                entries.add(ModItems.FLESH_PUSTULE);
+                entries.add(ModItems.FLESH_CAPILLARIES);
                 entries.add(ModBlocks.WHITE_WALLPAPER);
                 entries.add(ModBlocks.SILVER_WALLPAPER);
                 entries.add(ModBlocks.ASH_WALLPAPER);
@@ -187,6 +196,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.HUB_TILE_BLUE);
                 entries.add(ModBlocks.HUB_GLASS);
                 entries.add(ModItems.HUB_TORCH);
+                entries.add(ModBlocks.VOLUMETRIC_LIGHT);
                 entries.add(ModBlocks.EXAMPLE_BLOCK);
             })
             .build();

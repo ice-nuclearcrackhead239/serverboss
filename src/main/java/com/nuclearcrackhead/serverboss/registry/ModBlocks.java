@@ -33,6 +33,7 @@ public class ModBlocks {
 			AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL)
 	);
 
+
 	public static final Block WHITE = register("white", White::new,
 			AbstractBlock.Settings.create().emissiveLighting(ModBlocks::always).luminance(value -> 15).sounds(BlockSoundGroup.GLASS)
 	);
@@ -104,6 +105,20 @@ public class ModBlocks {
 	public static final Block FLESH_GUTS_ROTTEN = register("flesh_guts_rot", Block::new,
 			AbstractBlock.Settings.create().velocityMultiplier(0.9F).jumpVelocityMultiplier(0.9F).sounds(BlockSoundGroup.HONEY)
 	);
+	public static final Block FLESH_TOOTH = register("flesh_tooth", SpineBlock::new,
+			AbstractBlock.Settings.create().velocityMultiplier(0.9F).jumpVelocityMultiplier(0.9F).sounds(BlockSoundGroup.HONEY)
+	);
+
+	public static final Block FLESH_POLYP = registerBlock("flesh_polyp", Prop::new,
+			AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.HONEY).nonOpaque().pistonBehavior(PistonBehavior.DESTROY)
+	);
+	public static final Block FLESH_PUSTULE = registerBlock("flesh_pustule", Prop::new,
+			AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.HONEY).nonOpaque().pistonBehavior(PistonBehavior.DESTROY)
+	);
+	public static final Block FLESH_CAPILLARIES = registerBlock("flesh_capillaries", Prop::new,
+			AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.HONEY).nonOpaque().pistonBehavior(PistonBehavior.DESTROY)
+	);
+
 	public static final Block SLUDGE = register("sludge", Sludge::new,
 			AbstractBlock.Settings.create().velocityMultiplier(0.8F).jumpVelocityMultiplier(0.5F).slipperiness(0.992F).sounds(BlockSoundGroup.HONEY).nonOpaque()
 	);
@@ -166,6 +181,13 @@ public class ModBlocks {
 	public static final Block CHECKERBOARD = register("checkerboard", Block::new, AbstractBlock.Settings.copy(Blocks.QUARTZ_BRICKS));
 	public static final Block ASPHALT = register("asphalt", Block::new, AbstractBlock.Settings.copy(Blocks.BLACKSTONE));
 
+	public static final Block NETHERITE_BARS = register("netherite_bars", PaneBlock::new, AbstractBlock.Settings.create().requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.NETHERITE).nonOpaque());
+	public static final Block COPPER_BARS = register("copper_bars", PaneBlock::new, AbstractBlock.Settings.create().requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.COPPER).nonOpaque());
+	public static final Block HAZARD_TAPE = register("hazard_tape", PaneBlock::new, AbstractBlock.Settings.create().requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.WET_GRASS).nonOpaque());
+
+
+	public static final Block ASH = register("ash", Block::new, AbstractBlock.Settings.copy(Blocks.SAND));
+
 	public static final Block IRON_PIPE = register("iron_pipe",
 			PipeBlock::new,
 			AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).nonOpaque().solidBlock(Blocks::never));
@@ -181,6 +203,10 @@ public class ModBlocks {
 	public static final Block GLASS_PIPE = register("glass_pipe",
 			PipeBlock::new,
 			AbstractBlock.Settings.copy(Blocks.GLASS).nonOpaque().solidBlock(Blocks::never));
+
+	public static final Block RADIOACTIVE_PIPE = register("radioactive_pipe",
+			PipeBlock::new,
+			AbstractBlock.Settings.copy(ModBlocks.WASTEBARREL).nonOpaque().solidBlock(Blocks::never));
 
 	public static final Block CORRU = register("corru", Block::new, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).luminance(value -> 10));
 	public static final Block PALE_CORRU = register("pale_corru", Block::new, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).luminance(value -> 15));
@@ -283,6 +309,8 @@ public class ModBlocks {
 	public static final Block CORRUGATED_IRON_BLOCK = register("corrugated_iron_block", Block::new, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK));
 
 	public static final Block DARK_GLASS = register("dark_glass", TransparentBlock::new, AbstractBlock.Settings.copy(Blocks.GLASS));
+
+	public static final Block VOLUMETRIC_LIGHT = register("volumetric_light", TransparentBlock::new, AbstractBlock.Settings.copy(Blocks.GLASS).sounds(BlockSoundGroup.AMETHYST_BLOCK));
 
 	//todo shader stupid shit i stupdishi GRRRRR AAAAAAA i hate this
 	public static final Block SKYBOX_SPACE = register("skybox_space", EndGatewayBlock::new, AbstractBlock.Settings.create().mapColor(MapColor.BLACK).noCollision().luminance((state) -> 15).strength(-1.0F, 3600000.0F).dropsNothing().pistonBehavior(PistonBehavior.BLOCK));

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/leaf_generic_tinted",
+  "textures": {
+    "leaf": "minecraft:block/oak_leaves",
+    "fuzz": "minecraft:block/oak_leaf_fuzz",
+    "particle": "minecraft:block/oak_leaves"
+  }
+}
