@@ -264,6 +264,9 @@ public class ModBlocks {
 	public static final Block FORCEFIELD = register("forcefield", ForcefieldBlock::new,
 			AbstractBlock.Settings.copy(Blocks.GLASS).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
 	);
+	public static final Block ROOM_BLOCK = register("room_block", RoomBlock::new,
+			AbstractBlock.Settings.copy(Blocks.STRUCTURE_BLOCK)
+	);
 
 	public static final Block PORTAL_GLASS_OPAQUE = register("portal_glass", Block::new, AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS));
 	public static final Block PORTAL_GLASS_TRANSPARENT = register("portal_glass_trans", TransparentBlock::new,
