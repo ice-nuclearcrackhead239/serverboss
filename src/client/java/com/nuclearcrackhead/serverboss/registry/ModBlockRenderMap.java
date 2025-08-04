@@ -74,6 +74,8 @@ public class ModBlockRenderMap {
                 ModBlocks.FLESH_POLYP,
                 ModBlocks.FLESH_PUSTULE,
                 ModBlocks.FLESH_CAPILLARIES,
+                ModBlocks.ROSE,
+                ModBlocks.CRYSTALLINE_GLASS,
                 ModBlocks.FUMO_ICE,
                 ModBlocks.FUMO_OBI,
                 ModBlocks.FUMO_SOUMEH,
@@ -87,12 +89,11 @@ public class ModBlockRenderMap {
                 ModBlocks.FUMO_ISM,
                 ModBlocks.FUMO_BERYL,
                 ModBlocks.FUMO_ILYA,
-                ModBlocks.FUMO_FRESHLY,
                 Blocks.MAGMA_BLOCK, //DONT ASK
                 ModBlocks.VOID_LAMP //moving to end again simply so i can copypaste without having to worry about removing the last ,
         );
 
-        /*BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getLightning(),
+        /*BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getGlintTranslucent(),
                 ModBlocks.VOLUMETRIC_LIGHT
         );*/
 
@@ -113,9 +114,10 @@ public class ModBlockRenderMap {
                 ModBlocks.WATER_SILK
         );
 
+        /*
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getEndGateway(),
                 ModBlocks.SKYBOX_SPACE
-        );
+        );*/
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), RADIOACTIVE_STILL, RADIOACTIVE_FLOWING);
     }

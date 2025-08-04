@@ -1,0 +1,12 @@
+{
+  "music.menu": {
+    "sounds": [
+      {
+        "name": "svbcr:music/menu/menu",
+        "stream": true,
+        "volume": 1.0
+      }
+    ],
+    "replace": true
+  }
+}

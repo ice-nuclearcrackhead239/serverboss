@@ -14,9 +14,9 @@ public class ExtraPacks {
     public static void init() {
         ModContainer svbcr = FabricLoader.getInstance().getModContainer(SVBCR.MOD_ID)
                 .orElseThrow(() -> new IllegalStateException("hi where's the mod container"));
-        Identifier packId = Identifier.of(MOD_ID, "reworks");
-        Text packName = Text.literal("SVB:CR: Vanilla Reworks");
-        ResourceManagerHelper.registerBuiltinResourcePack(packId, svbcr, packName, ResourcePackActivationType.NORMAL);
+
+        ResourceManagerHelper.registerBuiltinResourcePack(Identifier.of(MOD_ID, "reworks"), svbcr, Text.literal("SVB:CR: Vanilla Reworks"), ResourcePackActivationType.NORMAL);
+        ResourceManagerHelper.registerBuiltinResourcePack(Identifier.of(MOD_ID, "bilinear"), svbcr, Text.literal("RubyDung Bilinear Filtering"), ResourcePackActivationType.NORMAL);
     }
 
 }

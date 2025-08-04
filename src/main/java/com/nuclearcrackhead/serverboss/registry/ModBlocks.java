@@ -2,7 +2,6 @@ package com.nuclearcrackhead.serverboss.registry;
 import com.nuclearcrackhead.serverboss.SVBCR;
 import com.nuclearcrackhead.serverboss.content.block.*;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -176,10 +175,27 @@ public class ModBlocks {
 	public static final Block CHISELED_NETHERITE = register("chiseled_netherite", Block::new, AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK));
 	public static final Block POLISHED_NETHERITE = register("polished_netherite", Block::new, AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK));
 	public static final Block CRYSTALLINE_DIAMOND = register("crystalline_diamond", Block::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK).sounds(BlockSoundGroup.GLASS));
+	public static final Block SKY_CRYSTALLINE_DIAMOND = register("sky_crystalline_diamond", Block::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK).sounds(BlockSoundGroup.GLASS));
+	public static final Block CRYSTALLINE_VOIDSPRITE = register("crystalline_voidsprite", Block::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK).sounds(BlockSoundGroup.GLASS));
+
+
+	public static final Block CRYSTALLINE_GLASS = register("crystalline_glass", TransparentBlock::new,
+			AbstractBlock.Settings.copy(Blocks.GLASS).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
+	);
+
+
+	public static final Block CRYSTALLINE_GLOWSTONE = register("crystalline_glowstone", Block::new,
+			AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK).sounds(BlockSoundGroup.GLASS).luminance(value -> 15)
+	);
+
 	public static final Block SMOOTH_IRON = register("smooth_iron", Block::new, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK));
 	public static final Block TILED_IRON = register("tiled_iron", Block::new, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK));
 	public static final Block CHECKERBOARD = register("checkerboard", Block::new, AbstractBlock.Settings.copy(Blocks.QUARTZ_BRICKS));
 	public static final Block ASPHALT = register("asphalt", Block::new, AbstractBlock.Settings.copy(Blocks.BLACKSTONE));
+
+
+	public static final Block MOSSY_STONE = register("mossy_stone", Block::new, AbstractBlock.Settings.copy(Blocks.STONE));
+
 
 	public static final Block NETHERITE_BARS = register("netherite_bars", PaneBlock::new, AbstractBlock.Settings.create().requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.NETHERITE).nonOpaque());
 	public static final Block COPPER_BARS = register("copper_bars", PaneBlock::new, AbstractBlock.Settings.create().requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.COPPER).nonOpaque());
@@ -214,6 +230,9 @@ public class ModBlocks {
 	public static final Block BUTTERCUPS = register("buttercups", ShortPlantBlock::new, AbstractBlock.Settings.copy(Blocks.DANDELION));
 	public static final Block OBSTERINE = register("obsterine", ShortPlantBlock::new, AbstractBlock.Settings.copy(Blocks.DANDELION));
 	public static final Block AXTERIA = register("axteria", ShortPlantBlock::new, AbstractBlock.Settings.copy(Blocks.DANDELION));
+
+
+	public static final Block ROSE = register("rose", ShortPlantBlock::new, AbstractBlock.Settings.copy(Blocks.POPPY));
 
 
 	public static final Block IRON_GRATING = register("iron_grating", MeshBlock::new,
@@ -254,6 +273,10 @@ public class ModBlocks {
 	public static final Block B_DEV_CLEAR = register("b_dev_clear", Block::new, AbstractBlock.Settings.copy(Blocks.STONE).nonOpaque());
 	public static final Block B_DEV_SKY = register("b_dev_sky", Block::new, AbstractBlock.Settings.copy(Blocks.STONE).luminance(value -> 15));
 
+	public static final Block FLOWERING_MOSS = register("flowering_moss", Block::new,
+			AbstractBlock.Settings.copy(Blocks.MOSS_BLOCK)
+	);
+
 
 	public static final Block OBSIDIAN_LIGHT_STRIP = register("obsidian_light", PillarBlock::new,
 			AbstractBlock.Settings.copy(ModBlocks.CHECKERED_OBSIDIAN).luminance(value -> 15)
@@ -264,6 +287,10 @@ public class ModBlocks {
 	public static final Block FORCEFIELD = register("forcefield", ForcefieldBlock::new,
 			AbstractBlock.Settings.copy(Blocks.GLASS).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
 	);
+
+	/*public static final Block BLACKSTONE_COFFIN = register("blackstone_coffin", Block::new,
+			AbstractBlock.Settings.copy(Blocks.BLACKSTONE).nonOpaque()
+	);*/
 
 	public static final Block PORTAL_GLASS_OPAQUE = register("portal_glass", Block::new, AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS));
 	public static final Block PORTAL_GLASS_TRANSPARENT = register("portal_glass_trans", TransparentBlock::new,
@@ -295,6 +322,13 @@ public class ModBlocks {
 
 	public static final Block WATER_LILY = registerBlock("water_lily", Prop::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.LILY_PAD).nonOpaque().pistonBehavior(PistonBehavior.DESTROY).luminance((state) -> 15));
 
+	public static final Block RD_TREE = registerBlock("rd_tree", settings -> new RdTreeBlock(settings, () -> ModBlockEntityTypes.RD_TREE), AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block RD_GRASS = register("rd_grass", Block::new,
+			AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK)
+	);
+	public static final Block RD_ROCK = register("rd_rock", Block::new,
+			AbstractBlock.Settings.copy(Blocks.COBBLESTONE)
+	);
 
 
 	public static final Block MYCELIA = registerBlock("mycelia", RootsBlock::new, AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.STEM).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
@@ -312,8 +346,12 @@ public class ModBlocks {
 
 	public static final Block VOLUMETRIC_LIGHT = register("volumetric_light", TransparentBlock::new, AbstractBlock.Settings.copy(Blocks.GLASS).sounds(BlockSoundGroup.AMETHYST_BLOCK));
 
-	//todo shader stupid shit i stupdishi GRRRRR AAAAAAA i hate this
-	public static final Block SKYBOX_SPACE = register("skybox_space", EndGatewayBlock::new, AbstractBlock.Settings.create().mapColor(MapColor.BLACK).noCollision().luminance((state) -> 15).strength(-1.0F, 3600000.0F).dropsNothing().pistonBehavior(PistonBehavior.BLOCK));
+	//to DONE shader stupid shit i stupdishi GRRRRR AAAAAAA i hate this
+	// HAHAAAAA ID IDD IT
+	//public static final Block SKYBOX_SPACE = register("skybox_space", EndGatewayBlock::new, AbstractBlock.Settings.create().mapColor(MapColor.BLACK).noCollision().luminance((state) -> 15).strength(-1.0F, 3600000.0F).dropsNothing().pistonBehavior(PistonBehavior.BLOCK));
+
+	public static final Block SHADER_INVERT = registerBlock("shader_invert", settings -> new InvertBlock(settings, () -> ModBlockEntityTypes.INVERT_BLOCK_ENTITY), AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.GLASS).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
+	public static final Block SHADER_SPACE = registerBlock("shader_space", settings -> new SpaceBlock(settings, () -> ModBlockEntityTypes.SPACE_BLOCK_ENTITY), AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(BlockSoundGroup.GLASS).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 
 	public static final Block LARGE_TORCH = registerBlock("large_torch", (settings) -> new LargeTorchBlock(ParticleTypes.FLAME, settings), AbstractBlock.Settings.create().noCollision().breakInstantly().luminance((state) -> 15).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY));
 
@@ -327,7 +365,7 @@ public class ModBlocks {
 	public static final Block HUB_TILES = register("hub_tiles", Block::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK));
 	public static final Block HUB_TILE_YELLOW = register("hub_tile_yellow", Block::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK));
 	public static final Block HUB_TILE_BLUE = register("hub_tile_blue", Block::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK));
-	public static final Block HUB_GLASS = register("hub_glass", Block::new, AbstractBlock.Settings.copy(Blocks.GLASS));
+	public static final Block HUB_GLASS = register("hub_glass", TransparentBlock::new, AbstractBlock.Settings.copy(Blocks.GLASS));
 
 	public static final Block HAZARD_MARKER = register("hazard_marker", Block::new, AbstractBlock.Settings.copy(Blocks.GOLD_BLOCK));
 	public static final Block HAZARD_MARKER_SLAB = register("hazard_marker_slab", SlabBlock::new,
@@ -366,7 +404,6 @@ public class ModBlocks {
 	public static final Block FUMO_BERYL = register("fumo_beryl", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 	public static final Block FUMO_ISM = register("fumo_ism", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 	public static final Block FUMO_ILYA = register("fumo_ilya", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
-	public static final Block FUMO_FRESHLY = register("fumo_freshly", PropFacing::new,  AbstractBlock.Settings.create().replaceable().noCollision().mapColor(MapColor.CLEAR).breakInstantly().sounds(ModSoundGroups.FUMO).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
 
 	public static final Block CRIMSON_VEINS = register("crimson_veins", VineBlock::new, AbstractBlock.Settings.create().mapColor(MapColor.DARK_RED).replaceable().noCollision().ticksRandomly().strength(0.2F).sounds(BlockSoundGroup.VINE).burnable().pistonBehavior(PistonBehavior.DESTROY));
 	public static final Block WARPED_WIREFRAME = register("warped_wireframe", VineBlock::new, AbstractBlock.Settings.create().mapColor(MapColor.DARK_RED).replaceable().noCollision().ticksRandomly().strength(0.2F).sounds(BlockSoundGroup.VINE).burnable().pistonBehavior(PistonBehavior.DESTROY));

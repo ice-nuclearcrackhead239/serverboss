@@ -1,0 +1,7 @@
+{
+  "parent": "svbcr:block/tintable_cross",
+  "textures": {
+    "tintable": "minecraft:block/rose_bush_top_tint",
+    "untintable": "minecraft:block/rose_bush_top_untint"
+  }
+}

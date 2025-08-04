@@ -15,6 +15,8 @@ import net.minecraft.world.BlockRenderView;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.GrassColors;
 
+import java.awt.*;
+
 public class ModColorProviders {
 
     public static final int DEFAULT_SKY_COLOR = 7907327;
@@ -34,9 +36,20 @@ public class ModColorProviders {
                 ModBlocks.VOLUMETRIC_LIGHT
         );
         ColorProviderRegistry.BLOCK.register(
+                (state, view, pos, tintIndex) -> view != null && pos != null ? Color.getHSBColor((float)(pos.getY()*939^(int)(pos.getX()*Math.E*219)^(int)(pos.getZ()*Math.PI*537))/77%1.0f, 0.2f, 1.0f).getRGB() : Colors.WHITE,
+                ModBlocks.RD_GRASS,
+                ModBlocks.RD_ROCK
+        );
+        ColorProviderRegistry.BLOCK.register(
                 (state, view, pos, tintIndex) -> view != null && pos != null ? BiomeColors.getGrassColor(view, pos) : Colors.WHITE,
                 ModBlocks.WATER_SILK,
+                ModBlocks.ROSE,
                 Blocks.SEAGRASS,
+                Blocks.DANDELION,
+                Blocks.ROSE_BUSH,
+                Blocks.PEONY,
+                Blocks.LILAC,
+                Blocks.BLUE_ORCHID,
                 Blocks.TALL_SEAGRASS
         );
         ColorProviderRegistry.BLOCK.register(
@@ -44,15 +57,17 @@ public class ModColorProviders {
                 ModBlocks.PUDDLE
         );
 
+
+        /*
         //items
-        ColorProviderRegistry.ITEM.register(
+        ColorProviderRegistry.BLOCK(
                 (stack, tintIndex) -> {
                     BlockState blockState = ((BlockItem)stack.getItem()).getBlock().getDefaultState();
                     BlockColorProvider blockColorProvider = (BlockColorProvider) ColorProviderRegistry.BLOCK.get(blockState.getBlock());
                     return blockColorProvider == null ? -1 : blockColorProvider.getColor(blockState, null, null, tintIndex);
                 },
                 ModItems.WATER_SILK
-        );
+        );*/
     }
 
 }

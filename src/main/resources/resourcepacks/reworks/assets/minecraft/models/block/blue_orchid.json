@@ -1,0 +1,7 @@
+{
+  "parent": "svbcr:block/tintable_cross",
+  "textures": {
+    "tintable": "minecraft:block/blue_orchid_tint",
+    "untintable": "minecraft:block/blue_orchid_untint"
+  }
+}

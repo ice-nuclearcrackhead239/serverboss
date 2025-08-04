@@ -2,5 +2,11 @@
 	"parent": "minecraft:item/generated",
 	"textures": {
 		"layer0": "svbcr:item/water_silk"
-	}
+	},
+	"tints": [
+		{
+			"type": "constant",
+			"value": 3446251
+		}
+	]
 }

@@ -53,6 +53,8 @@ public class ModItemGroups {
                 entries.add(ModBlocks.BUTTERCUPS);
                 entries.add(ModBlocks.OBSTERINE);
                 entries.add(ModBlocks.AXTERIA);
+                entries.add(ModBlocks.ROSE);
+                entries.add(ModBlocks.FLOWERING_MOSS);
                 entries.add(ModItems.WATER_SILK);
                 entries.add(ModItems.PROP_DRIFTWOOD);
                 entries.add(ModItems.PROP_PUDDLE);
@@ -61,6 +63,7 @@ public class ModItemGroups {
                 entries.add(ModItems.PROP_TRASH);
                 entries.add(ModItems.PROP_TRASH_SPREAD);
                 entries.add(ModItems.PROP_PEBBLES);
+                entries.add(ModBlocks.MOSSY_STONE);
                 entries.add(ModBlocks.LOPER_BRICKS);
                 entries.add(ModBlocks.B_DEV_ORANGE);
                 entries.add(ModBlocks.B_DEV_ASH);
@@ -107,6 +110,10 @@ public class ModItemGroups {
                 entries.add(ModBlocks.BLACK);
                 entries.add(ModBlocks.PORTAL_LEGACY);
                 entries.add(ModBlocks.CRYSTALLINE_DIAMOND);
+                entries.add(ModBlocks.SKY_CRYSTALLINE_DIAMOND);
+                entries.add(ModBlocks.CRYSTALLINE_GLOWSTONE);
+                entries.add(ModBlocks.CRYSTALLINE_GLASS);
+                entries.add(ModBlocks.CRYSTALLINE_VOIDSPRITE);
                 entries.add(ModBlocks.CHECKERED_OBSIDIAN);
                 entries.add(ModBlocks.CHISELED_OBSIDIAN);
                 entries.add(ModBlocks.OBSIDIAN_LIGHT_STRIP);
@@ -196,6 +203,11 @@ public class ModItemGroups {
                 entries.add(ModBlocks.HUB_TILE_BLUE);
                 entries.add(ModBlocks.HUB_GLASS);
                 entries.add(ModItems.HUB_TORCH);
+                entries.add(ModBlocks.RD_GRASS);
+                entries.add(ModBlocks.RD_ROCK);
+                entries.add(ModItems.RD_TREE);
+                entries.add(ModItems.SHADER_SPACE);
+                entries.add(ModItems.SHADER_INVERT);
                 entries.add(ModBlocks.VOLUMETRIC_LIGHT);
                 entries.add(ModBlocks.EXAMPLE_BLOCK);
             })
@@ -222,7 +234,6 @@ public class ModItemGroups {
                 entries.add(ModBlocks.FUMO_HEAPONS);
                 entries.add(ModBlocks.FUMO_SOUMEH);
                 entries.add(ModBlocks.FUMO_ICE);
-                entries.add(ModBlocks.FUMO_FRESHLY);
                 entries.add(ModBlocks.FUMO_JOSE);
                 entries.add(ModBlocks.FUMO_OBI);
                 entries.add(ModBlocks.FUMO_AVARITA);
@@ -253,10 +264,10 @@ public class ModItemGroups {
             entries.add(ModItems.RADIOACTIVE_BUCKET);
             entries.add(ModItems.EXAMPLE_ITEM);
         });
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {
+        /*ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {
             entries.add(ModItems.AXEMACHINE_SPAWN_EGG);
             entries.add(ModItems.BATTERY_SPAWN_EGG);
-        });
+        });*/
     }
 
 }

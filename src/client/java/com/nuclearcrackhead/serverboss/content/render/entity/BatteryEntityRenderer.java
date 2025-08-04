@@ -16,7 +16,7 @@ public class BatteryEntityRenderer extends MobEntityRenderer<BatteryEntity, Batt
 
     public BatteryEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new BatteryEntityModel(context.getPart(ModEntityRenderers.MODEL_BATTERY_LAYER)), 0.5f);
-        this.addFeature(new BatteryOutlineFeatureRenderer(this, context.getModelLoader()));
+        this.addFeature(new BatteryOutlineFeatureRenderer(this, context.getEntityModels()));
     }
 
     @Override

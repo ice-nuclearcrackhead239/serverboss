@@ -1,0 +1,7 @@
+{
+  "parent": "svbcr:block/tintable_cross",
+  "textures": {
+    "tintable": "svbcr:block/rose_tint",
+    "untintable": "svbcr:block/rose_untint"
+  }
+}

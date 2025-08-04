@@ -11,7 +11,7 @@ import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.feature.FeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
 import net.minecraft.client.render.entity.model.EntityModel;
-import net.minecraft.client.render.entity.model.EntityModelLoader;
+import net.minecraft.client.render.entity.model.LoadedEntityModels;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
@@ -19,7 +19,7 @@ public class BatteryOutlineRenderer extends FeatureRenderer<BatteryEntityRenderS
 
     private final EntityModel<BatteryEntityRenderState> outlineModel;
 
-    public BatteryOutlineRenderer(FeatureRendererContext<BatteryEntityRenderState, BatteryEntityMainModel> context, EntityModelLoader loader) {
+    public BatteryOutlineRenderer(FeatureRendererContext<BatteryEntityRenderState, BatteryEntityMainModel> context, LoadedEntityModels loader) {
         super(context);
         this.outlineModel = new BatteryEntityOutlineModel(loader.getModelPart(ModEntityRenderers.MODEL_BATTERY_LAYER));
     }

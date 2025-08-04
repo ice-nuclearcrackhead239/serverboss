@@ -1,5 +1,6 @@
 package com.nuclearcrackhead.serverboss.mixin.client;
 
+import net.minecraft.client.item.ItemModelManager;
 import net.minecraft.client.render.item.HeldItemRenderer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.util.math.MatrixStack;
@@ -24,7 +25,7 @@ public class HeldItemRendererMixin {
 	@Shadow ItemRenderer itemRenderer;
 
 	@Inject(at = @At("RETURN"), method = "<init>")
-	private void onNew(MinecraftClient client, EntityRenderDispatcher entityRenderDispatcher, ItemRenderer itemRenderer, CallbackInfo ci) {
+	private void onNew(MinecraftClient client, EntityRenderDispatcher entityRenderDispatcher, ItemRenderer itemRenderer, ItemModelManager itemModelManager, CallbackInfo ci) {
 		ModItemRenderers.init();
 	}
 

@@ -4,7 +4,6 @@ import com.nuclearcrackhead.serverboss.SVBCR;
 import com.nuclearcrackhead.serverboss.content.item.dev.*;
 import com.nuclearcrackhead.serverboss.content.item.*;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -38,12 +37,12 @@ public class ModItems {
 
     //public static final Item AXEMACHINE_SPAWN_EGG = new SpawnEggItem(ModEntities.AXEMACHINE, 0xff0000, 0x0000ff, new Item.Settings());
     // ↑ dont do that. it will crash t he game on initialization -mikii/adenator
-    public static final Item AXEMACHINE_SPAWN_EGG = register("axemachine_spawn_egg", //original primary 3a363a
+    /*public static final Item AXEMACHINE_SPAWN_EGG = register("axemachine_spawn_egg", //original primary 3a363a
             settings -> new SpawnEggItem(ModEntities.AXEMACHINE, 0xffffff, 0x5b0000, settings), new Item.Settings()
     );
     public static final Item BATTERY_SPAWN_EGG = register("battery_spawn_egg",
             settings -> new SpawnEggItem(ModEntities.BATTERY, 0xFFFFFF, 0xFF00FF, settings), new Item.Settings()
-    );
+    );*/
 
     //blocks that don't already have an associated item
     public static final Item WATER_SILK = register("water_silk", settings -> new PlaceableOnWaterItem(ModBlocks.WATER_SILK, settings), new Item.Settings());
@@ -51,6 +50,12 @@ public class ModItems {
     public static final Item WARPED_STALKS = register("warped_stalks", settings -> new TallBlockItem(ModBlocks.WARPED_STALKS, settings), new Item.Settings());
     public static final Item DEMONIC_GATE = register("demonic_gate", settings -> new TallBlockItem(ModBlocks.DEMONIC_GATE, settings), new Item.Settings());
 
+    public static final Item PROP_RD_TREE = register("prop_rd_tree", settings -> new BlockItem(ModBlocks.RD_TREE, settings), new Item.Settings());
+
+    public static final Item SHADER_SPACE = register("shader_space", settings -> new BlockItem(ModBlocks.SHADER_SPACE, settings), new Item.Settings());
+    public static final Item SHADER_INVERT = register("shader_invert", settings -> new BlockItem(ModBlocks.SHADER_INVERT, settings), new Item.Settings());
+
+    public static final Item RD_TREE = register("rd_tree", settings -> new BlockItem(ModBlocks.RD_TREE, settings), new Item.Settings());
     public static final Item PROP_TRASH = register("prop_trash", settings -> new BlockItem(ModBlocks.TRASH, settings), new Item.Settings());
     public static final Item LARGE_TORCH = register("large_torch", settings -> new BlockItem(ModBlocks.LARGE_TORCH, settings), new Item.Settings());
     public static final Item PROP_TRASH_SPREAD = register("prop_trash_spread", settings -> new BlockItem(ModBlocks.TRASH_SPREAD, settings), new Item.Settings());

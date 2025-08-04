@@ -28,7 +28,7 @@ public class BlackstonePedestalEntityRenderer implements BlockEntityRenderer<Bla
 		if ((Boolean)blockState.get(BlackstonePedestal.HAS_BOOK)) {
 			matrixStack.push();
 			matrixStack.translate(0.5F, 1.0625F, 0.5F);
-			float g = ((Direction)blockState.get(BlackstonePedestal.FACING)).rotateYClockwise().asRotation();
+			float g = ((Direction)blockState.get(BlackstonePedestal.FACING)).rotateYClockwise().getPositiveHorizontalDegrees();
 			matrixStack.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-g));
 			matrixStack.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(67.5F));
 			matrixStack.translate(0.0F, -0.125F, 0.0F);

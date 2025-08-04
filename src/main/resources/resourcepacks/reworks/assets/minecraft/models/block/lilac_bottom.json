@@ -1,0 +1,7 @@
+{
+  "parent": "svbcr:block/tintable_cross",
+  "textures": {
+    "tintable": "minecraft:block/lilac_bottom_tint",
+    "untintable": "minecraft:block/lilac_bottom_untint"
+  }
+}

@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/leaf_generic",
   "textures": {
-    "leaf": "minecraft:block/jungle_leaves",
+    "leaf": "minecraft:block/jungle_leaves_1",
     "fuzz": "minecraft:block/jungle_leaf_fuzz",
-    "particle": "minecraft:block/jungle_leaves"
+    "particle": "minecraft:block/jungle_leaves_1"
   }
 }

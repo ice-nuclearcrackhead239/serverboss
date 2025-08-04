@@ -196,7 +196,7 @@ public class BlackstonePedestalEntity extends BlockEntity implements Clearable, 
 		return new ServerCommandSource(CommandOutput.DUMMY, vec3d, Vec2f.ZERO, world, 2, string, text, world.getServer(), player);
 	}
 
-	@Override
+	//@Override
 	public boolean copyItemDataRequiresOperator() {
 		return true;
 	}

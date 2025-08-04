@@ -3,9 +3,7 @@
 	"package": "com.nuclearcrackhead.serverboss.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin",
-		"TitleMixin",
-		"MoveMixin"
+		"TitleMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
