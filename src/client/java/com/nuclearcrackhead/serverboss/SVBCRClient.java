@@ -15,6 +15,7 @@ public class SVBCRClient implements ClientModInitializer {
 		ModEntityRenderers.init();
 		ModColorProviders.init();
 		ModParticleFactories.init();
+		ModScreens.init();
 	}
 
 }

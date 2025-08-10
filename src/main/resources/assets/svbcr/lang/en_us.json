@@ -180,6 +180,8 @@
   "block.svbcr.smooth_stone_stairs": "Smooth Stone Stairs",
   "block.svbcr.spike_block": "Spike Block",
   "block.svbcr.spike_block.tooltip": "Spikes appear when it is stepped on",
+  "block.svbcr.room_block": "Room Block",
+  "block.svbcr.room_block.tooltip": "Creates rooms that can spawn mobs or trigger events",
   "block.svbcr.void_lamp": "Void Lamp",
   "block.svbcr.wastebarrel": "Large Radioactive Waste Barrel",
   "block.svbcr.water_silk": "Water Silk",

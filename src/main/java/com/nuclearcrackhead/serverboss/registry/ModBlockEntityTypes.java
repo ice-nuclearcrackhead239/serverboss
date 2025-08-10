@@ -12,6 +12,7 @@ public class ModBlockEntityTypes {
 	}
 	
 	public static final BlockEntityType<SpikeBlockEntity> SPIKE_BLOCK = register("spike_block", FabricBlockEntityTypeBuilder.create(SpikeBlockEntity::new, ModBlocks.SPIKE_BLOCK).build());
+	public static final BlockEntityType<RoomBlockEntity> ROOM_BLOCK = register("room_block", FabricBlockEntityTypeBuilder.create(RoomBlockEntity::new, ModBlocks.ROOM_BLOCK).build());
 	public static final BlockEntityType<BlackstonePedestalEntity> BLACKSTONE_PEDESTAL = register("blackstone_pedestal", FabricBlockEntityTypeBuilder.create(BlackstonePedestalEntity::new, ModBlocks.BLACKSTONE_PEDESTAL).build());
 
 	public static final BlockEntityType<RdTree> RD_TREE = register("rd_tree", FabricBlockEntityTypeBuilder.create(RdTree::new, ModBlocks.RD_TREE).build());
