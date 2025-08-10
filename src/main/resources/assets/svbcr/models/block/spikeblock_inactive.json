@@ -1,5 +1,6 @@
 {
 	"credit": "I hate minecraft models!",
+        "ambientocclusion": false,
 	"textures": {
 		"0": "svbcr:block/spikeblock_bottom",
 		"1": "svbcr:block/spikeblock_side",
