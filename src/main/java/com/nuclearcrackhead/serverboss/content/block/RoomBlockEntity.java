@@ -15,18 +15,24 @@ import net.minecraft.util.math.Vec3i;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.listener.ClientPlayPacketListener;
+import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import com.nuclearcrackhead.serverboss.registry.ModBlockEntityTypes;
 import com.nuclearcrackhead.serverboss.content.screen.RoomBlockScreenHandler;
 import com.nuclearcrackhead.serverboss.content.packet.UpdateRoomBlockS2CPacket;
 import com.nuclearcrackhead.serverboss.content.packet.UpdateRoomBlockC2SPacket;
+
+import org.jetbrains.annotations.Nullable;
+
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 
 public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory<UpdateRoomBlockS2CPacket> {
-	private String roomName = "";
-	private String mobList = "";
-	private BlockPos offset = new BlockPos(0, 1, 0);
-	private Vec3i size = Vec3i.ZERO;
-	private boolean showBoundingBox = false;
+	public String roomName = "";
+	public String mobList = "";
+	public BlockPos offset = new BlockPos(0, 1, 0);
+	public Vec3i size = Vec3i.ZERO;
+	public boolean showBoundingBox = false;
 
 	public RoomBlockEntity(BlockPos pos, BlockState state) {
 		super(ModBlockEntityTypes.ROOM_BLOCK, pos, state);
@@ -72,6 +78,17 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 		offset = new BlockPos(nbt.getInt("posX"), nbt.getInt("posY"), nbt.getInt("posZ"));
 		size = new Vec3i(nbt.getInt("sizeX"), nbt.getInt("sizeY"), nbt.getInt("sizeZ"));
 		showBoundingBox = nbt.getBoolean("showBoundingBox");
+	}
+
+	@Override
+	@Nullable
+	public Packet<ClientPlayPacketListener> toUpdatePacket() {
+		return BlockEntityUpdateS2CPacket.create(this);
+	}
+
+	@Override
+	public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup registries) {
+		return createNbt(registries);
 	}
 
 	public void update(UpdateRoomBlockC2SPacket packet) {
