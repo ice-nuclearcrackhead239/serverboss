@@ -3,9 +3,7 @@ package com.nuclearcrackhead.serverboss.content.screen;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
-import net.minecraft.client.gui.widget.CyclingButtonWidget;
 import net.minecraft.client.gui.widget.ButtonWidget;
-import net.minecraft.util.Identifier;
 import net.minecraft.text.Text;
 import net.minecraft.entity.player.PlayerInventory;
 import net.fabricmc.api.Environment;
@@ -13,7 +11,6 @@ import net.fabricmc.api.EnvType;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.util.math.BlockPos;
 
-import com.nuclearcrackhead.serverboss.SVBCR;
 import com.nuclearcrackhead.serverboss.content.packet.UpdateRoomBlockC2SPacket;
 import com.nuclearcrackhead.serverboss.content.packet.UpdateRoomBlockS2CPacket;
 
@@ -29,6 +26,7 @@ public class RoomBlockScreen extends HandledScreen<RoomBlockScreenHandler> {
 	private TextFieldWidget xSizeWidget;
 	private TextFieldWidget ySizeWidget;
 	private TextFieldWidget zSizeWidget;
+	private TextFieldWidget forceFieldListWidget;
 	private ButtonWidget showBoundingBoxWidget;
 	private ButtonWidget saveWidget;
 	private ButtonWidget cancelWidget;
@@ -68,6 +66,7 @@ public class RoomBlockScreen extends HandledScreen<RoomBlockScreenHandler> {
 		context.drawTextWithShadow(this.textRenderer, "X Size", longPos, 140, textColor);
 		context.drawTextWithShadow(this.textRenderer, "Y Size", longPos + posWidth + 8, 140, textColor);
 		context.drawTextWithShadow(this.textRenderer, "Z Size", longPos + posWidth * 2 + 16, 140, textColor);
+		context.drawTextWithShadow(this.textRenderer, "Forcefield List", longPos, 176, textColor);
 	}
  
 	@Override
@@ -87,9 +86,10 @@ public class RoomBlockScreen extends HandledScreen<RoomBlockScreenHandler> {
 		xSizeWidget = new TextFieldWidget(this.textRenderer, longPos, 148, posWidth, 20, Text.empty());
 		ySizeWidget = new TextFieldWidget(this.textRenderer, longPos + posWidth + 8, 148, posWidth, 20, Text.empty());
 		zSizeWidget = new TextFieldWidget(this.textRenderer, longPos + zPos, 148, longWidth - zPos, 20, Text.empty());
-		saveWidget = ButtonWidget.builder(Text.literal("Save"), this::onSave).dimensions(longPos, 176, posWidth, 20).build();
-		cancelWidget = ButtonWidget.builder(Text.literal("Cancel"), this::onCancel).dimensions(longPos + posWidth + 8, 176, posWidth, 20).build();
-		showBoundingBoxWidget = ButtonWidget.builder(Text.literal("Show Bounding Box"), this::showBounds).dimensions(longPos + zPos, 176, longWidth - zPos, 20).build();
+		forceFieldListWidget = new TextFieldWidget(this.textRenderer, longPos, 184, longWidth, 20, Text.empty());
+		saveWidget = ButtonWidget.builder(Text.literal("Save"), this::onSave).dimensions(longPos, 212, posWidth, 20).build();
+		cancelWidget = ButtonWidget.builder(Text.literal("Cancel"), this::onCancel).dimensions(longPos + posWidth + 8, 212, posWidth, 20).build();
+		showBoundingBoxWidget = ButtonWidget.builder(Text.literal("Show Bounding Box"), this::showBounds).dimensions(longPos + zPos, 212, longWidth - zPos, 20).build();
 
 		this.addDrawableChild(nameWidget);
 		this.addDrawableChild(mobListWidget);
@@ -99,9 +99,14 @@ public class RoomBlockScreen extends HandledScreen<RoomBlockScreenHandler> {
 		this.addDrawableChild(xSizeWidget);
 		this.addDrawableChild(ySizeWidget);
 		this.addDrawableChild(zSizeWidget);
+		this.addDrawableChild(forceFieldListWidget);
 		this.addDrawableChild(saveWidget);
 		this.addDrawableChild(cancelWidget);
 		this.addDrawableChild(showBoundingBoxWidget);
+
+		nameWidget.setMaxLength(500);
+		mobListWidget.setMaxLength(500);
+		forceFieldListWidget.setMaxLength(500);
 
 		UpdateRoomBlockS2CPacket payload = this.getScreenHandler().getPayload();
 		nameWidget.setText(payload.name());
@@ -114,6 +119,7 @@ public class RoomBlockScreen extends HandledScreen<RoomBlockScreenHandler> {
 		xSizeWidget.setText(Integer.toString(size.getX()));
 		ySizeWidget.setText(Integer.toString(size.getY()));
 		zSizeWidget.setText(Integer.toString(size.getZ()));
+		forceFieldListWidget.setText(payload.forceFieldList());
 		showingBounds = payload.showBounds();
 	}
 
@@ -132,16 +138,17 @@ public class RoomBlockScreen extends HandledScreen<RoomBlockScreenHandler> {
 		xSizeWidget.setDimensionsAndPosition(posWidth, 20, longPos, 148);
 		ySizeWidget.setDimensionsAndPosition(posWidth, 20, longPos + posWidth + 8, 148);
 		zSizeWidget.setDimensionsAndPosition(longWidth - zPos, 20, longPos + zPos, 148);
-		saveWidget.setDimensionsAndPosition(posWidth, 20, longPos, 176);
-		cancelWidget.setDimensionsAndPosition(posWidth, 20, longPos + posWidth + 8, 176);
-		showBoundingBoxWidget.setDimensionsAndPosition(longWidth - zPos, 20, longPos + zPos, 176);
+		forceFieldListWidget.setDimensionsAndPosition(longWidth, 20, longPos, 184);
+		saveWidget.setDimensionsAndPosition(posWidth, 20, longPos, 212);
+		cancelWidget.setDimensionsAndPosition(posWidth, 20, longPos + posWidth + 8, 212);
+		showBoundingBoxWidget.setDimensionsAndPosition(longWidth - zPos, 20, longPos + zPos, 212);
 	}
 
 	private void onSave(ButtonWidget button) {
 		BlockPos target = this.getScreenHandler().getPayload().targetPos();
 		BlockPos roomPos = new BlockPos(parseInt(xPosWidget.getText()), parseInt(yPosWidget.getText()), parseInt(zPosWidget.getText()));
 		BlockPos roomSize = new BlockPos(parseInt(xSizeWidget.getText()), parseInt(ySizeWidget.getText()), parseInt(zSizeWidget.getText()));
-		UpdateRoomBlockC2SPacket packet = new UpdateRoomBlockC2SPacket(target, nameWidget.getText(), mobListWidget.getText(), roomPos, roomSize, this.showingBounds);
+		UpdateRoomBlockC2SPacket packet = new UpdateRoomBlockC2SPacket(target, nameWidget.getText(), mobListWidget.getText(), roomPos, roomSize, this.showingBounds, forceFieldListWidget.getText());
 		ClientPlayNetworking.send(packet);
 		this.close();
 	}
@@ -160,5 +167,13 @@ public class RoomBlockScreen extends HandledScreen<RoomBlockScreenHandler> {
 		} catch (NumberFormatException e) {
 			return 0;
 		}
+	}
+
+	@Override
+	public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+		if (this.client.options.inventoryKey.matchesKey(keyCode, scanCode)) {
+			return true;
+		}
+		return super.keyPressed(keyCode, scanCode, modifiers);
 	}
 }

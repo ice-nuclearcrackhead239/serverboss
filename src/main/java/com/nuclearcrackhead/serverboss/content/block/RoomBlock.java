@@ -1,22 +1,15 @@
 package com.nuclearcrackhead.serverboss.content.block;
 
-import com.nuclearcrackhead.serverboss.registry.ModDamageTypes;
-import com.nuclearcrackhead.serverboss.registry.ModBlockEntityTypes;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockWithEntity;
-import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.util.Formatting;
@@ -24,10 +17,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.ActionResult;
 import net.minecraft.world.World;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
 
 import java.util.List;
+
+import org.jetbrains.annotations.Nullable;
+
+import com.nuclearcrackhead.serverboss.registry.ModBlockEntityTypes;
 
 public class RoomBlock extends BlockWithEntity {
 	public RoomBlock(Settings settings) {
@@ -61,5 +56,12 @@ public class RoomBlock extends BlockWithEntity {
 			return ActionResult.SUCCESS;
 		}
 		return player.isCreativeLevelTwoOp() ? ActionResult.SUCCESS : ActionResult.PASS;
+	}
+
+	@Nullable
+	@Override
+	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+		if (world.isClient()) return null;
+		return validateTicker(type, ModBlockEntityTypes.ROOM_BLOCK, RoomBlockEntity::tick);
 	}
 }
