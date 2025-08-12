@@ -285,7 +285,7 @@ public class ModBlocks {
 			AbstractBlock.Settings.copy(Blocks.GLASS).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
 	);
 	public static final Block FORCEFIELD = register("forcefield", ForcefieldBlock::new,
-			AbstractBlock.Settings.copy(Blocks.GLASS).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)
+			AbstractBlock.Settings.copy(Blocks.GLASS).nonOpaque().allowsSpawning(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never).requiresTool().strength(-1.0F, 3600000.0F).dropsNothing()
 	);
 
 	/*public static final Block BLACKSTONE_COFFIN = register("blackstone_coffin", Block::new,
