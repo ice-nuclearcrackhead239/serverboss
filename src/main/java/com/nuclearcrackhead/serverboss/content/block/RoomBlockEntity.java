@@ -3,10 +3,12 @@ package com.nuclearcrackhead.serverboss.content.block;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.Vec3i;
@@ -18,6 +20,7 @@ import net.minecraft.network.packet.Packet;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.world.World;
+import net.minecraft.server.world.ServerWorld;
 import com.nuclearcrackhead.serverboss.registry.ModBlockEntityTypes;
 import com.nuclearcrackhead.serverboss.content.screen.RoomBlockScreenHandler;
 import com.nuclearcrackhead.serverboss.content.packet.UpdateRoomBlockS2CPacket;
@@ -27,6 +30,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.Optional;
 
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 
@@ -40,6 +44,8 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 
 	public long activeDuration = 0;
 	public ArrayList<UUID> safePlayers = new ArrayList<UUID>();
+	public ArrayList<LivingEntity> activeMobs = new ArrayList<LivingEntity>();
+	public ArrayList<BlockPos> safeSpots = new ArrayList<BlockPos>();
 
 	public RoomBlockEntity(BlockPos pos, BlockState state) {
 		super(ModBlockEntityTypes.ROOM_BLOCK, pos, state);
@@ -149,6 +155,55 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 		return true;
 	}
 
+	public Optional<BlockPos> getSpawnPos() {
+		if (safeSpots.size() == 0) {
+			return Optional.empty();
+		}
+		int index = this.world.getRandom().nextInt(safeSpots.size());
+		return Optional.of(safeSpots.get(index));
+	}
+
+	public void calcSafeSpots() {
+		safeSpots.clear();
+
+		int xOff = offset.getX() + this.pos.getX();
+		int yOff = offset.getY() + this.pos.getY();
+		int zOff = offset.getZ() + this.pos.getZ();
+
+		int xSize = size.getX();
+		int ySize = size.getY();
+		int zSize = size.getZ();
+
+		for (int i = 0; i < xSize; i++) {
+			for (int j = 0; j < zSize; j++) {
+				BlockPos pos = new BlockPos(i + xOff, yOff, j + zOff);
+				for (int k = 0; k < ySize; k++) {
+					if (world.isAir(pos)) {
+						safeSpots.add(pos);
+						continue;
+					}
+				}
+			}
+		}
+	}
+
+	public void spawnMobs() {
+		calcSafeSpots();
+
+		String[] mobArray = mobList.split(",");
+		for (String mobId : mobArray) {
+			Optional<EntityType<?>> entityTypeOptional = EntityType.get(mobId);
+			if (entityTypeOptional.isEmpty()) continue;
+			EntityType<?> entityType = entityTypeOptional.get();
+
+			Optional<BlockPos> spawnPosOptional = getSpawnPos();
+			if (spawnPosOptional.isEmpty()) return;
+
+			ServerWorld serverWorld = (ServerWorld)this.world;
+			entityType.spawn(serverWorld, spawnPosOptional.get(), SpawnReason.MOB_SUMMONED);
+		}
+	}
+
 	public static void tick(World world, BlockPos pos, BlockState state, RoomBlockEntity blockEntity) {
 		for (PlayerEntity player : world.getPlayers()) {
 			ServerPlayerEntity serverPlayer = (ServerPlayerEntity)player;
@@ -163,6 +218,9 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 			}
 		}
 		if (blockEntity.activeDuration > 0) {
+			if (blockEntity.activeDuration == 40) {
+				blockEntity.spawnMobs();
+			}
 			blockEntity.activeDuration++;
 		}
 	}
