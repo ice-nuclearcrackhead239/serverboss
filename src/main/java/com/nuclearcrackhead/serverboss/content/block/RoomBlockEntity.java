@@ -119,21 +119,21 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 		world.updateListeners(packet.targetPos(), state, state, 0);
 	}
 
-	public void activateForcefield(BlockPos pos) {
+	public void setForcefield(BlockPos pos, boolean closed) {
 		BlockState state = world.getBlockState(pos);
 		if (state.getBlock() instanceof ForcefieldBlock) {
-			if (state.get(ForcefieldBlock.OPEN) == false) return;
-			world.setBlockState(pos, state.with(ForcefieldBlock.OPEN, false));
-			activateForcefield(pos.up());
-			activateForcefield(pos.down());
-			activateForcefield(pos.north());
-			activateForcefield(pos.east());
-			activateForcefield(pos.south());
-			activateForcefield(pos.west());
+			if (state.get(ForcefieldBlock.OPEN) == !closed) return;
+			world.setBlockState(pos, state.with(ForcefieldBlock.OPEN, !closed));
+			setForcefield(pos.up(), closed);
+			setForcefield(pos.down(), closed);
+			setForcefield(pos.north(), closed);
+			setForcefield(pos.east(), closed);
+			setForcefield(pos.south(), closed);
+			setForcefield(pos.west(), closed);
 		}
 	}
 
-	public void activateForcefields() {
+	public void setForcefields(boolean closed) {
 		String[] forceFieldArray = forceFieldList.split(",");
 		BlockPos[] posArray = new BlockPos[forceFieldArray.length];
 		for (int i = 0; i < forceFieldArray.length; i++) {
@@ -144,7 +144,7 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 			posArray[i] = pos;
 		}
 		for (BlockPos pos : posArray) {
-			activateForcefield(pos);
+			setForcefield(pos, closed);
 		}
 	}
 
@@ -200,7 +200,10 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 			if (spawnPosOptional.isEmpty()) return;
 
 			ServerWorld serverWorld = (ServerWorld)this.world;
-			entityType.spawn(serverWorld, spawnPosOptional.get(), SpawnReason.MOB_SUMMONED);
+			Entity entity = entityType.spawn(serverWorld, spawnPosOptional.get(), SpawnReason.MOB_SUMMONED);
+			if (entity instanceof LivingEntity livingEntity) {
+				activeMobs.add(livingEntity);
+			}
 		}
 	}
 
@@ -210,7 +213,7 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 			if (serverPlayer.interactionManager.isSurvivalLike() && !blockEntity.safePlayers.contains(player.getUuid())) {
 				if (blockEntity.inRoom(player)) {
 					if (blockEntity.activeDuration == 0) {
-						blockEntity.activateForcefields();
+						blockEntity.setForcefields(true);
 						blockEntity.activeDuration = 1;
 					}
 					blockEntity.safePlayers.add(player.getUuid());
@@ -220,6 +223,19 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 		if (blockEntity.activeDuration > 0) {
 			if (blockEntity.activeDuration == 40) {
 				blockEntity.spawnMobs();
+			} else if (blockEntity.activeDuration > 40) {
+				for (int i = 0; i < blockEntity.activeMobs.size(); i++) {
+					LivingEntity livingEntity = blockEntity.activeMobs.get(i);
+					if (livingEntity.isDead()) {
+						blockEntity.activeMobs.remove(i);
+						i--;
+					}
+				}
+				if (blockEntity.activeMobs.size() == 0) {
+					blockEntity.setForcefields(false);
+					blockEntity.activeDuration = 0;
+					return;
+				}
 			}
 			blockEntity.activeDuration++;
 		}
