@@ -21,7 +21,10 @@ import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.world.World;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.sound.SoundCategory;
 import com.nuclearcrackhead.serverboss.registry.ModBlockEntityTypes;
+import com.nuclearcrackhead.serverboss.registry.ModSounds;
 import com.nuclearcrackhead.serverboss.content.screen.RoomBlockScreenHandler;
 import com.nuclearcrackhead.serverboss.content.packet.UpdateRoomBlockS2CPacket;
 import com.nuclearcrackhead.serverboss.content.packet.UpdateRoomBlockC2SPacket;
@@ -207,6 +210,21 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 		}
 	}
 
+	public void playEnterSound(PlayerEntity player) {
+		player.playSoundToPlayer(SoundEvents.BLOCK_NOTE_BLOCK_DIDGERIDOO.value(), SoundCategory.AMBIENT, 2, 0);
+		player.playSoundToPlayer(ModSounds.MISC_ERROR, SoundCategory.AMBIENT, 2, 0);
+	}
+
+	public void playOverSound(PlayerEntity player) {
+		player.playSoundToPlayer(SoundEvents.BLOCK_NOTE_BLOCK_BELL.value(), SoundCategory.AMBIENT, 2, 0);
+		player.playSoundToPlayer(SoundEvents.BLOCK_NOTE_BLOCK_BELL.value(), SoundCategory.AMBIENT, 2, 1);
+		player.playSoundToPlayer(SoundEvents.BLOCK_NOTE_BLOCK_BELL.value(), SoundCategory.AMBIENT, 2, 2);
+		player.playSoundToPlayer(SoundEvents.BLOCK_BELL_USE, SoundCategory.AMBIENT, 2, 0);
+		player.playSoundToPlayer(SoundEvents.BLOCK_BELL_USE, SoundCategory.AMBIENT, 2, 1);
+		player.playSoundToPlayer(SoundEvents.BLOCK_BELL_USE, SoundCategory.AMBIENT, 2, 2);
+		player.playSoundToPlayer(SoundEvents.ENTITY_WITHER_AMBIENT, SoundCategory.AMBIENT, 2, 0);
+	}
+
 	public static void tick(World world, BlockPos pos, BlockState state, RoomBlockEntity blockEntity) {
 		for (PlayerEntity player : world.getPlayers()) {
 			ServerPlayerEntity serverPlayer = (ServerPlayerEntity)player;
@@ -215,6 +233,7 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 					if (blockEntity.activeDuration == 0) {
 						blockEntity.setForcefields(true);
 						blockEntity.activeDuration = 1;
+						blockEntity.playEnterSound(player);
 					}
 					blockEntity.safePlayers.add(player.getUuid());
 				}
@@ -234,6 +253,11 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 				if (blockEntity.activeMobs.size() == 0) {
 					blockEntity.setForcefields(false);
 					blockEntity.activeDuration = 0;
+					for (PlayerEntity player : world.getPlayers()) {
+						if (blockEntity.inRoom(player)) {
+							blockEntity.playOverSound(player);
+						}
+					}
 					return;
 				}
 			}

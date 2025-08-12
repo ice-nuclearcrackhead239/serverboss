@@ -95,5 +95,10 @@
     "sounds": [
       "svbcr:block/explode"
     ]
+  },
+  "misc.error": {
+    "sounds": [
+      "svbcr:misc/error"
+    ]
   }
 }
