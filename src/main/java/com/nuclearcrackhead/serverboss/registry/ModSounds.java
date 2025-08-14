@@ -24,6 +24,7 @@ public class ModSounds {
     public static final SoundEvent BLOCK_FUMO_BREAK = registerSound("block.fumo.break");
     
     public static final SoundEvent MISC_ERROR = registerSound("misc.error");
+    public static final SoundEvent MISC_SECRET = registerSound("misc.secret");
 
     private static SoundEvent registerSound(String id) {
         Identifier identifier = Identifier.of(SVBCR.MOD_ID, id);

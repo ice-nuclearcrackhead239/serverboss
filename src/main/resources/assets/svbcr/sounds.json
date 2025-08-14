@@ -100,5 +100,10 @@
     "sounds": [
       "svbcr:misc/error"
     ]
+  },
+  "misc.secret": {
+    "sounds": [
+      "svbcr:misc/secret"
+    ]
   }
 }

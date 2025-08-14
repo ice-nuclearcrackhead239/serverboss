@@ -231,7 +231,8 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 	}
 
 	public void playSecretSound(PlayerEntity player) {
-		//player.playSoundToPlayer(ModSounds.MISC_SECRET, SoundCategory.AMBIENT, 2, 1);
+		player.playSoundToPlayer(ModSounds.MISC_SECRET, SoundCategory.AMBIENT, 2, 1);
+		player.sendMessage(Text.literal("You have unveiled a sneaky secret!"), true);
 	}
 
 	public static void tick(World world, BlockPos pos, BlockState state, RoomBlockEntity blockEntity) {
@@ -322,6 +323,7 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 		for (PlayerEntity player : world.getPlayers()) {
 			if (inRoom(player) && !safePlayers.contains(player.getUuid())) {
 				playSecretSound(player);
+				safePlayers.add(player.getUuid());
 			}
 		}
 	}
