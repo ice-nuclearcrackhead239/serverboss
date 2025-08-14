@@ -13,12 +13,15 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.Box;
+import net.minecraft.util.TypeFilter;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
+import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.world.World;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
@@ -28,10 +31,12 @@ import com.nuclearcrackhead.serverboss.registry.ModSounds;
 import com.nuclearcrackhead.serverboss.content.screen.RoomBlockScreenHandler;
 import com.nuclearcrackhead.serverboss.content.packet.UpdateRoomBlockS2CPacket;
 import com.nuclearcrackhead.serverboss.content.packet.UpdateRoomBlockC2SPacket;
+import com.nuclearcrackhead.serverboss.content.entity.ILivingEntityMixin;
 
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import java.util.Optional;
 
@@ -225,47 +230,144 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 		player.playSoundToPlayer(SoundEvents.ENTITY_WITHER_AMBIENT, SoundCategory.AMBIENT, 2, 0);
 	}
 
+	public void playSecretSound(PlayerEntity player) {
+		//player.playSoundToPlayer(ModSounds.MISC_SECRET, SoundCategory.AMBIENT, 2, 1);
+	}
+
 	public static void tick(World world, BlockPos pos, BlockState state, RoomBlockEntity blockEntity) {
+		int underscoreIndex = blockEntity.roomName.indexOf("_");
+		if (underscoreIndex == -1) {
+			blockEntity.roomTick(world, pos, state);
+			return;
+		}
+		String roomType = blockEntity.roomName.substring(0, underscoreIndex);
+		switch (roomType) {
+			case "room":
+				blockEntity.roomTick(world, pos, state);
+				break;
+			case "kill":
+				blockEntity.killTick(world, pos, state);
+				break;
+			case "deny":
+				blockEntity.denyTick(world, pos, state);
+				break;
+			case "secret":
+				blockEntity.secretTick(world, pos, state);
+				break;
+			case "warp":
+				blockEntity.warpTick(world, pos, state);
+				break;
+			case "vkill":
+				blockEntity.vkillTick(world, pos, state);
+				break;
+			case "drop":
+				blockEntity.dropTick(world, pos, state);
+		}
+	}
+
+	public void roomTick(World world, BlockPos pos, BlockState state) {
 		for (PlayerEntity player : world.getPlayers()) {
 			ServerPlayerEntity serverPlayer = (ServerPlayerEntity)player;
-			if (serverPlayer.interactionManager.isSurvivalLike() && !blockEntity.safePlayers.contains(player.getUuid())) {
-				if (blockEntity.inRoom(player)) {
-					if (blockEntity.activeDuration == 0) {
-						blockEntity.setForcefields(true);
-						blockEntity.activeDuration = 1;
-						blockEntity.playEnterSound(player);
+			if (serverPlayer.interactionManager.isSurvivalLike() && !safePlayers.contains(player.getUuid())) {
+				if (inRoom(player)) {
+					if (activeDuration == 0) {
+						setForcefields(true);
+						activeDuration = 1;
+						playEnterSound(player);
 					}
-					blockEntity.safePlayers.add(player.getUuid());
+					safePlayers.add(player.getUuid());
 				}
 			}
 		}
-		if (blockEntity.activeDuration > 0) {
-			if (blockEntity.activeDuration == 40) {
-				blockEntity.spawnMobs();
-			} else if (blockEntity.activeDuration > 40) {
-				for (int i = 0; i < blockEntity.activeMobs.size(); i++) {
-					LivingEntity livingEntity = blockEntity.activeMobs.get(i);
+		if (activeDuration > 0) {
+			if (activeDuration == 40) {
+				spawnMobs();
+			} else if (activeDuration > 40) {
+				for (int i = 0; i < activeMobs.size(); i++) {
+					LivingEntity livingEntity = activeMobs.get(i);
 					if (livingEntity.isDead()) {
-						blockEntity.activeMobs.remove(i);
+						activeMobs.remove(i);
 						i--;
 					}
 				}
-				if (blockEntity.activeMobs.size() == 0) {
-					blockEntity.setForcefields(false);
-					blockEntity.activeDuration = 0;
+				if (activeMobs.size() == 0) {
+					setForcefields(false);
+					activeDuration = 0;
 					for (PlayerEntity player : world.getPlayers()) {
-						if (blockEntity.inRoom(player)) {
-							blockEntity.playOverSound(player);
+						if (inRoom(player)) {
+							playOverSound(player);
 						}
 					}
 					return;
 				}
 			}
-			blockEntity.activeDuration++;
+			activeDuration++;
 		}
 	}
 
-	private int parseInt(String string) {
+	public void killTick(World world, BlockPos pos, BlockState state) {
+		for (PlayerEntity player : world.getPlayers()) {
+			ServerPlayerEntity serverPlayer = (ServerPlayerEntity)player;
+			if (inRoom(player) && player.isAlive() && serverPlayer.interactionManager.isSurvivalLike()) {
+				player.kill((ServerWorld)world);
+			}
+		}
+	}
+
+	public void denyTick(World world, BlockPos pos, BlockState state) {
+		//TODO
+	}
+
+	public void secretTick(World world, BlockPos pos, BlockState state) {
+		for (PlayerEntity player : world.getPlayers()) {
+			if (inRoom(player) && !safePlayers.contains(player.getUuid())) {
+				playSecretSound(player);
+			}
+		}
+	}
+
+	public void warpTick(World world, BlockPos pos, BlockState state) {
+		String[] coords = mobList.split(" ");
+		if (coords.length != 3) return;
+		for (PlayerEntity player : world.getPlayers()) {
+			ServerPlayerEntity serverPlayer = (ServerPlayerEntity)player;
+			if (inRoom(player) && serverPlayer.interactionManager.isSurvivalLike()) {
+				player.teleport(parseDouble(coords[0]), parseDouble(coords[1]), parseDouble(coords[2]), false);
+			}
+		}
+	}
+
+	public void vkillTick(World world, BlockPos pos, BlockState state) {
+		Box box = new Box(new Vec3d(offset.add(pos)), new Vec3d(offset.add(pos).add(size)));
+		List<LivingEntity> entities = world.getEntitiesByType(TypeFilter.instanceOf(LivingEntity.class), box, EntityPredicates.VALID_LIVING_ENTITY);
+		for (LivingEntity entity : entities) {
+			if (!entity.isPlayer()) {
+				entity.kill((ServerWorld)world);
+			}
+		}
+	}
+
+	public void dropTick(World world, BlockPos pos, BlockState state) {
+		for (int i = 0; i < safePlayers.size(); i++) {
+			PlayerEntity player = world.getPlayerByUuid(safePlayers.get(i));
+			if (!inRoom(player)) {
+				safePlayers.remove(i);
+
+				ILivingEntityMixin livingEntity = (ILivingEntityMixin)(Object)player;
+				livingEntity.setFallImmune(false);
+			}
+		}
+		for (PlayerEntity player : world.getPlayers()) {
+			if (inRoom(player)) {
+				ILivingEntityMixin livingEntity = (ILivingEntityMixin)(Object)player;
+				livingEntity.setFallImmune(true);
+
+				safePlayers.add(player.getUuid());
+			}
+		}
+	}
+
+	public int parseInt(String string) {
 		try {
 			return Integer.parseInt(string);
 		} catch (NumberFormatException e) {
@@ -273,5 +375,11 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 		}
 	}
 
-
+	public double parseDouble(String string) {
+		try {
+			return Double.parseDouble(string);
+		} catch (NumberFormatException e) {
+			return 0;
+		}
+	}
 }
