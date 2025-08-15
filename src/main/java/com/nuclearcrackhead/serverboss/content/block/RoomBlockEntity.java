@@ -38,6 +38,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
 import java.util.UUID;
 import java.util.Optional;
 
@@ -55,6 +56,7 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 	public ArrayList<UUID> safePlayers = new ArrayList<UUID>();
 	public ArrayList<LivingEntity> activeMobs = new ArrayList<LivingEntity>();
 	public ArrayList<BlockPos> safeSpots = new ArrayList<BlockPos>();
+	public HashMap<UUID,Vec3d> playerVelocities = new HashMap<UUID,Vec3d>();
 
 	public RoomBlockEntity(BlockPos pos, BlockState state) {
 		super(ModBlockEntityTypes.ROOM_BLOCK, pos, state);
@@ -319,17 +321,20 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 	public void denyTick(World world, BlockPos pos, BlockState state) {
 		for (PlayerEntity player : world.getPlayers()) {
 			ServerPlayerEntity serverPlayer = (ServerPlayerEntity)player;
-			if (inRoom(player) && serverPlayer.interactionManager.isSurvivalLike() && !safePlayers.contains(player.getUuid())) {
+			if (inRoom(player) && serverPlayer.interactionManager.isSurvivalLike()) {
 				Vec3d playerVelocity = player.getMovement();
-				Vec3d velocity = playerVelocity.withAxis(Axis.Y, 0.0F).normalize().multiply(-0.5).withAxis(Axis.Y, 0.25);
-				System.out.println(playerVelocity);
-				System.out.println(velocity);
+				Vec3d velocity;
+				if (!playerVelocities.containsKey(player.getUuid())) {
+					velocity = playerVelocity.withAxis(Axis.Y, 0.0F).normalize().multiply(-0.5).withAxis(Axis.Y, 0.25);
+					playerVelocities.put(player.getUuid(), velocity);
+				} else {
+					velocity = playerVelocities.get(player.getUuid());
+				}
 				player.setVelocity(velocity);
 				player.velocityModified = true;
-				safePlayers.add(player.getUuid());
 			}
-			if (!inRoom(player) && safePlayers.contains(player.getUuid())) {
-				safePlayers.remove(player.getUuid());
+			if (!inRoom(player) && playerVelocities.containsKey(player.getUuid())) {
+				playerVelocities.remove(player.getUuid());
 			}
 		}
 	}
