@@ -13,6 +13,7 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.Direction.Axis;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.TypeFilter;
 import net.minecraft.nbt.NbtCompound;
@@ -316,7 +317,21 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 	}
 
 	public void denyTick(World world, BlockPos pos, BlockState state) {
-		//TODO
+		for (PlayerEntity player : world.getPlayers()) {
+			ServerPlayerEntity serverPlayer = (ServerPlayerEntity)player;
+			if (inRoom(player) && serverPlayer.interactionManager.isSurvivalLike() && !safePlayers.contains(player.getUuid())) {
+				Vec3d playerVelocity = player.getMovement();
+				Vec3d velocity = playerVelocity.withAxis(Axis.Y, 0.0F).normalize().multiply(-0.5).withAxis(Axis.Y, 0.25);
+				System.out.println(playerVelocity);
+				System.out.println(velocity);
+				player.setVelocity(velocity);
+				player.velocityModified = true;
+				safePlayers.add(player.getUuid());
+			}
+			if (!inRoom(player) && safePlayers.contains(player.getUuid())) {
+				safePlayers.remove(player.getUuid());
+			}
+		}
 	}
 
 	public void secretTick(World world, BlockPos pos, BlockState state) {
