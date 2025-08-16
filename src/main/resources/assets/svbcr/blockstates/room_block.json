@@ -1,0 +1,25 @@
+{
+	"variants": {
+		"mode=normal": {
+			"model": "svbcr:block/roomblock_normal"
+		},
+		"mode=secret": {
+			"model": "svbcr:block/roomblock_secret"
+		},
+		"mode=drop": {
+			"model": "svbcr:block/roomblock_drop"
+		},
+		"mode=warp": {
+			"model": "svbcr:block/roomblock_warp"
+		},
+		"mode=deny": {
+			"model": "svbcr:block/roomblock_deny"
+		},
+		"mode=kill": {
+			"model": "svbcr:block/roomblock_kill"
+		},
+		"mode=vkill": {
+			"model": "svbcr:block/roomblock_vkill"
+		}
+	}
+}

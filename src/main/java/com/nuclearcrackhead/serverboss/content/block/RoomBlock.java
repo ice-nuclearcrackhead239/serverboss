@@ -1,5 +1,6 @@
 package com.nuclearcrackhead.serverboss.content.block;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -16,6 +17,8 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.ActionResult;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -25,8 +28,11 @@ import org.jetbrains.annotations.Nullable;
 import com.nuclearcrackhead.serverboss.registry.ModBlockEntityTypes;
 
 public class RoomBlock extends BlockWithEntity {
+	public static final EnumProperty<RoomBlockMode> MODE = EnumProperty.of("mode", RoomBlockMode.class);
+
 	public RoomBlock(Settings settings) {
 		super(settings);
+		setDefaultState(getDefaultState().with(MODE, RoomBlockMode.NORMAL));
 	}
 
 	public static final MapCodec<RoomBlock> CODEC = createCodec(RoomBlock::new);
@@ -63,5 +69,10 @@ public class RoomBlock extends BlockWithEntity {
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
 		if (world.isClient()) return null;
 		return validateTicker(type, ModBlockEntityTypes.ROOM_BLOCK, RoomBlockEntity::tick);
+	}
+
+	@Override
+	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+		builder.add(MODE);
 	}
 }

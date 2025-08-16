@@ -117,6 +117,41 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 		return createNbt(registries);
 	}
 
+	public void updateBlockstate() {
+		int underscoreIndex = roomName.indexOf("_");
+		if (underscoreIndex == -1) {
+			world.setBlockState(pos, world.getBlockState(pos).with(RoomBlock.MODE, RoomBlockMode.NORMAL));
+			return;
+		}
+		String roomType = roomName.substring(0, underscoreIndex);
+		switch (roomType) {
+			case "room":
+				world.setBlockState(pos, world.getBlockState(pos).with(RoomBlock.MODE, RoomBlockMode.NORMAL));
+				break;
+			case "kill":
+				world.setBlockState(pos, world.getBlockState(pos).with(RoomBlock.MODE, RoomBlockMode.KILL));
+				break;
+			case "deny":
+				world.setBlockState(pos, world.getBlockState(pos).with(RoomBlock.MODE, RoomBlockMode.DENY));
+				break;
+			case "secret":
+				world.setBlockState(pos, world.getBlockState(pos).with(RoomBlock.MODE, RoomBlockMode.SECRET));
+				break;
+			case "warp":
+				world.setBlockState(pos, world.getBlockState(pos).with(RoomBlock.MODE, RoomBlockMode.WARP));
+				break;
+			case "vkill":
+				world.setBlockState(pos, world.getBlockState(pos).with(RoomBlock.MODE, RoomBlockMode.VKILL));
+				break;
+			case "drop":
+				world.setBlockState(pos, world.getBlockState(pos).with(RoomBlock.MODE, RoomBlockMode.KILL));
+				break;
+			default:
+				world.setBlockState(pos, world.getBlockState(pos).with(RoomBlock.MODE, RoomBlockMode.NORMAL));
+				break;
+		}
+	}
+
 	public void update(UpdateRoomBlockC2SPacket packet) {
 		roomName = new String(packet.name());
 		mobList = new String(packet.mobList());
@@ -128,6 +163,8 @@ public class RoomBlockEntity extends BlockEntity implements ExtendedScreenHandle
 
 		BlockState state = this.world.getBlockState(packet.targetPos());
 		world.updateListeners(packet.targetPos(), state, state, 0);
+
+		updateBlockstate();
 	}
 
 	public void setForcefield(BlockPos pos, boolean closed) {
